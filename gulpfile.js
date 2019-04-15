@@ -4,6 +4,7 @@ const log = require('gulplog');
 // sass dependencies
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const cleanCSS = require('gulp-clean-css');
 // js dependencies
 const babel = require('gulp-babel');
 const browserify = require('browserify');
@@ -21,15 +22,18 @@ gulp.task('clean', () => {
 
 // sass bundler
 gulp.task('sass', () => {
-  return gulp.src('./src/sass/bundle.scss')
+  return gulp.src('src/sass/bundle.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./docs'));
+    .pipe(cleanCSS({debug: true}, details => {
+      console.log(`${details.name}: ${details.stats.originalSize} => ${details.stats.minifiedSize}`);
+    }))
+    .pipe(gulp.dest('docs'));
 });
 
 // javascript browserify, babelify, minify
 gulp.task('javascript', () => {
   var b = browserify({
-    entries: './src/js/main.js',
+    entries: 'src/js/main.js',
     debug: true,
     transform: [babelify.configure({
       presets: ['@babel/preset-env']
@@ -41,8 +45,8 @@ gulp.task('javascript', () => {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .on('error', log.error)
-    .pipe(sourcemaps.write('./maps/'))
-    .pipe(gulp.dest('./docs'));
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('docs'));
 });
 
 // create task
