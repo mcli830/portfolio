@@ -1,0 +1,9 @@
+.flex--center {
+  @include flex(center);
+}
+.flex--row {
+  @include flex($dir: row, $align: center);
+}
+.flex--column {
+  @include flex($dir: column, $align: center);
+}

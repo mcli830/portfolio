@@ -29,6 +29,21 @@ $theme-tri-light: $purple-light;
 // helper
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
 
-$shadow-sm: 2px 2px 5px rgba($black-light, 0.3);
-$shadow-md: 5px 5px 10px rgba($black-light, 0.4);
-$shadow-lg: 10px 10px 20px rgba($black, 0.4);
+$alpha-light: rgba($white, 0.4);
+$alpha-dark: rgba($black, 0.4);
+
+$shadow-sm-size: 2px 2px 5px;
+$shadow-md-size: 5px 5px 10px;
+$shadow-lg-size: 10px 10px 20px;
+$shadow-sm-color: rgba($black-light, 0.3);
+$shadow-md-color: rgba($black-light, 0.4);
+$shadow-lg-color: rgba($black, 0.4);
+$shadow-sm: $shadow-sm-size $shadow-sm-color;
+$shadow-md: $shadow-md-size $shadow-md-color;
+$shadow-lg: $shadow-lg-size $shadow-lg-color;
+
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;

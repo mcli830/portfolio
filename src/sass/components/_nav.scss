@@ -1,4 +1,33 @@
+$tab-radius: 8px;
+
 .nav {
-  position: fixed;
-  display: none;
+  position: sticky;
+  background: transparent;
+  flex: 0 0 5rem;
+  width: 100%;
+  @include flex($dir: row, $align: center);
+  z-index: 1;
+}
+
+.nav__tab-wrapper {
+  flex: 1 0 33.3%;
+  height: 100%;
+  @include flex($justify: flex-end, $align: flex-start);
+
+  .nav__tab {
+    height: 70%;
+    width: 95%;
+    border-top-left-radius: $tab-radius;
+    border-top-right-radius: $tab-radius;
+    background-color: $alpha-light;
+    border: 1px solid $alpha-light;
+    border-bottom: none;
+    box-shadow: 3px -1px 2px $shadow-sm-color;
+  }
+  &:first-child {
+    .nav__tab {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
 }

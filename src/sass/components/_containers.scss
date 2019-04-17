@@ -1,7 +1,6 @@
 .container {
   width: 96%;
   min-height: 100vh;
-  box-shadow: $shadow-sm;
   @include mediaQueryStep((width: 92% 88% 84%))
   @media only screen and (orientation: landscape){
     @include mediaQueryRange((width: 100% 60%));
