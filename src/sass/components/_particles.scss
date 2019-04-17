@@ -1,0 +1,13 @@
+$particles-bg: $java;
+$particles-bg-light: $java-light;
+$particles: $sky-light;
+
+#particles {
+  background: linear-gradient(3deg, $particles-bg, $particles-bg-light);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}

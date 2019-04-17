@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  @media only screen and (orientation: landscape){
+    @include mediaQueryRange((
+      width: 100% 60%
+    ));
+  }
+}

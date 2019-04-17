@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "http-server -c-1 -p 3000"
+    "start": "gulp && cd docs && http-server -c-1 -p 3000",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mcli830/portfolio.git"
   },
-  "author": "",
+  "author": "mcli830",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mcli830/portfolio/issues"
@@ -33,5 +34,8 @@
     "node-sass": "^4.11.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "particlesjs": "^2.2.3"
   }
 }

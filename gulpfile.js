@@ -35,9 +35,9 @@ gulp.task('html', ()=>{
 gulp.task('sass', ()=>{
   return gulp.src('src/sass/bundle.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS({debug: true}, details => {
-      console.log(`${details.name}: ${details.stats.originalSize} ==minify=> ${details.stats.minifiedSize}`);
-    }))
+    // .pipe(cleanCSS({debug: true}, details => {
+    //   console.log(`${details.name}: ${details.stats.originalSize} ==minify=> ${details.stats.minifiedSize}`);
+    // }))
     .pipe(gulp.dest('docs'))
 })
 
@@ -60,10 +60,24 @@ gulp.task('javascript', ()=>{
     .pipe(gulp.dest('docs'))
 })
 
+// return assets
+gulp.task('assets', ()=>{
+  return gulp.src('src/js/particles.config.json')
+    .pipe(gulp.dest('docs'));
+})
+
 // default task
 gulp.task('default', gulp.series(
   'clean',
   'html',
   'sass',
-  'javascript'
+  'javascript',
+))
+
+gulp.task('compile+', gulp.series(
+  'clean',
+  'html',
+  'sass',
+  'javascript',
+  'assets'
 ))
