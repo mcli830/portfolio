@@ -25,3 +25,10 @@ $theme-sec-light: $red-light;
 $theme-tri: $purple;
 $theme-tri-dark: $purple-dark;
 $theme-tri-light: $purple-light;
+
+// helper
+$bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+
+$shadow-sm: 2px 2px 5px rgba($black-light, 0.3);
+$shadow-md: 5px 5px 10px rgba($black-light, 0.4);
+$shadow-lg: 10px 10px 20px rgba($black, 0.4);
