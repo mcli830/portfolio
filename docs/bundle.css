@@ -75,7 +75,7 @@ body {
       width: 60%; } }
 
 #particles {
-  background: linear-gradient(3deg, #1FC2C2, #68f5f5);
+  background: linear-gradient(-3deg, #007ac1, #1FC2C2);
   position: fixed;
   z-index: 0;
   top: 0;
