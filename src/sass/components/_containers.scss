@@ -1,8 +1,18 @@
-.container {
+[class^="container--"],
+[class*=" container--"] {
   width: 96%;
-  min-height: 100vh;
-  @include mediaQueryStep((width: 92% 88% 84%))
+  height: 100%;
+  @include mediaQueryStep($delay: 1, $rules: (width: (94%, 92%, 90%)));
+}
+
+.container--default {
   @media only screen and (orientation: landscape){
-    @include mediaQueryRange((width: 100% 60%));
+    @include mediaQueryRange((width: (100%, 70%)));
+  }
+}
+
+.container--wide {
+  @media only screen and (orientation: landscape){
+    @include mediaQueryRange((width: (100%, 85%)));
   }
 }

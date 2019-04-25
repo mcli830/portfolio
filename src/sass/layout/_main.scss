@@ -1,0 +1,19 @@
+$nav-height: 6rem;
+$section-height: 80vh;
+
+[class^="main--"],
+[class*=" main--"] {
+  display: block;
+}
+
+.main--nav {
+  height: $nav-height;
+}
+
+.main--about {
+  height: $section-height;
+}
+
+.main--portfolio {
+  height: $section-height;
+}
