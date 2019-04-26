@@ -1,9 +1,14 @@
 $nav-height: 6rem;
 $section-height: 80vh;
 
+$portfolio-bg: rgba($color-bg, 0.9);
+$portfolio-radius: $border-radius-lg;
+$portfolio-shadow: $shadow-lg;
+
 [class^="main--"],
 [class*=" main--"] {
   display: block;
+  width: 100%;
 }
 
 .main--nav {
@@ -12,8 +17,19 @@ $section-height: 80vh;
 
 .main--about {
   height: $section-height;
+  .content {
+    height: 100%;
+    background-color: transparent;
+    @include flex(center);
+  }
 }
 
 .main--portfolio {
   height: $section-height;
+  .content {
+    background-color: $portfolio-bg;
+    border-top-left-radius: $portfolio-radius;
+    border-top-right-radius: $portfolio-radius;
+    box-shadow: $portfolio-shadow;
+  }
 }

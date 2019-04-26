@@ -2,6 +2,7 @@
 [class*=" container--"] {
   width: 96%;
   height: 100%;
+  margin: auto;
   @include mediaQueryStep($delay: 1, $rules: (width: (94%, 92%, 90%)));
 }
 

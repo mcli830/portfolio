@@ -60,47 +60,65 @@ body {
   align-items: center;
   overflow: hidden; }
 
-.container {
+[class^="container--"],
+[class*=" container--"] {
   width: 96%;
-  height: 100%; }
+  height: 100%;
+  margin: auto; }
   @media only screen and (min-width: 600px) {
-    .container {
+    [class^="container--"],
+    [class*=" container--"] {
       width: 94%; } }
   @media only screen and (min-width: 768px) {
-    .container {
+    [class^="container--"],
+    [class*=" container--"] {
       width: 92%; } }
   @media only screen and (min-width: 992px) {
-    .container {
+    [class^="container--"],
+    [class*=" container--"] {
       width: 90%; } }
   @media only screen and (min-width: 1200px) {
-    .container {
+    [class^="container--"],
+    [class*=" container--"] {
       width: 90%; } }
-  @media only screen and (orientation: landscape) {
-    .container {
-      width: 100%; } }
+
+@media only screen and (orientation: landscape) {
+  .container--default {
+    width: 100%; } }
   @media only screen and (orientation: landscape) and (min-width: 480px) {
-    .container {
+    .container--default {
       width: 92.5%; } }
   @media only screen and (orientation: landscape) and (min-width: 600px) {
-    .container {
+    .container--default {
       width: 85%; } }
   @media only screen and (orientation: landscape) and (min-width: 768px) {
-    .container {
+    .container--default {
       width: 77.5%; } }
   @media only screen and (orientation: landscape) and (min-width: 992px) {
-    .container {
+    .container--default {
       width: 70%; } }
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
-    .container {
+    .container--default {
       width: 62.5%; } }
 
-.content {
-  flex: 1 1 auto;
-  width: 100%;
-  background-color: rgba(250, 250, 250, 0.4);
-  box-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3);
-  border-radius: 4px;
-  z-index: 2; }
+@media only screen and (orientation: landscape) {
+  .container--wide {
+    width: 100%; } }
+  @media only screen and (orientation: landscape) and (min-width: 480px) {
+    .container--wide {
+      width: 96.25%; } }
+  @media only screen and (orientation: landscape) and (min-width: 600px) {
+    .container--wide {
+      width: 92.5%; } }
+  @media only screen and (orientation: landscape) and (min-width: 768px) {
+    .container--wide {
+      width: 88.75%; } }
+  @media only screen and (orientation: landscape) and (min-width: 992px) {
+    .container--wide {
+      width: 85%; } }
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .container--wide {
+      width: 81.25%; } }
 
 .nav {
   background: transparent;
@@ -166,3 +184,26 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center; }
+
+[class^="main--"],
+[class*=" main--"] {
+  display: block;
+  width: 100%; }
+
+.main--nav {
+  height: 6rem; }
+
+.main--about {
+  height: 80vh; }
+  .main--about .content {
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 165, 0, 0.8); }
+
+.main--portfolio {
+  height: 80vh; }
+  .main--portfolio .content {
+    background-color: rgba(250, 250, 250, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }

@@ -6,25 +6,18 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bundle.css">
+        <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
         <script src="bundle.js" defer></script>
     </head>
     
     <body>
-        <div class="container flex--column">
-            <div class="nav">
-                <div class="nav__tab-wrapper">
-                    <div class="nav__tab"></div>
-                </div>
-                <div class="nav__tab-wrapper">
-                    <div class="nav__tab"></div>
-                </div>
-                <div class="nav__tab-wrapper">
-                    <div class="nav__tab"></div>
-                </div>
-            </div>
-            <div class="content alpha--light"></div>
+        <div class="nav"></div>
+        <div id="about" class="main--about">
+            <div class="container--default content"></div>
+        </div>
+        <div id="portfolio" class="main--portfolio">
+            <div class="container--wide content"></div>
         </div>
         <canvas id="particles"></canvas>
         <script src="bundle.js"></script>

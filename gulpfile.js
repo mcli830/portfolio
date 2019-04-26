@@ -33,7 +33,7 @@ gulp.task('html', ()=>{
 
 // sass bundler
 gulp.task('sass', ()=>{
-  return gulp.src('src/sass/bundle.scss')
+  return gulp.src('src/sass/style.scss')
     .pipe(sass().on('error', sass.logError))
     // .pipe(cleanCSS({debug: true}, details => {
     //   console.log(`${details.name}: ${details.stats.originalSize} ==minify=> ${details.stats.minifiedSize}`);
