@@ -1,0 +1,30 @@
+$avatar-sm: 50px;
+$avatar-md: 100px;
+$avatar-lg: 200px;
+
+[class^="avatar--"],
+[class*=" avatar--"] {
+  overflow: hidden;
+  border-radius: 50%;
+  @include flex(center);
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: center;
+  }
+}
+
+.avatar--sm {
+  height: $avatar-sm;
+  width: $avatar-sm;
+}
+
+.avatar--md {
+  height: $avatar-md;
+  width: $avatar-md;
+}
+
+.avatar--lg {
+  height: $avatar-lg;
+  width: $avatar-lg;
+}

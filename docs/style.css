@@ -161,6 +161,32 @@ body {
   max-height: 100%;
   max-width: 100%; }
 
+[class^="avatar--"],
+[class*=" avatar--"] {
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  [class^="avatar--"] img,
+  [class*=" avatar--"] img {
+    height: 100%;
+    width: 100%;
+    object-fit: center; }
+
+.avatar--sm {
+  height: 50px;
+  width: 50px; }
+
+.avatar--md {
+  height: 100px;
+  width: 100px; }
+
+.avatar--lg {
+  height: 200px;
+  width: 200px; }
+
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
 
@@ -185,6 +211,15 @@ body {
   justify-content: flex-start;
   align-items: center; }
 
+.shadow--sm {
+  box-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3); }
+
+.shadow--md {
+  box-shadow: 5px 5px 10px rgba(72, 72, 72, 0.4); }
+
+.shadow--lg {
+  box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
+
 [class^="main--"],
 [class*=" main--"] {
   display: block;
@@ -198,7 +233,10 @@ body {
   .main--about .content {
     height: 100%;
     background-color: transparent;
-    border: 1px solid rgba(255, 165, 0, 0.8); }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 .main--portfolio {
   height: 80vh; }

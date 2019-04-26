@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const clean = require('gulp-clean')
+const del = require('del')
 const log = require('gulplog')
 // html-partial dependencies
 const htmlPartial = require('gulp-html-partial')
@@ -18,8 +18,7 @@ const babelify = require('babelify')
 
 // clean output folder
 gulp.task('clean', ()=>{
-  return gulp.src('docs', {read: false})
-    .pipe(clean());
+  return del(['docs/**/*', '!docs/assets', '!docs/assets/**/*']);
 })
 
 // html partial compiler
