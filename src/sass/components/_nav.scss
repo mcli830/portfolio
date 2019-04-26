@@ -22,28 +22,26 @@ $nav-color: $color-text-invert;
     text-align: center;
     cursor: pointer;
     padding: 1em;
-    transition: $transition-slow 200ms;
+    transition: $transition-slow 100ms;
     position: relative;
     border-radius: $border-radius-sm;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 49%;
-      height: 2px;
-      width: 1%;
-      background-color: transparent;
-      transition: $transition-fast;
-    }
+    &:before,
     &:after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 49%;
-      height: 1px;
-      width: 1%;
       background-color: transparent;
-      transition: $transition-med 100ms;
+      height: 0;
+      width: 1%;
+      left: 49%;
+      border-radius: $border-radius-sm;
+    }
+    &:before {
+      top: 0;
+      transition: $transition-fast;
+    }
+    &:after {
+      top: 5px;
+      transition: $transition-med 50ms;
     }
 
     &:hover,
@@ -52,11 +50,13 @@ $nav-color: $color-text-invert;
       letter-spacing: 0.3em;
       &:before {
         left: 0;
+        height: 2px;
         width: 100%;
         background-color: rgba($nav-color, 0.9);
       }
       &:after {
         left: 15%;
+        height: 1px;
         width: 70%;
         background-color: rgba($nav-color, 0.7);
       }

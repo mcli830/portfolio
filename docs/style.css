@@ -142,35 +142,33 @@ body {
     text-align: center;
     cursor: pointer;
     padding: 1em;
-    transition: 800ms 200ms;
+    transition: 800ms 100ms;
     position: relative;
     border-radius: 4px; }
-    .nav .nav__button:before {
+    .nav .nav__button:before, .nav .nav__button:after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 49%;
-      height: 2px;
-      width: 1%;
       background-color: transparent;
+      height: 0;
+      width: 1%;
+      left: 49%;
+      border-radius: 4px; }
+    .nav .nav__button:before {
+      top: 0;
       transition: 250ms; }
     .nav .nav__button:after {
-      content: '';
-      position: absolute;
       top: 5px;
-      left: 49%;
-      height: 1px;
-      width: 1%;
-      background-color: transparent;
-      transition: 500ms 100ms; }
+      transition: 500ms 50ms; }
     .nav .nav__button:hover, .nav .nav__button:focus, .nav .nav__button.selected {
       letter-spacing: 0.3em; }
       .nav .nav__button:hover:before, .nav .nav__button:focus:before, .nav .nav__button.selected:before {
         left: 0;
+        height: 2px;
         width: 100%;
         background-color: rgba(250, 250, 250, 0.9); }
       .nav .nav__button:hover:after, .nav .nav__button:focus:after, .nav .nav__button.selected:after {
         left: 15%;
+        height: 1px;
         width: 70%;
         background-color: rgba(250, 250, 250, 0.7); }
     .nav .nav__button:hover, .nav .nav__button:focus {
