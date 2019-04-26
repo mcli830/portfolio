@@ -12,6 +12,9 @@ $rem: 16px;
 $color-text: $black;
 $color-text-dark: $black-dark;
 $color-text-light: $black-light;
+$color-text-invert: $white;
+$color-text-invert-dark: $white-dark;
+$color-text-invert-light: $white-light;
 $color-bg: $white;
 $color-bg-dark: $white-dark;
 $color-bg-light: $white-light;
@@ -28,6 +31,11 @@ $theme-tri-light: $purple-light;
 
 // helper
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+
+$transition-sec: 1s;
+$transition-slow: 800ms;
+$transition-med: 500ms;
+$transition-fast: 250ms;
 
 $alpha-light: rgba($white, 0.4);
 $alpha-dark: rgba($black, 0.4);

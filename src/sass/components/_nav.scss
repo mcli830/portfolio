@@ -1,32 +1,72 @@
-$tab-radius: 8px;
+$nav-height: 5rem;
+$nav-color: $color-text-invert;
 
 .nav {
   background: transparent;
-  flex: 0 0 5rem;
+  height: $nav-height;
+  display: block;
   width: 100%;
-  @include flex($dir: row, $align: center);
   z-index: 1;
-}
-
-.nav__tab-wrapper {
-  flex: 1 0 33.3%;
-  height: 100%;
-  @include flex($justify: flex-end, $align: flex-start);
-
-  .nav__tab {
-    height: 70%;
-    width: 95%;
-    border-top-left-radius: $tab-radius;
-    border-top-right-radius: $tab-radius;
-    background-color: $alpha-light;
-    border: 1px solid $alpha-light;
-    border-bottom: none;
-    box-shadow: 3px -1px 2px $shadow-sm-color;
+  .content {
+    @include flex($dir: row, $justify: space-around, $align: center);
   }
-  &:first-child {
-    .nav__tab {
-      width: 90%;
-      margin-left: 5%;
+
+  .nav__button {
+    flex: 0 0 25%;
+    height: auto;
+    margin: auto;
+    font-size: 1rem;
+    font-family: $font-sec;
+    color: $nav-color;
+    letter-spacing: 0.2em;
+    text-align: center;
+    cursor: pointer;
+    padding: 1em;
+    transition: $transition-slow 200ms;
+    position: relative;
+    border-radius: $border-radius-sm;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 49%;
+      height: 2px;
+      width: 1%;
+      background-color: transparent;
+      transition: $transition-fast;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 49%;
+      height: 1px;
+      width: 1%;
+      background-color: transparent;
+      transition: $transition-med 100ms;
+    }
+
+    &:hover,
+    &:focus,
+    &.selected {
+      letter-spacing: 0.3em;
+      &:before {
+        left: 0;
+        width: 100%;
+        background-color: rgba($nav-color, 0.9);
+      }
+      &:after {
+        left: 15%;
+        width: 70%;
+        background-color: rgba($nav-color, 0.7);
+      }
+    }
+    &:hover,
+    &:focus {
+      background-color: rgba($nav-color, 0.2);
+    }
+    &.selected {
+      transition: $transition-med;
     }
   }
 }
