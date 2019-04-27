@@ -5,6 +5,15 @@ $portfolio-bg: rgba($color-bg, 0.9);
 $portfolio-radius: $border-radius-lg;
 $portfolio-shadow: $shadow-lg;
 
+.body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
 [class^="main--"],
 [class*=" main--"] {
   display: block;
@@ -17,6 +26,7 @@ $portfolio-shadow: $shadow-lg;
     height: 100%;
     background-color: transparent;
     @include flex(center);
+    padding: 2rem;
   }
 }
 

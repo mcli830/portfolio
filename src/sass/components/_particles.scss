@@ -1,9 +1,8 @@
-$bg-d: $cerulean-dark;
-$bg-l: $java;
+
 $particles: $cerulean-light;
 
 #particles {
-  background: linear-gradient($alpha-dark, transparent 5em), linear-gradient(-3deg, $bg-d, $bg-l);
+  background: linear-gradient($alpha-dark, transparent 5em);
   position: fixed;
   z-index: -1;
   top: 0;

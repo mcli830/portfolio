@@ -7,16 +7,19 @@ $nav-color: $color-text-invert;
   display: block;
   width: 100%;
   z-index: 1;
+  font-family: $font-nav;
+  font-size: 1rem;
   .content {
     @include flex($dir: row, $justify: space-around, $align: center);
+  }
+  * {
+    font-family: inherit;
   }
 
   .nav__button {
     flex: 0 0 25%;
     height: auto;
     margin: auto;
-    font-size: 1rem;
-    font-family: $font-sec;
     color: $nav-color;
     letter-spacing: 0.2em;
     text-align: center;

@@ -1,0 +1,9 @@
+.fx__fade-in {
+  opacity: 0;
+  animation: fade-in $load-fade-in-time linear $page-load-delay forwards;
+}
+
+@keyframes fade-in {
+  from {opacity: 0}
+  to {opacity: 1}
+}
