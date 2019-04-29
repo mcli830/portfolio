@@ -55,7 +55,23 @@ body {
   color: #212121;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(-3deg, #007ac1, #1FC2C2); }
+  background: linear-gradient(-3deg, #007ac1, #1FC2C2);
+  font-size: 10px; }
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 12px; } }
+  @media only screen and (min-width: 600px) {
+    body {
+      font-size: 14px; } }
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px; } }
+  @media only screen and (min-width: 992px) {
+    body {
+      font-size: 18px; } }
+  @media only screen and (min-width: 1200px) {
+    body {
+      font-size: 20px; } }
 
 [class^="container--"],
 [class*=" container--"] {
@@ -119,12 +135,12 @@ body {
 
 .nav {
   background: transparent;
-  height: 5rem;
+  height: 4em;
   display: block;
   width: 100%;
   z-index: 1;
   font-family: "Orbitron";
-  font-size: 1rem; }
+  font-size: 1em; }
   .nav .content {
     display: flex;
     flex-direction: row;
@@ -133,7 +149,7 @@ body {
   .nav * {
     font-family: inherit; }
   .nav .nav__button {
-    flex: 0 0 25%;
+    flex: 0 0 30%;
     height: auto;
     margin: auto;
     color: #fafafa;
@@ -194,16 +210,18 @@ body {
   max-height: 100%;
   max-width: 100%; }
 
-[class^="avatar--"],
-[class*=" avatar--"] {
+[class^="avatar"],
+[class*=" avatar"],
+[class*="__avatar"] {
   overflow: hidden;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  [class^="avatar--"] img,
-  [class*=" avatar--"] img {
+  [class^="avatar"] img,
+  [class*=" avatar"] img,
+  [class*="__avatar"] img {
     height: 100%;
     width: 100%;
     object-fit: center; }
@@ -242,7 +260,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem; }
+    padding: 2em; }
 
 .main--portfolio {
   height: 80vh; }
@@ -256,31 +274,33 @@ body {
   position: relative;
   width: 100%;
   height: 100%; }
-  .about__profile [class^="avatar--"],
-  .about__profile [class*=" avatar--"] {
+  .about__profile .about__avatar {
     position: absolute;
+    top: 0;
     left: calc(50% - 100px);
-    z-index: 1; }
-  .about__profile .about__card-container {
-    position: absolute;
-    height: calc(100% - (100px + 0.5em));
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; }
-    .about__profile .about__card-container .about__card {
-      flex: 0 0 calc(50% - 0.5em);
-      height: 100%;
-      border-radius: 8px; }
-      .about__profile .about__card-container .about__card:first-child {
-        transform-origin: 100% 50%;
-        background: radial-gradient(circle at top right, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
-      .about__profile .about__card-container .about__card:last-child {
-        transform-origin: 0% 50%;
-        background: radial-gradient(circle at top left, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
+    z-index: 1;
+    height: 80px;
+    width: 80px; }
+    @media only screen and (min-width: 480px) {
+      .about__profile .about__avatar {
+        height: 110px;
+        width: 110px; } }
+    @media only screen and (min-width: 600px) {
+      .about__profile .about__avatar {
+        height: 140px;
+        width: 140px; } }
+    @media only screen and (min-width: 768px) {
+      .about__profile .about__avatar {
+        height: 170px;
+        width: 170px; } }
+    @media only screen and (min-width: 992px) {
+      .about__profile .about__avatar {
+        height: 200px;
+        width: 200px; } }
+    @media only screen and (min-width: 1200px) {
+      .about__profile .about__avatar {
+        height: 230px;
+        width: 230px; } }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
@@ -348,3 +368,7 @@ body {
     transform: scaleX(1) scaleY(0.01); }
   to {
     transform: scaleX(1) scaleY(1); } }
+
+.fx__card-fade-in {
+  opacity: 0;
+  animation: fade-in 500ms linear 2300ms forwards; }

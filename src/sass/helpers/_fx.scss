@@ -33,3 +33,10 @@ $avatar-top: calc(50% - (#{$avatar-half / 2} + 0.25em));
   50% {transform: scaleX(1) scaleY(0.01);}
   to {transform: scaleX(1) scaleY(1);}
 }
+
+$card-animation-done: $load-fade-in-done + $transition-slow;
+
+.fx__card-fade-in {
+  opacity: 0;
+  animation: fade-in $transition-med linear $card-animation-done forwards;
+}

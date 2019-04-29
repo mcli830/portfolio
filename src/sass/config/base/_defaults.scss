@@ -12,4 +12,5 @@ body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(-3deg, $bg-d, $bg-l);
+  @include mediaQueryRange((font-size: (10px, 18px)));
 }

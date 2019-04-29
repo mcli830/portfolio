@@ -2,8 +2,9 @@ $avatar-sm: 50px;
 $avatar-md: 100px;
 $avatar-lg: 200px;
 
-[class^="avatar--"],
-[class*=" avatar--"] {
+[class^="avatar"],
+[class*=" avatar"],
+[class*="__avatar"] {
   overflow: hidden;
   border-radius: 50%;
   @include flex(center);
