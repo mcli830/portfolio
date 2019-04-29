@@ -220,6 +220,68 @@ body {
   height: 200px;
   width: 200px; }
 
+.body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; }
+
+[class^="main--"],
+[class*=" main--"] {
+  display: block;
+  width: 100%; }
+
+.main--about {
+  height: 80vh; }
+  .main--about .content {
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; }
+
+.main--portfolio {
+  height: 80vh; }
+  .main--portfolio .content {
+    background-color: rgba(250, 250, 250, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
+
+.about__profile {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .about__profile [class^="avatar--"],
+  .about__profile [class*=" avatar--"] {
+    position: absolute;
+    left: calc(50% - 100px);
+    z-index: 1; }
+  .about__profile .about__card-container {
+    position: absolute;
+    height: calc(100% - (100px + 0.5em));
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .about__profile .about__card-container .about__card {
+      flex: 0 0 calc(50% - 0.5em);
+      height: 100%;
+      border-radius: 8px; }
+      .about__profile .about__card-container .about__card:first-child {
+        transform-origin: 100% 50%;
+        background: radial-gradient(circle at top right, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
+      .about__profile .about__card-container .about__card:last-child {
+        transform-origin: 0% 50%;
+        background: radial-gradient(circle at top left, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
+
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
 
@@ -263,62 +325,26 @@ body {
   to {
     opacity: 1; } }
 
-.body {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden; }
+.fx__avatar-move {
+  top: calc(50% - (50px + 0.25em));
+  animation: avatar-move 800ms ease 1500ms forwards; }
 
-[class^="main--"],
-[class*=" main--"] {
-  display: block;
-  width: 100%; }
+@keyframes avatar-move {
+  from {
+    top: calc(50% - (50px + 0.25em)); }
+  50% {
+    top: calc(50% - (50px + 0.25em)); }
+  to {
+    top: 0; } }
 
-.main--about {
-  height: 80vh; }
-  .main--about .content {
-    height: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem; }
+.fx__expand-card {
+  transform: scaleX(0) scaleY(0.01);
+  animation: expand-card 800ms ease 1500ms forwards; }
 
-.main--portfolio {
-  height: 80vh; }
-  .main--portfolio .content {
-    background-color: rgba(250, 250, 250, 0.9);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
-
-.about__profile {
-  position: relative;
-  width: 100%;
-  height: 100%; }
-  .about__profile [class^="avatar--"],
-  .about__profile [class*=" avatar--"] {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 100px); }
-  .about__profile .about__card-container {
-    position: absolute;
-    height: calc(100% - (100px + 0.5em));
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; }
-    .about__profile .about__card-container .about__card {
-      flex: 0 0 calc(50% - 0.5em);
-      height: 100%;
-      border-radius: 8px; }
-      .about__profile .about__card-container .about__card:first-child {
-        background: radial-gradient(circle at top right, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
-      .about__profile .about__card-container .about__card:last-child {
-        background: radial-gradient(circle at top left, transparent 0, transparent calc(100px + 0.5em), rgba(250, 250, 250, 0.4) calc(100px + 0.5em)1px, rgba(250, 250, 250, 0.4) 100%); }
+@keyframes expand-card {
+  from {
+    transform: scaleX(0) scaleY(0.01); }
+  50% {
+    transform: scaleX(1) scaleY(0.01); }
+  to {
+    transform: scaleX(1) scaleY(1); } }

@@ -7,3 +7,29 @@
   from {opacity: 0}
   to {opacity: 1}
 }
+
+$load-fade-in-done: $page-load-delay + $load-fade-in-time;
+
+$avatar-top: calc(50% - (#{$avatar-half / 2} + 0.25em));
+
+.fx__avatar-move {
+  top: $avatar-top;
+  animation: avatar-move $transition-slow ease $load-fade-in-done forwards;
+}
+
+@keyframes avatar-move {
+  from {top: $avatar-top;}
+  50% {top: $avatar-top;}
+  to {top: 0;}
+}
+
+.fx__expand-card {
+  transform: scaleX(0) scaleY(0.01);
+  animation: expand-card $transition-slow ease $load-fade-in-done forwards;
+}
+
+@keyframes expand-card {
+  from {transform: scaleX(0) scaleY(0.01);}
+  50% {transform: scaleX(1) scaleY(0.01);}
+  to {transform: scaleX(1) scaleY(1);}
+}
