@@ -274,33 +274,55 @@ body {
   position: relative;
   width: 100%;
   height: 100%; }
-  .about__profile .about__avatar {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 100px);
-    z-index: 1;
-    height: 80px;
-    width: 80px; }
-    @media only screen and (min-width: 480px) {
-      .about__profile .about__avatar {
-        height: 110px;
-        width: 110px; } }
-    @media only screen and (min-width: 600px) {
-      .about__profile .about__avatar {
-        height: 140px;
-        width: 140px; } }
-    @media only screen and (min-width: 768px) {
-      .about__profile .about__avatar {
-        height: 170px;
-        width: 170px; } }
-    @media only screen and (min-width: 992px) {
-      .about__profile .about__avatar {
-        height: 200px;
-        width: 200px; } }
-    @media only screen and (min-width: 1200px) {
-      .about__profile .about__avatar {
-        height: 230px;
-        width: 230px; } }
+
+.about__avatar {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 1;
+  height: 80px;
+  width: 80px; }
+  @media only screen and (min-width: 480px) {
+    .about__avatar {
+      height: 100px;
+      width: 100px; } }
+  @media only screen and (min-width: 600px) {
+    .about__avatar {
+      height: 120px;
+      width: 120px; } }
+  @media only screen and (min-width: 768px) {
+    .about__avatar {
+      height: 140px;
+      width: 140px; } }
+  @media only screen and (min-width: 992px) {
+    .about__avatar {
+      height: 160px;
+      width: 160px; } }
+  @media only screen and (min-width: 1200px) {
+    .about__avatar {
+      height: 180px;
+      width: 180px; } }
+
+.about__content {
+  height: 100%;
+  width: 100%; }
+
+.about__info {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1em;
+  background-color: rgba(250, 250, 250, 0.4);
+  transform-origin: 0% 0%;
+  opacity: 0;
+  top: 40%;
+  transform: scaleX(0) scaleY(0.01); }
+  .about__info h2 {
+    font-size: 1.1em;
+    color: #fafafa;
+    font-family: "Orbitron";
+    letter-spacing: 0.1em;
+    padding: 1em 30%; }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
@@ -337,38 +359,10 @@ body {
 
 .fx__fade-in {
   opacity: 0;
-  animation: fade-in 1s linear 500ms forwards; }
+  animation: fade-in 1s linear forwards; }
 
 @keyframes fade-in {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-
-.fx__avatar-move {
-  top: calc(50% - (50px + 0.25em));
-  animation: avatar-move 800ms ease 1500ms forwards; }
-
-@keyframes avatar-move {
-  from {
-    top: calc(50% - (50px + 0.25em)); }
-  50% {
-    top: calc(50% - (50px + 0.25em)); }
-  to {
-    top: 0; } }
-
-.fx__expand-card {
-  transform: scaleX(0) scaleY(0.01);
-  animation: expand-card 800ms ease 1500ms forwards; }
-
-@keyframes expand-card {
-  from {
-    transform: scaleX(0) scaleY(0.01); }
-  50% {
-    transform: scaleX(1) scaleY(0.01); }
-  to {
-    transform: scaleX(1) scaleY(1); } }
-
-.fx__card-fade-in {
-  opacity: 0;
-  animation: fade-in 500ms linear 2300ms forwards; }

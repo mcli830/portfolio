@@ -1,4 +1,5 @@
 const Particles = require('particlesjs')
+const anime = require('animejs')
 
 if (document.getElementById('particles')) {
   Particles.init({
@@ -9,6 +10,40 @@ if (document.getElementById('particles')) {
     minDistance: 30,
     connectParticles: true
   });
+}
+
+// load animation
+if (anime) {
+  console.log('animejs loaded')
+  var loadAnimation = anime.timeline({
+    easing: 'easeOutCubic',
+    duration: 400
+  });
+  loadAnimation
+    .add({
+      targets: '.about__avatar',
+      opacity: [0, 1],
+      duration: 1000
+    })
+    .add({
+      targets: '.about__avatar',
+      left: 0
+    })
+    .add({
+      targets: '.about__info',
+      scaleX: [0, 1],
+      opacity: [0, 1]
+    }, '-=390')
+    .add({
+      targets: '.about__avatar',
+      top: 0,
+      scale: 0.9
+    })
+    .add({
+      targets: '.about__info',
+      top: 0,
+      scaleY: [0.01, 1]
+    }, '-=390')
 }
 
 // change view function

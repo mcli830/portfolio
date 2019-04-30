@@ -6,16 +6,42 @@ $card-bg: $alpha-dark;
   position: relative;
   width: 100%;
   height: 100%;
-  .about__avatar {
-    position: absolute;
-    top: 0;
-    left: calc(50% - #{$avatar-half});
-    z-index: 1;
-    @include mediaQueryRange((
-      height: (80px, 200px),
-      width: (80px, 200px)
-    ));
+}
+
+
+.about__avatar {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 1;
+  @include mediaQueryRange((
+    height: (80px, 160px),
+    width: (80px, 160px)
+  ));
+}
+
+
+.about__content {
+  height: 100%;
+  width: 100%;
+}
+
+.about__info {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 1em;
+  background-color: $alpha-light;
+  transform-origin: 0% 0%;
+  // animation start point
+  opacity: 0;
+  top: 40%;
+  transform: scaleX(0) scaleY(0.01);
+  h2 {
+    font-size: 1.1em;
+    color: $color-text-invert;
+    font-family: $font-nav;
+    letter-spacing: 0.1em;
+    padding: 1em 30%;
   }
-
-
 }
