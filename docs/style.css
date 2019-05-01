@@ -275,54 +275,73 @@ body {
   width: 100%;
   height: 100%; }
 
-.about__avatar {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  z-index: 1;
-  height: 80px;
-  width: 80px; }
-  @media only screen and (min-width: 480px) {
-    .about__avatar {
-      height: 100px;
-      width: 100px; } }
-  @media only screen and (min-width: 600px) {
-    .about__avatar {
-      height: 120px;
-      width: 120px; } }
-  @media only screen and (min-width: 768px) {
-    .about__avatar {
-      height: 140px;
-      width: 140px; } }
-  @media only screen and (min-width: 992px) {
-    .about__avatar {
-      height: 160px;
-      width: 160px; } }
-  @media only screen and (min-width: 1200px) {
-    .about__avatar {
-      height: 180px;
-      width: 180px; } }
-
 .about__content {
   height: 100%;
   width: 100%; }
 
 .about__info {
   position: relative;
-  left: 0;
-  display: block;
-  padding: 1em;
-  background-color: rgba(250, 250, 250, 0.4);
-  transform-origin: 0% 0%;
-  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 160px;
   top: 40%;
-  transform: scaleX(0) scaleY(0.01); }
-  .about__info h2 {
-    font-size: 1.1em;
-    color: #fafafa;
-    font-family: "Orbitron";
-    letter-spacing: 0.1em;
-    padding: 1em 30%; }
+  left: 40%; }
+  .about__info .about__avatar {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 80px;
+    width: 80px; }
+    @media only screen and (min-width: 480px) {
+      .about__info .about__avatar {
+        height: 100px;
+        width: 100px; } }
+    @media only screen and (min-width: 600px) {
+      .about__info .about__avatar {
+        height: 120px;
+        width: 120px; } }
+    @media only screen and (min-width: 768px) {
+      .about__info .about__avatar {
+        height: 140px;
+        width: 140px; } }
+    @media only screen and (min-width: 992px) {
+      .about__info .about__avatar {
+        height: 160px;
+        width: 160px; } }
+    @media only screen and (min-width: 1200px) {
+      .about__info .about__avatar {
+        height: 180px;
+        width: 180px; } }
+  .about__info .about__info__text {
+    position: relative;
+    top: 0;
+    right: 20px;
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 1rem;
+    background: radial-gradient(circle at -80px 50%, transparent, transparent 120px, rgba(33, 33, 33, 0.4) 121px);
+    transform-origin: 50% 50%;
+    opacity: 0;
+    transform: scaleY(0.01); }
+    .about__info .about__info__text * {
+      opacity: 0;
+      margin-left: 60px;
+      display: block; }
+    .about__info .about__info__text h2 {
+      font-size: 1.1em;
+      color: #fafafa;
+      font-family: "Orbitron";
+      letter-spacing: 0.1em;
+      padding: 0.5rem; }
+    .about__info .about__info__text p {
+      font-size: 0.8em;
+      font-family: "Roboto";
+      padding: 0.5rem; }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }

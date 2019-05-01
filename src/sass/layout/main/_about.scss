@@ -9,16 +9,6 @@ $card-bg: $alpha-dark;
 }
 
 
-.about__avatar {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  z-index: 1;
-  @include mediaQueryRange((
-    height: (80px, 160px),
-    width: (80px, 160px)
-  ));
-}
 
 
 .about__content {
@@ -28,20 +18,58 @@ $card-bg: $alpha-dark;
 
 .about__info {
   position: relative;
-  left: 0;
-  display: block;
-  padding: 1em;
-  background-color: $alpha-light;
-  transform-origin: 0% 0%;
-  // animation start point
-  opacity: 0;
+  @include flex($dir: row, $align: center);
+  height: 160px;
   top: 40%;
-  transform: scaleX(0) scaleY(0.01);
-  h2 {
-    font-size: 1.1em;
+  left: 40%;
+
+  .about__avatar {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include mediaQueryRange((
+      height: (80px, 160px),
+      width: (80px, 160px)
+    ));
+  }
+  .about__info__text {
+    position: relative;
+    top: 0;
+    right: 20px;
+    flex: 1 1 auto;
+    height: 100%;
     color: $color-text-invert;
-    font-family: $font-nav;
-    letter-spacing: 0.1em;
-    padding: 1em 30%;
+    padding: 1rem;
+    border-radius: $border-radius-sm;
+    background: radial-gradient(circle at -80px 50%, transparent, transparent 120px, $alpha-dark 121px);
+    transform-origin: 50% 50%;
+    // animation start point
+    opacity: 0;
+    transform: scaleY(0.01);
+    * {
+      // animation start point
+      opacity: 0;
+      margin-left: 40px;
+    }
+    h2 {
+      font-size: 1.1em;
+      font-family: $font-nav;
+      letter-spacing: 0.1em;
+      padding: 0.5rem;
+    }
+    p {
+      font-size: 0.8em;
+      font-family: $font-pri;
+      padding: 0.5rem;
+    }
+  }
+  @each $device in $device-breakpoints {
+    $i: index($device-breakpoints, $device);
+    @media only screen and (min-width: $device){
+
+    }
   }
 }

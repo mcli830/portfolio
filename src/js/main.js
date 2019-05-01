@@ -26,24 +26,29 @@ if (anime) {
       duration: 1000
     })
     .add({
-      targets: '.about__avatar',
-      left: 0
+      targets: '.about__info',
+      top: 0,
     })
     .add({
       targets: '.about__info',
+      left: 0,
+    })
+    .add({
+      targets: '.about__info__text',
       scaleX: [0, 1],
+      scaleY: [0.01, 0.01],
       opacity: [0, 1]
     }, '-=390')
     .add({
-      targets: '.about__avatar',
+      targets: '.about__info__text',
       top: 0,
-      scale: 0.9
+      scaleX: [1,1],
+      scaleY: [0.01, 1]
     })
     .add({
-      targets: '.about__info',
-      top: 0,
-      scaleY: [0.01, 1]
-    }, '-=390')
+      targets: '.about__info__text *',
+      opacity: [0,1]
+    })
 }
 
 // change view function
