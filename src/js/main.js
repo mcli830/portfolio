@@ -31,7 +31,7 @@ if (anime) {
     })
     .add({
       targets: '.about__info',
-      left: 0,
+      left: 10,
     })
     .add({
       targets: '.about__info__text',

@@ -320,21 +320,21 @@ body {
   .about__info .about__info__text {
     position: relative;
     top: 0;
-    right: 20px;
+    right: 10px;
     flex: 1 1 auto;
     height: 100%;
+    color: #fafafa;
     padding: 1rem;
+    border-radius: 4px;
     background: radial-gradient(circle at -80px 50%, transparent, transparent 120px, rgba(33, 33, 33, 0.4) 121px);
     transform-origin: 50% 50%;
     opacity: 0;
     transform: scaleY(0.01); }
     .about__info .about__info__text * {
       opacity: 0;
-      margin-left: 60px;
-      display: block; }
+      margin-left: 40px; }
     .about__info .about__info__text h2 {
       font-size: 1.1em;
-      color: #fafafa;
       font-family: "Orbitron";
       letter-spacing: 0.1em;
       padding: 0.5rem; }
