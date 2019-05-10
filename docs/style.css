@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Orbitron|Alegreya+Sans+SC");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -295,29 +295,32 @@ body {
       left: 0;
       width: 100%;
       opacity: 0;
+      white-space: nowrap;
       text-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3);
       -webkit-transition: 500ms;
       transition: 500ms; }
     .skill-badge .skill-badge__icon h3 {
       top: -1em;
-      font-family: "Roboto Mono";
+      font-family: "Alegreya Sans SC";
       font-size: 0.9em;
       padding: 0.25em;
       font-weight: bold;
-      color: #fafafa; }
+      color: #212121; }
     .skill-badge .skill-badge__icon h4 {
       bottom: -1em;
       font-size: 0.7em;
       padding: 0.25em; }
-  .skill-badge:hover {
+  .skill-badge:hover, .skill-badge:focus, .skill-badge:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
     .skill-badge:hover h3,
-    .skill-badge:hover h4 {
+    .skill-badge:hover h4, .skill-badge:focus h3,
+    .skill-badge:focus h4, .skill-badge:active h3,
+    .skill-badge:active h4 {
       opacity: 1; }
-    .skill-badge:hover h3 {
+    .skill-badge:hover h3, .skill-badge:focus h3, .skill-badge:active h3 {
       top: -1.5em; }
-    .skill-badge:hover h4 {
+    .skill-badge:hover h4, .skill-badge:focus h4, .skill-badge:active h4 {
       bottom: -1.5em; }
 
 .body {
@@ -523,6 +526,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   color: #212121;

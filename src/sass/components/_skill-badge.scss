@@ -30,16 +30,17 @@ $badge-icon-range: (80px, 240px);
       left: 0;
       width: 100%;
       opacity: 0;
+      white-space: nowrap;
       text-shadow: $shadow-sm;
       transition: $transition-med;
     }
     h3 {
       top: -1em;
-      font-family: $font-pri-mono;
+      font-family: $font-badge;
       font-size: 0.9em;
       padding: 0.25em;
       font-weight: bold;
-      color: $color-text-invert;
+      color: $color-text;
     }
     h4 {
       bottom: -1em;
@@ -48,7 +49,9 @@ $badge-icon-range: (80px, 240px);
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     transform: scale(1.1);
     h3,
     h4 {

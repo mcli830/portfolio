@@ -84,6 +84,8 @@ $avatar-range-grow: (120px, 240px);
 
 .about__skills {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: $color-text;
   padding: 1em;
