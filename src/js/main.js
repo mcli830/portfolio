@@ -63,7 +63,7 @@ if (anime) {
     })
     // badges
     .add({
-      targets: '.about__skills__badge',
+      targets: '.skill-badge',
       delay: anime.stagger(100),
       opacity: [0,1],
       duration: 800

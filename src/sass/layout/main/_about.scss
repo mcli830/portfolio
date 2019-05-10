@@ -87,28 +87,4 @@ $avatar-range-grow: (120px, 240px);
   flex-wrap: wrap;
   color: $color-text;
   padding: 1em;
-
-  .about__skills__badge {
-    margin: 1em;
-    height: 5em;
-    width: calc(33.3% - 2em);
-    padding: 0.5em;
-    background-color: $alpha-dark;
-    border-radius: $border-radius-md;
-
-    * {
-      text-align: center;
-    }
-    h3 {
-      font-family: $font-pri-mono;
-      font-size: 1em;
-      padding: 0.25em;
-      font-weight: bold;
-      color: $color-text-invert;
-    }
-    h4 {
-      font-size: 0.9em;
-      padding: 0.25em;
-    }
-  }
 }
