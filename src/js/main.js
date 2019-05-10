@@ -54,14 +54,8 @@ if (anime) {
     .add({
       targets: '.about__info__text',
       scaleX: [0, 1],
-      scaleY: [0.01, 0.01],
+      scaleY: [0.01, 1],
       opacity: [0, 1]
-    }, '-=50')
-    .add({
-      targets: '.about__info__text',
-      top: 0,
-      scaleX: [1,1],
-      scaleY: [0.01, 1]
     })
     .add({
       targets: '.about__info__text *',
