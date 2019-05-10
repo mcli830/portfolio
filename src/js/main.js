@@ -26,21 +26,18 @@ if (anime) {
     })
     .add({
       targets: '.about__avatar',
-      scale: 0.1,
+      scale: 0.05,
       rotate: 360,
       duration: 200
     })
     .add({
-      targets: '.about__avatar .overlay',
+      targets: '.about__avatar [class*="overlay"]',
       opacity: 1,
       duration: 200
     }, '-=150')
     .add({
       targets: '.about__info',
       top: 0,
-    })
-    .add({
-      targets: '.about__info',
       left: 0,
     })
     .add({
@@ -50,7 +47,7 @@ if (anime) {
       duration: 200
     })
     .add({
-      targets: '.about__avatar .overlay',
+      targets: '.about__avatar [class*="overlay"]',
       opacity: 0,
       duration: 200
     }, '-=150')
@@ -70,8 +67,14 @@ if (anime) {
       targets: '.about__info__text *',
       opacity: [0,1]
     })
+    // badges
+    .add({
+      targets: '.about__skills__badge',
+      delay: anime.stagger(100),
+      opacity: [0,1],
+      duration: 800
+    })
 
-  var loadSkills = anime.timeline
 }
 
 // change view function

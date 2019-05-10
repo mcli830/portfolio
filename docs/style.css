@@ -287,22 +287,22 @@ body {
   align-items: flex-start;
   top: 40%;
   left: 40%;
-  height: 160px; }
+  height: 120px; }
   @media only screen and (min-width: 480px) {
     .about__info {
-      height: 200px; } }
+      height: 150px; } }
   @media only screen and (min-width: 600px) {
     .about__info {
-      height: 240px; } }
+      height: 180px; } }
   @media only screen and (min-width: 768px) {
     .about__info {
-      height: 280px; } }
+      height: 210px; } }
   @media only screen and (min-width: 992px) {
     .about__info {
-      height: 320px; } }
+      height: 240px; } }
   @media only screen and (min-width: 1200px) {
     .about__info {
-      height: 360px; } }
+      height: 270px; } }
   .about__info .about__avatar {
     position: relative;
     top: 0;
@@ -336,10 +336,10 @@ body {
     position: relative;
     align-self: flex-end;
     flex: 1 1 auto;
-    height: 75%;
+    height: 66.66%;
     color: #fafafa;
     padding: 1rem;
-    border-radius: 4px;
+    border-radius: 8px;
     background: radial-gradient(circle at top left, transparent, transparent 50px, rgba(33, 33, 33, 0.4) 51px);
     transform-origin: 0% 0%;
     opacity: 0;
@@ -402,6 +402,30 @@ body {
     @media only screen and (min-width: 1200px) {
       .about__info .about__info__text {
         background: radial-gradient(circle at top left, transparent, transparent calc(80px + 1em), rgba(33, 33, 33, 0.4) calc(81px + 1em)); } }
+
+.about__skills {
+  display: flex;
+  flex-wrap: wrap;
+  color: #212121;
+  padding: 1em; }
+  .about__skills .about__skills__badge {
+    margin: 1em;
+    height: 5em;
+    width: calc(33.3% - 2em);
+    padding: 0.5em;
+    background-color: rgba(33, 33, 33, 0.4);
+    border-radius: 8px; }
+    .about__skills .about__skills__badge * {
+      text-align: center; }
+    .about__skills .about__skills__badge h3 {
+      font-family: "Roboto Mono";
+      font-size: 1em;
+      padding: 0.25em;
+      font-weight: bold;
+      color: #fafafa; }
+    .about__skills .about__skills__badge h4 {
+      font-size: 0.9em;
+      padding: 0.25em; }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }

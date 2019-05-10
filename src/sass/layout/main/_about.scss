@@ -4,7 +4,7 @@ $card-bg: $alpha-dark;
 
 $avatar-range: (80px, 160px);
 $avatar-range-half: (40px, 80px);
-$avatar-range-double: (160px, 320px);
+$avatar-range-grow: (120px, 240px);
 
 .about__profile {
   position: relative;
@@ -22,7 +22,7 @@ $avatar-range-double: (160px, 320px);
   @include flex($dir: row);
   top: 40%;
   left: 40%;
-  @include mediaQueryRange((height: $avatar-range-double));
+  @include mediaQueryRange((height: $avatar-range-grow));
 
   .about__avatar {
     position: relative;
@@ -40,10 +40,10 @@ $avatar-range-double: (160px, 320px);
     position: relative;
     align-self: flex-end;
     flex: 1 1 auto;
-    height: 75%;
+    height: 66.66%;
     color: $color-text-invert;
     padding: 1rem;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     background: radial-gradient(circle at top left, transparent, transparent 50px, $alpha-dark 51px);
     transform-origin: 0% 0%;
     // animation start point
@@ -83,5 +83,32 @@ $avatar-range-double: (160px, 320px);
 }
 
 .about__skills {
+  display: flex;
+  flex-wrap: wrap;
+  color: $color-text;
+  padding: 1em;
 
+  .about__skills__badge {
+    margin: 1em;
+    height: 5em;
+    width: calc(33.3% - 2em);
+    padding: 0.5em;
+    background-color: $alpha-dark;
+    border-radius: $border-radius-md;
+
+    * {
+      text-align: center;
+    }
+    h3 {
+      font-family: $font-pri-mono;
+      font-size: 1em;
+      padding: 0.25em;
+      font-weight: bold;
+      color: $color-text-invert;
+    }
+    h4 {
+      font-size: 0.9em;
+      padding: 0.25em;
+    }
+  }
 }
