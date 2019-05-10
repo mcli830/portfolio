@@ -5,3 +5,24 @@
 .alpha--dark {
   background-color: rgba($black, 0.4);
 }
+
+[class^="overlay"],
+[class*=" overlay"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.overlay--dark {
+  background-color: $black;
+}
+
+.overlay--light {
+  background-color: $white;
+}
+
+.overlay--theme {
+  background-color: $color-text-invert;
+}

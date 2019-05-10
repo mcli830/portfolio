@@ -284,10 +284,25 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  height: 160px;
+  align-items: flex-start;
   top: 40%;
-  left: 40%; }
+  left: 40%;
+  height: 160px; }
+  @media only screen and (min-width: 480px) {
+    .about__info {
+      height: 200px; } }
+  @media only screen and (min-width: 600px) {
+    .about__info {
+      height: 240px; } }
+  @media only screen and (min-width: 768px) {
+    .about__info {
+      height: 280px; } }
+  @media only screen and (min-width: 992px) {
+    .about__info {
+      height: 320px; } }
+  @media only screen and (min-width: 1200px) {
+    .about__info {
+      height: 360px; } }
   .about__info .about__avatar {
     position: relative;
     top: 0;
@@ -319,20 +334,50 @@ body {
         width: 180px; } }
   .about__info .about__info__text {
     position: relative;
-    top: 0;
-    right: 10px;
+    align-self: flex-end;
     flex: 1 1 auto;
-    height: 100%;
+    height: 75%;
     color: #fafafa;
     padding: 1rem;
     border-radius: 4px;
-    background: radial-gradient(circle at -80px 50%, transparent, transparent 120px, rgba(33, 33, 33, 0.4) 121px);
-    transform-origin: 50% 50%;
+    background: radial-gradient(circle at top left, transparent, transparent 50px, rgba(33, 33, 33, 0.4) 51px);
+    transform-origin: 0% 0%;
     opacity: 0;
-    transform: scaleY(0.01); }
+    transform: scaleY(0.01);
+    right: 40px; }
+    @media only screen and (min-width: 480px) {
+      .about__info .about__info__text {
+        right: 50px; } }
+    @media only screen and (min-width: 600px) {
+      .about__info .about__info__text {
+        right: 60px; } }
+    @media only screen and (min-width: 768px) {
+      .about__info .about__info__text {
+        right: 70px; } }
+    @media only screen and (min-width: 992px) {
+      .about__info .about__info__text {
+        right: 80px; } }
+    @media only screen and (min-width: 1200px) {
+      .about__info .about__info__text {
+        right: 90px; } }
     .about__info .about__info__text * {
       opacity: 0;
       margin-left: 40px; }
+      @media only screen and (min-width: 480px) {
+        .about__info .about__info__text * {
+          margin-left: 50px; } }
+      @media only screen and (min-width: 600px) {
+        .about__info .about__info__text * {
+          margin-left: 60px; } }
+      @media only screen and (min-width: 768px) {
+        .about__info .about__info__text * {
+          margin-left: 70px; } }
+      @media only screen and (min-width: 992px) {
+        .about__info .about__info__text * {
+          margin-left: 80px; } }
+      @media only screen and (min-width: 1200px) {
+        .about__info .about__info__text * {
+          margin-left: 90px; } }
     .about__info .about__info__text h2 {
       font-size: 1.1em;
       font-family: "Orbitron";
@@ -342,12 +387,44 @@ body {
       font-size: 0.8em;
       font-family: "Roboto";
       padding: 0.5rem; }
+    @media only screen and (min-width: 480px) {
+      .about__info .about__info__text {
+        background: radial-gradient(circle at top left, transparent, transparent calc(48px + 1em), rgba(33, 33, 33, 0.4) calc(49px + 1em)); } }
+    @media only screen and (min-width: 600px) {
+      .about__info .about__info__text {
+        background: radial-gradient(circle at top left, transparent, transparent calc(56px + 1em), rgba(33, 33, 33, 0.4) calc(57px + 1em)); } }
+    @media only screen and (min-width: 768px) {
+      .about__info .about__info__text {
+        background: radial-gradient(circle at top left, transparent, transparent calc(64px + 1em), rgba(33, 33, 33, 0.4) calc(65px + 1em)); } }
+    @media only screen and (min-width: 992px) {
+      .about__info .about__info__text {
+        background: radial-gradient(circle at top left, transparent, transparent calc(72px + 1em), rgba(33, 33, 33, 0.4) calc(73px + 1em)); } }
+    @media only screen and (min-width: 1200px) {
+      .about__info .about__info__text {
+        background: radial-gradient(circle at top left, transparent, transparent calc(80px + 1em), rgba(33, 33, 33, 0.4) calc(81px + 1em)); } }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
 
 .alpha--dark {
   background-color: rgba(33, 33, 33, 0.4); }
+
+[class^="overlay"],
+[class*=" overlay"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0; }
+
+.overlay--dark {
+  background-color: #212121; }
+
+.overlay--light {
+  background-color: #fafafa; }
+
+.overlay--theme {
+  background-color: #fafafa; }
 
 .flex--center {
   display: flex;
@@ -375,6 +452,9 @@ body {
 
 .shadow--lg {
   box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
+
+.invis {
+  opacity: 0; }
 
 .fx__fade-in {
   opacity: 0;

@@ -14,7 +14,6 @@ if (document.getElementById('particles')) {
 
 // load animation
 if (anime) {
-  console.log('animejs loaded')
   var loadAnimation = anime.timeline({
     easing: 'easeOutCubic',
     duration: 400
@@ -26,19 +25,41 @@ if (anime) {
       duration: 1000
     })
     .add({
+      targets: '.about__avatar',
+      scale: 0.1,
+      rotate: 360,
+      duration: 200
+    })
+    .add({
+      targets: '.about__avatar .overlay',
+      opacity: 1,
+      duration: 200
+    }, '-=150')
+    .add({
       targets: '.about__info',
       top: 0,
     })
     .add({
       targets: '.about__info',
-      left: 10,
+      left: 0,
     })
+    .add({
+      targets: '.about__avatar',
+      scale: 1,
+      rotate: 0,
+      duration: 200
+    })
+    .add({
+      targets: '.about__avatar .overlay',
+      opacity: 0,
+      duration: 200
+    }, '-=150')
     .add({
       targets: '.about__info__text',
       scaleX: [0, 1],
       scaleY: [0.01, 0.01],
       opacity: [0, 1]
-    }, '-=390')
+    }, '-=50')
     .add({
       targets: '.about__info__text',
       top: 0,
@@ -49,6 +70,8 @@ if (anime) {
       targets: '.about__info__text *',
       opacity: [0,1]
     })
+
+  var loadSkills = anime.timeline
 }
 
 // change view function

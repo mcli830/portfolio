@@ -2,14 +2,15 @@ $margin: 0.5em;
 $avatar-offset: calc(#{$avatar-half} + #{$margin});
 $card-bg: $alpha-dark;
 
+$avatar-range: (80px, 160px);
+$avatar-range-half: (40px, 80px);
+$avatar-range-double: (160px, 320px);
+
 .about__profile {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
-
-
 
 .about__content {
   height: 100%;
@@ -18,10 +19,10 @@ $card-bg: $alpha-dark;
 
 .about__info {
   position: relative;
-  @include flex($dir: row, $align: center);
-  height: 160px;
+  @include flex($dir: row);
   top: 40%;
   left: 40%;
+  @include mediaQueryRange((height: $avatar-range-double));
 
   .about__avatar {
     position: relative;
@@ -31,28 +32,30 @@ $card-bg: $alpha-dark;
     flex-grow: 0;
     flex-shrink: 0;
     @include mediaQueryRange((
-      height: (80px, 160px),
-      width: (80px, 160px)
+      height: $avatar-range,
+      width: $avatar-range
     ));
   }
   .about__info__text {
     position: relative;
-    top: 0;
-    right: 10px;
+    align-self: flex-end;
     flex: 1 1 auto;
-    height: 100%;
+    height: 75%;
     color: $color-text-invert;
     padding: 1rem;
     border-radius: $border-radius-sm;
-    background: radial-gradient(circle at -80px 50%, transparent, transparent 120px, $alpha-dark 121px);
-    transform-origin: 50% 50%;
+    background: radial-gradient(circle at top left, transparent, transparent 50px, $alpha-dark 51px);
+    transform-origin: 0% 0%;
     // animation start point
     opacity: 0;
     transform: scaleY(0.01);
+    @include mediaQueryRange((
+      right: $avatar-range-half
+    ));
     * {
       // animation start point
       opacity: 0;
-      margin-left: 40px;
+      @include mediaQueryRange((margin-left: $avatar-range-half));
     }
     h2 {
       font-size: 1.1em;
@@ -65,11 +68,20 @@ $card-bg: $alpha-dark;
       font-family: $font-pri;
       padding: 0.5rem;
     }
-  }
-  @each $device in $device-breakpoints {
-    $i: index($device-breakpoints, $device);
-    @media only screen and (min-width: $device){
-
+    // .about__info__text media query
+    $bg-range: 40px;
+    $bg-interval: $bg-range / length($device-breakpoints);
+    @each $device in $device-breakpoints {
+      $i: index($device-breakpoints, $device);
+      @media only screen and (min-width: $device){
+        $bg-break: $bg-range + ($bg-interval * $i);
+        background: radial-gradient(circle at top left, transparent, transparent calc(#{$bg-break} + 1em), $alpha-dark calc(#{$bg-break + 1} + 1em));
+      }
     }
   }
+  // .about__info media query
+}
+
+.about__skills {
+
 }
