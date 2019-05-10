@@ -6,6 +6,7 @@ const htmlPartial = require('gulp-html-partial')
 // sass dependencies
 const sass = require('gulp-sass')
 sass.compiler = require('node-sass')
+const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 // js dependencies
 const babel = require('gulp-babel')
@@ -34,6 +35,10 @@ gulp.task('html', ()=>{
 gulp.task('sass', ()=>{
   return gulp.src('src/sass/style.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     // .pipe(cleanCSS({debug: true}, details => {
     //   console.log(`${details.name}: ${details.stats.originalSize} ==minify=> ${details.stats.minifiedSize}`);
     // }))
