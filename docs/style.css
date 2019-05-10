@@ -57,6 +57,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(-3deg, #007ac1, #1FC2C2);
+  overflow: hidden;
   font-size: 10px; }
   @media only screen and (min-width: 480px) {
     body {
@@ -279,8 +280,28 @@ body {
   user-select: none; }
   .skill-badge .skill-badge__icon {
     position: relative;
-    height: 100px;
-    width: 100px; }
+    width: 40px;
+    height: 40px; }
+    @media only screen and (min-width: 480px) {
+      .skill-badge .skill-badge__icon {
+        width: 50px;
+        height: 50px; } }
+    @media only screen and (min-width: 600px) {
+      .skill-badge .skill-badge__icon {
+        width: 60px;
+        height: 60px; } }
+    @media only screen and (min-width: 768px) {
+      .skill-badge .skill-badge__icon {
+        width: 70px;
+        height: 70px; } }
+    @media only screen and (min-width: 992px) {
+      .skill-badge .skill-badge__icon {
+        width: 80px;
+        height: 80px; } }
+    @media only screen and (min-width: 1200px) {
+      .skill-badge .skill-badge__icon {
+        width: 90px;
+        height: 90px; } }
     .skill-badge .skill-badge__icon img {
       -o-object-fit: contain;
       object-fit: contain;
@@ -300,14 +321,14 @@ body {
       -webkit-transition: 500ms;
       transition: 500ms; }
     .skill-badge .skill-badge__icon h3 {
-      top: -1em;
+      top: -1rem;
       font-family: "Alegreya Sans SC";
       font-size: 0.9em;
       padding: 0.25em;
       font-weight: bold;
       color: #212121; }
     .skill-badge .skill-badge__icon h4 {
-      bottom: -1em;
+      bottom: -1rem;
       font-size: 0.7em;
       padding: 0.25em; }
   .skill-badge:hover, .skill-badge:focus, .skill-badge:active {
@@ -319,9 +340,9 @@ body {
     .skill-badge:active h4 {
       opacity: 1; }
     .skill-badge:hover h3, .skill-badge:focus h3, .skill-badge:active h3 {
-      top: -1.5em; }
+      top: -1.5rem; }
     .skill-badge:hover h4, .skill-badge:focus h4, .skill-badge:active h4 {
-      bottom: -1.5em; }
+      bottom: -1.5rem; }
 
 .body {
   height: 100%;
@@ -335,8 +356,7 @@ body {
   flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden; }
+  align-items: center; }
 
 [class^="main--"],
 [class*=" main--"] {
@@ -344,7 +364,7 @@ body {
   width: 100%; }
 
 .main--about {
-  height: 80vh; }
+  height: auto; }
   .main--about .content {
     height: 100%;
     background-color: transparent;
@@ -364,7 +384,9 @@ body {
     padding: 2em; }
 
 .main--portfolio {
-  height: 80vh; }
+  height: 80vh;
+  position: relative;
+  top: 100vh; }
   .main--portfolio .content {
     background-color: rgba(250, 250, 250, 0.9);
     border-top-left-radius: 12px;

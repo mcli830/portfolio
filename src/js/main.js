@@ -68,7 +68,17 @@ if (anime) {
       opacity: [0,1],
       duration: 800
     })
+    // portfolio
+    .add({
+      targets: '.main--portfolio',
+      top: 0,
+      easing: 'easeOutQuad',
+      duration: 300
+    })
 
+  loadAnimation.finished.then(() => {
+    console.log('load animation finished');
+  });
 }
 
 // change view function
