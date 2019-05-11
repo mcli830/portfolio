@@ -310,7 +310,7 @@ body {
       -webkit-filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4));
       filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4)); }
     .skill-badge .skill-badge__icon h3,
-    .skill-badge .skill-badge__icon h4 {
+    .skill-badge .skill-badge__icon .skill-badge__level {
       position: absolute;
       text-align: center;
       left: 0;
@@ -321,28 +321,61 @@ body {
       -webkit-transition: 500ms;
       transition: 500ms; }
     .skill-badge .skill-badge__icon h3 {
-      top: -1rem;
+      top: -1em;
       font-family: "Alegreya Sans SC";
-      font-size: 0.9em;
       padding: 0.25em;
       font-weight: bold;
       color: #212121; }
-    .skill-badge .skill-badge__icon h4 {
-      bottom: -1rem;
-      font-size: 0.7em;
-      padding: 0.25em; }
+    .skill-badge .skill-badge__icon [class^="skill-badge__level--"],
+    .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] {
+      bottom: -1em;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .skill-badge .skill-badge__icon [class^="skill-badge__level--"] .skill-badge__star,
+      .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] .skill-badge__star {
+        padding: 0.1em;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        position: relative; }
+        .skill-badge .skill-badge__icon [class^="skill-badge__level--"] .skill-badge__star i,
+        .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] .skill-badge__star i {
+          font-size: 0.8em;
+          color: #c1d5e0; }
+    .skill-badge .skill-badge__icon .skill-badge__level--3 .skill-badge__star:first-child,
+    .skill-badge .skill-badge__icon .skill-badge__level--3 .skill-badge__star:last-child,
+    .skill-badge .skill-badge__icon .skill-badge__level--4 .skill-badge__star:first-child,
+    .skill-badge .skill-badge__icon .skill-badge__level--4 .skill-badge__star:last-child {
+      bottom: 0.4em; }
+    .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:first-child {
+      bottom: 1em;
+      left: 0.5em; }
+    .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:last-child {
+      bottom: 1em;
+      right: 0.5em; }
+    .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:nth-child(even) {
+      bottom: 0.4em; }
   .skill-badge:hover, .skill-badge:focus, .skill-badge:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
-    .skill-badge:hover h3,
-    .skill-badge:hover h4, .skill-badge:focus h3,
-    .skill-badge:focus h4, .skill-badge:active h3,
-    .skill-badge:active h4 {
-      opacity: 1; }
     .skill-badge:hover h3, .skill-badge:focus h3, .skill-badge:active h3 {
-      top: -1.5rem; }
-    .skill-badge:hover h4, .skill-badge:focus h4, .skill-badge:active h4 {
-      bottom: -1.5rem; }
+      opacity: 1;
+      top: -1.5em; }
+    .skill-badge:hover .skill-badge__level, .skill-badge:focus .skill-badge__level, .skill-badge:active .skill-badge__level {
+      opacity: 1;
+      bottom: -1.2em; }
 
 .body {
   height: 100%;

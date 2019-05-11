@@ -1,4 +1,5 @@
 $badge-sizes: (40px, 80px);
+$star-color: $steel-light;
 
 .skill-badge {
   margin: 1em;
@@ -20,7 +21,7 @@ $badge-sizes: (40px, 80px);
       filter: drop-shadow($shadow-md);
     }
     h3,
-    h4 {
+    .skill-badge__level {
       position: absolute;
       text-align: center;
       left: 0;
@@ -31,17 +32,49 @@ $badge-sizes: (40px, 80px);
       transition: $transition-med;
     }
     h3 {
-      top: -1rem;
+      top: -1em;
       font-family: $font-badge;
-      font-size: 0.9em;
       padding: 0.25em;
       font-weight: bold;
       color: $color-text;
     }
-    h4 {
-      bottom: -1rem;
-      font-size: 0.7em;
-      padding: 0.25em;
+    [class^="skill-badge__level--"],
+    [class*=" skill-badge__level--"] {
+      bottom: -1em;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .skill-badge__star {
+        padding: 0.1em;
+        flex: 0 0 20%;
+        position: relative;
+        i {
+          font-size: 0.8em;
+          color: $star-color;
+        }
+      }
+    }
+    .skill-badge__level--3,
+    .skill-badge__level--4 {
+      .skill-badge__star:first-child,
+      .skill-badge__star:last-child {
+        bottom: 0.4em;
+      }
+    }
+    .skill-badge__level--5 {
+      .skill-badge__star:first-child {
+        bottom: 1em;
+        left: 0.5em;
+      }
+      .skill-badge__star:last-child {
+        bottom: 1em;
+        right: 0.5em;
+      }
+      .skill-badge__star:nth-child(even) {
+        bottom: 0.4em;
+      }
     }
   }
 
@@ -49,16 +82,13 @@ $badge-sizes: (40px, 80px);
   &:focus,
   &:active {
     transform: scale(1.1);
-    h3,
-    h4 {
-      opacity: 1;
-    }
     h3 {
-      top: -1.5rem;
+      opacity: 1;
+      top: -1.5em;
     }
-    h4 {
-      bottom: -1.5rem;
+    .skill-badge__level {
+      opacity: 1;
+      bottom: -1.2em;
     }
   }
-
 }
