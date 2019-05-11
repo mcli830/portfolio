@@ -1,0 +1,27 @@
+mixin badge(skill, icon, level)
+  figure.skill-badge.invis
+    .skill-badge__icon
+      img(src=icon)
+      h3= skill
+      div(class="skill-badge__level--" + level)
+        each _ in Array(level)
+          .skill-badge__star
+            i.fas.fa-star
+
+#about.main--about
+  .container--default.content
+    section.about__profile
+      .about__info
+        figure.about__avatar.shadow--md
+          img(src="/assets/profile.jpg" alt="Michael Li" title="Michael Li")
+          .overlay--theme.invis
+        .about__info__text
+          h1 About
+          p Michael Li is a freelance web developer
+      .about__skills
+        +badge('HTML5', '/assets/html5.svg', 5)
+        +badge('CSS3', '/assets/css3.svg', 5)
+        +badge('JavaScript', '/assets/javascript.svg', 5)
+        +badge('Bootstrap', '/assets/bootstrap.svg', 3)
+        +badge('Material UI', '/assets/materialui.svg', 3)
+        +badge('Node.js', '/assets/nodejs.svg', 5)

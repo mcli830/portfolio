@@ -1,9 +1,9 @@
 const gulp = require('gulp')
 const del = require('del')
 const log = require('gulplog')
-// html-partial dependencies
-const htmlPartial = require('gulp-html-partial')
-// sass dependencies
+// html dependencies
+const pug = require('gulp-pug');
+// css dependencies
 const sass = require('gulp-sass')
 sass.compiler = require('node-sass')
 const autoprefixer = require('gulp-autoprefixer')
@@ -24,10 +24,8 @@ gulp.task('clean', ()=>{
 
 // html partial compiler
 gulp.task('html', ()=>{
-  return gulp.src('src/html/index.html')
-    .pipe(htmlPartial({
-      basePath: 'src/html/partials/'
-    }))
+  return gulp.src('src/pug/index.pug')
+    .pipe(pug())
     .pipe(gulp.dest('docs'))
 })
 

@@ -310,7 +310,8 @@ body {
       -webkit-filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4));
       filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4)); }
     .skill-badge .skill-badge__icon h3,
-    .skill-badge .skill-badge__icon .skill-badge__level {
+    .skill-badge .skill-badge__icon [class^="skill-badge__level--"],
+    .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] {
       position: absolute;
       text-align: center;
       left: 0;
@@ -358,22 +359,25 @@ body {
     .skill-badge .skill-badge__icon .skill-badge__level--3 .skill-badge__star:last-child,
     .skill-badge .skill-badge__icon .skill-badge__level--4 .skill-badge__star:first-child,
     .skill-badge .skill-badge__icon .skill-badge__level--4 .skill-badge__star:last-child {
-      bottom: 0.4em; }
+      bottom: 0.2em; }
     .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:first-child {
-      bottom: 1em;
-      left: 0.5em; }
+      bottom: 0.6em;
+      left: 0.1em; }
     .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:last-child {
-      bottom: 1em;
-      right: 0.5em; }
+      bottom: 0.6em;
+      right: 0.1em; }
     .skill-badge .skill-badge__icon .skill-badge__level--5 .skill-badge__star:nth-child(even) {
-      bottom: 0.4em; }
+      bottom: 0.2em; }
   .skill-badge:hover, .skill-badge:focus, .skill-badge:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
     .skill-badge:hover h3, .skill-badge:focus h3, .skill-badge:active h3 {
       opacity: 1;
       top: -1.5em; }
-    .skill-badge:hover .skill-badge__level, .skill-badge:focus .skill-badge__level, .skill-badge:active .skill-badge__level {
+    .skill-badge:hover [class^="skill-badge__level--"],
+    .skill-badge:hover [class*=" skill-badge__level--"], .skill-badge:focus [class^="skill-badge__level--"],
+    .skill-badge:focus [class*=" skill-badge__level--"], .skill-badge:active [class^="skill-badge__level--"],
+    .skill-badge:active [class*=" skill-badge__level--"] {
       opacity: 1;
       bottom: -1.2em; }
 
@@ -552,7 +556,7 @@ body {
       @media only screen and (min-width: 1200px) {
         .about__info .about__info__text * {
           margin-left: 90px; } }
-    .about__info .about__info__text h2 {
+    .about__info .about__info__text h1 {
       font-size: 1.1em;
       font-family: "Orbitron";
       letter-spacing: 0.1em;

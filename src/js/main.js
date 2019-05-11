@@ -21,14 +21,10 @@ if (anime) {
   loadAnimation
     .add({
       targets: '.about__avatar',
-      opacity: [0, 1],
-      duration: 1000
-    })
-    .add({
-      targets: '.about__avatar',
       scale: 0.05,
       rotate: 360,
-      duration: 200
+      duration: 200,
+      delay: 1200
     })
     .add({
       targets: '.about__avatar [class*="overlay"]',

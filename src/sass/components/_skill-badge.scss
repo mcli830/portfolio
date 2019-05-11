@@ -21,7 +21,8 @@ $star-color: $steel-light;
       filter: drop-shadow($shadow-md);
     }
     h3,
-    .skill-badge__level {
+    [class^="skill-badge__level--"],
+    [class*=" skill-badge__level--"] {
       position: absolute;
       text-align: center;
       left: 0;
@@ -60,20 +61,20 @@ $star-color: $steel-light;
     .skill-badge__level--4 {
       .skill-badge__star:first-child,
       .skill-badge__star:last-child {
-        bottom: 0.4em;
+        bottom: 0.2em;
       }
     }
     .skill-badge__level--5 {
       .skill-badge__star:first-child {
-        bottom: 1em;
-        left: 0.5em;
+        bottom: 0.6em;
+        left: 0.1em;
       }
       .skill-badge__star:last-child {
-        bottom: 1em;
-        right: 0.5em;
+        bottom: 0.6em;
+        right: 0.1em;
       }
       .skill-badge__star:nth-child(even) {
-        bottom: 0.4em;
+        bottom: 0.2em;
       }
     }
   }
@@ -86,7 +87,8 @@ $star-color: $steel-light;
       opacity: 1;
       top: -1.5em;
     }
-    .skill-badge__level {
+    [class^="skill-badge__level--"],
+    [class*=" skill-badge__level--"] {
       opacity: 1;
       bottom: -1.2em;
     }
