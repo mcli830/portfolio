@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "gulp && cd docs && http-server -c-1 -p 3000",
-    "build": "gulp"
+    "start": "cd docs && http-server -c-1 -p 3000",
+    "build": "gulp && npm start"
   },
   "repository": {
     "type": "git",
