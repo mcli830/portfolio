@@ -19,7 +19,9 @@ mixin badge(skill, icon, level)
         .about__info__text
           h1 About
           p Michael Li is a freelance web developer
-      .about__skills
+    section.about__skills
+      h1 < Skills >
+      .about__skills__badges
         +badge('HTML5', '/assets/html5.svg', 5)
         +badge('CSS3', '/assets/css3.svg', 5)
         +badge('JavaScript', '/assets/javascript.svg', 5)

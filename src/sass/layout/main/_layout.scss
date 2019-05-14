@@ -20,19 +20,18 @@ $portfolio-shadow: $shadow-lg;
 }
 
 .main--about {
-  height: auto;
+  height: 85vh;
   .content {
     height: 100%;
     background-color: transparent;
-    @include flex(center);
+    @include flex($dir: column, $justify: center, $align: center);
     padding: 2em;
   }
 }
 
 .main--portfolio {
-  height: $section-height;
+  min-height: $section-height;
   position: relative;
-  top: 100vh;
   .content {
     background-color: $portfolio-bg;
     border-top-left-radius: $portfolio-radius;

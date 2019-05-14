@@ -57,13 +57,17 @@ if (anime) {
       targets: '.about__info__text *',
       opacity: [0,1]
     })
-    // badges
+    // skills/badges
+    .add({
+      targets: '.about__skills h1',
+      opacity: [0,1]
+    })
     .add({
       targets: '.skill-badge',
       delay: anime.stagger(100),
       opacity: [0,1],
       duration: 800
-    })
+    }, '-=200')
     // portfolio
     .add({
       targets: '.main--portfolio',
