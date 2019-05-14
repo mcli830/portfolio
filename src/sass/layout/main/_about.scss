@@ -34,7 +34,7 @@ $profile-header-offset: $avatar-size;
     border-radius: $border-radius-md;
     color: $color-text-invert;
     padding: 2em;
-    max-width: 60%;
+    max-width: 400px;
     @media only screen and (orientation: landscape) {
       max-width: none;
     }
@@ -49,6 +49,7 @@ $profile-header-offset: $avatar-size;
       font-family: $font-text;
       font-size: 1em;
       line-height: 1.4em;
+      text-align: center;
     }
   }
 }
