@@ -2,122 +2,47 @@ $margin: 0.5em;
 $avatar-offset: calc(#{$avatar-half} + #{$margin});
 $card-bg: $alpha-dark;
 
-$avatar-range: (80px, 160px);
+$avatar-size: 60px;
+$avatar-half: $avatar-size / 2;
+$avatar-quarter: $avatar-size / 4;
+$avatar-negative: calc(#{$avatar-half} + 1em);
+$avatar-range: (60px, 160px);
 $avatar-range-half: (40px, 80px);
 $avatar-range-grow: (120px, 240px);
 
+$profile-text-offset: calc(#{$avatar-quarter} + 2em);
+
 .about__profile {
-  position: relative;
+  @include flex($dir: row, $align: center);
   width: 100%;
   height: auto;
-}
-
-.about__content {
-  height: 100%;
-  width: 100%;
-}
-
-.about__info {
   position: relative;
-  @include flex($dir: row);
-  top: 40%;
-  left: 40%;
-  @include mediaQueryRange((height: $avatar-range-grow));
 
-  .about__avatar {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  .avatar {
     flex-grow: 0;
     flex-shrink: 0;
-    @include mediaQueryRange((
-      height: $avatar-range,
-      width: $avatar-range
-    ));
-  }
-  .about__info__text {
+    height: $avatar-size;
+    width: $avatar-size;
     position: relative;
-    align-self: flex-end;
+    left: #{$avatar-quarter / 2};
+  }
+  .intro {
+    position: relative;
+    right: #{$avatar-quarter / 2};
     flex: 1 1 auto;
-    height: 66.66%;
+    font-family: $font-nav;
+    background: radial-gradient(circle at #{$avatar-quarter * -1} 50%, transparent, transparent $avatar-negative, $alpha-dark $avatar-negative, $alpha-dark);
+    border-radius: $border-radius-sm;
     color: $color-text-invert;
-    padding: 1rem;
-    border-radius: $border-radius-md;
-    background: radial-gradient(circle at top left, transparent, transparent 50px, $alpha-dark 51px);
-    transform-origin: 0% 0%;
-    // animation start point
-    opacity: 0;
-    transform: scaleY(0.01);
-    @include mediaQueryRange((
-      right: $avatar-range-half
-    ));
-    * {
-      // animation start point
-      opacity: 0;
-      @include mediaQueryRange((margin-left: $avatar-range-half));
-    }
+    padding: 1em;
+    padding-left: $profile-text-offset;
+
     h1 {
       font-size: 1.1em;
-      font-family: $font-nav;
-      letter-spacing: 0.1em;
-      padding: 0.5rem;
+      margin-bottom: 0.5em;
     }
     p {
-      font-size: 0.8em;
-      font-family: $font-pri;
-      padding: 0.5rem;
+      font-size: 1em;
     }
-    // .about__info__text media query
-    $bg-range: 40px;
-    $bg-interval: $bg-range / length($device-breakpoints);
-    @each $device in $device-breakpoints {
-      $i: index($device-breakpoints, $device);
-      @media only screen and (min-width: $device){
-        $bg-break: $bg-range + ($bg-interval * $i);
-        background: radial-gradient(circle at top left, transparent, transparent calc(#{$bg-break} + 1em), $alpha-dark calc(#{$bg-break + 1} + 1em));
-      }
-    }
-  }
-  // .about__info media query
-}
-
-.about__skills {
-  flex: 1 1 auto;
-  @include flex($dir: column, $align: center);
-  overflow: hidden;
-  h1 {
-    flex: 0 0 auto;
-    width: 100%;
-    text-align: center;
-    font-size: 1.1em;
-    font-family: $font-nav;
-    padding: 2em 0 1em;
-  }
-  &:after {
-    content: '';
-    @include overlay;
-    background: linear-gradient($alpha-dark, transparent 15%, transparent 85%, $alpha-dark);
-  }
-}
-
-.about__skills__badges {
-  flex: 1 1 auto;
-  width: 100%;
-  overflow: auto;
-  @include flex($dir: row, $justify: center, $align: center);
-  flex-wrap: wrap;
-  color: $color-text;
-  padding-bottom: 2em;
-  &::-webkit-scrollbar {
-    width: 5px;
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    border: 1px solid $alpha-light;
-    border-radius: $border-radius-lg;
   }
 }

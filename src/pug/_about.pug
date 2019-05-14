@@ -12,35 +12,10 @@ mixin badge(skill, icon, level)
 #about.main--about
   .container--default.content
     section.about__profile
-      .about__info
-        figure.about__avatar.shadow--md
-          img(src="/assets/profile.jpg" alt="Michael Li" title="Michael Li")
-          .overlay--theme.invis
-        .about__info__text
-          h1 About
-          p Michael Li is a freelance web developer
-    section.about__skills
-      h1.invis Skills
-      .about__skills__badges
-        +badge('HTML5', '/assets/html5.svg', 5)
-        +badge('CSS3', '/assets/css3.svg', 5)
-        +badge('JavaScript', '/assets/javascript.svg', 5)
-        +badge('Bootstrap', '/assets/bootstrap.svg', 3)
-        +badge('Material UI', '/assets/materialui.svg', 3)
-        +badge('Node.js', '/assets/nodejs.svg', 5)
-        +badge('Express.js', '/assets/expressjs.svg', 4)
-        +badge('React.js', '/assets/reactjs.svg', 4)
-        +badge('Redux.js', '/assets/reduxjs.svg', 4)
-        //- +badge('SQL', '/assets/sql.svg', 3)
-        +badge('MongoDB', '/assets/mongodb.png', 4)
-        //- +badge('Ruby', '/assets/ruby.svg', 4)
-        +badge('Ruby on Rails', '/assets/rubyonrails.svg', 4)
-        //- +badge('Pug', '/assets/pug.svg', 5)
-        +badge('Sass', '/assets/sass.svg', 5)
-        //- +badge('socket.io', '/assets/socketio.svg', 2)
-        +badge('Webpack', '/assets/webpack.svg', 3)
-        +badge('Gulp', '/assets/gulp.svg', 3)
-        //- +badge('Git', '/assets/git.svg', 4)
-        //- +badge('Google Cloud', '/assets/googlecloud.svg', 2)
-        
+      .avatar
+        img(src="/assets/profile.jpg")
+      .intro
+        h1 About
+        p Hi, I'm Mike and I'm a full-stack developer. I love to connect people and computers by creating a seamless user experience in my projects. Let's make something cool.
+
         
