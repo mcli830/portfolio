@@ -2,6 +2,10 @@
   opacity: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .fx__fade-in {
   opacity: 0;
   animation: fade-in $load-fade-in-time linear forwards;

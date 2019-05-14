@@ -28,6 +28,9 @@ $portfolio-shadow: $shadow-lg;
     background-color: transparent;
     @include flex($dir: column, $justify: center, $align: center);
     padding: 2em;
+    @media only screen and (orientation: landscape) {
+      flex-direction: row;
+    }
   }
 }
 
