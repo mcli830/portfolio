@@ -309,7 +309,8 @@ body {
       height: 100%;
       -webkit-filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4));
       filter: drop-shadow(5px 5px 10px rgba(72, 72, 72, 0.4)); }
-    .skill-badge .skill-badge__icon h3,
+    .skill-badge .skill-badge__icon [class^="skill-badge__header"],
+    .skill-badge .skill-badge__icon [class*=" skill-badge__header"],
     .skill-badge .skill-badge__icon [class^="skill-badge__level--"],
     .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] {
       position: absolute;
@@ -321,12 +322,26 @@ body {
       text-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3);
       -webkit-transition: 500ms;
       transition: 500ms; }
-    .skill-badge .skill-badge__icon h3 {
+    .skill-badge .skill-badge__icon [class^="skill-badge__header"],
+    .skill-badge .skill-badge__icon [class*=" skill-badge__header"] {
       top: -1em;
       font-family: "Alegreya Sans SC";
       padding: 0.25em;
       font-weight: bold;
-      color: #212121; }
+      color: #212121;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
     .skill-badge .skill-badge__icon [class^="skill-badge__level--"],
     .skill-badge .skill-badge__icon [class*=" skill-badge__level--"] {
       bottom: -1em;
@@ -371,7 +386,10 @@ body {
   .skill-badge:hover, .skill-badge:focus, .skill-badge:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
-    .skill-badge:hover h3, .skill-badge:focus h3, .skill-badge:active h3 {
+    .skill-badge:hover [class^="skill-badge__header"],
+    .skill-badge:hover [class*=" skill-badge__header"], .skill-badge:focus [class^="skill-badge__header"],
+    .skill-badge:focus [class*=" skill-badge__header"], .skill-badge:active [class^="skill-badge__header"],
+    .skill-badge:active [class*=" skill-badge__header"] {
       opacity: 1;
       top: -1.5em; }
     .skill-badge:hover [class^="skill-badge__level--"],

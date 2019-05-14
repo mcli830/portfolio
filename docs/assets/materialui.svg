@@ -5,11 +5,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   height="317.53333"
-   width="400"
-   id="svg10"
+   viewBox="0 0 200 158.76666"
    version="1.1"
-   viewBox="0 0 400 317.53332">
+   id="svg10"
+   width="200"
+   height="158.76666">
   <metadata
      id="metadata16">
     <rdf:RDF>
@@ -25,19 +25,19 @@
   <defs
      id="defs14" />
   <path
-     style="fill:#00b0ff;stroke-width:0.66666669"
+     d="M 0,86.59999 V 0 L 75,43.29999 V 72.16666 L 25,43.29999 v 57.73334 z"
      id="path2"
-     d="M 0,173.2 V 0 l 150,86.6 v 57.73333 L 50,86.6 v 115.46666 z" />
+     style="fill:#00b0ff;stroke-width:0.33333334" />
   <path
-     style="fill:#0081cb;stroke-width:0.66666669"
+     d="M 75,43.29999 150,0 V 86.59999 L 100,115.46666 75,101.03333 125,72.16666 V 43.29999 L 75,72.16666 Z"
      id="path4"
-     d="M 150,86.6 300,0 V 173.2 L 200,230.93333 150,202.06666 250,144.33333 V 86.6 l -100,57.73333 z" />
+     style="fill:#0081cb;stroke-width:0.33333334" />
   <path
-     style="fill:#00b0ff;stroke-width:0.66666669"
+     d="M 75,101.03333 V 129.9 l 50,28.86666 V 129.9 Z"
      id="path6"
-     d="M 150,202.06666 V 259.8 l 100,57.73333 V 259.8 Z" />
+     style="fill:#00b0ff;stroke-width:0.33333334" />
   <path
-     style="fill:#0081cb;stroke-width:0.66666669"
+     d="m 125,158.76666 75,-43.3 V 57.73333 l -25,14.43333 v 28.86667 L 125,129.9 Z M 175,43.29999 V 14.43333 L 200,0 v 28.86666 z"
      id="path8"
-     d="m 250,317.53333 150,-86.6 V 115.46666 l -50,28.86667 v 57.73333 L 250,259.8 Z M 350,86.6 V 28.86666 L 400,0 v 57.73333 z" />
+     style="fill:#0081cb;stroke-width:0.33333334" />
 </svg>

@@ -20,7 +20,8 @@ $star-color: $steel-light;
       height: 100%;
       filter: drop-shadow($shadow-md);
     }
-    h3,
+    [class^="skill-badge__header"],
+    [class*=" skill-badge__header"],
     [class^="skill-badge__level--"],
     [class*=" skill-badge__level--"] {
       position: absolute;
@@ -32,12 +33,14 @@ $star-color: $steel-light;
       text-shadow: $shadow-sm;
       transition: $transition-med;
     }
-    h3 {
+    [class^="skill-badge__header"],
+    [class*=" skill-badge__header"] {
       top: -1em;
       font-family: $font-badge;
       padding: 0.25em;
       font-weight: bold;
       color: $color-text;
+      @include flex(center);
     }
     [class^="skill-badge__level--"],
     [class*=" skill-badge__level--"] {
@@ -83,7 +86,8 @@ $star-color: $steel-light;
   &:focus,
   &:active {
     transform: scale(1.1);
-    h3 {
+    [class^="skill-badge__header"],
+    [class*=" skill-badge__header"] {
       opacity: 1;
       top: -1.5em;
     }

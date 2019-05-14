@@ -6,14 +6,14 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   id="svg67"
-   version="1.1"
-   focusable="false"
-   viewBox="0 0 800 744.54858"
-   role="img"
+   width="200"
+   height="186.13716"
    class="img-fluid mb-3 mb-md-0"
-   height="372.27429"
-   width="400">
+   role="img"
+   viewBox="0 0 400 372.27432"
+   focusable="false"
+   version="1.1"
+   id="svg67">
   <metadata
      id="metadata71">
     <rdf:RDF>
@@ -31,199 +31,199 @@
   <defs
      id="defs43">
     <linearGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.2198451,0.81977622)"
-       y2="983.32874"
+       id="c"
+       x1="357.80527"
+       x2="357.80527"
        y1="268.96548"
-       x2="357.80527"
-       x1="357.80527"
-       id="c">
+       y2="983.32874"
+       gradientTransform="scale(1.2198451,0.81977622)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop4"
+         offset="0%"
          stop-color="#5C24AE"
-         offset="0%" />
+         id="stop4" />
       <stop
-         id="stop6"
+         offset="100%"
          stop-color="#30135A"
-         offset="100%" />
+         id="stop6" />
     </linearGradient>
     <path
-       d="m 355.967,242.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z"
-       id="b" />
+       id="b"
+       d="m 355.967,242.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z" />
     <filter
-       filterUnits="objectBoundingBox"
-       y="-0.043000001"
-       x="-0.039999999"
-       height="1.12"
+       id="a"
        width="1.08"
-       id="a">
+       height="1.12"
+       x="-0.039999999"
+       y="-0.043000001"
+       filterUnits="objectBoundingBox">
       <feOffset
-         id="feOffset10"
-         result="shadowOffsetOuter1"
+         dy="10"
          in="SourceAlpha"
-         dy="10" />
+         result="shadowOffsetOuter1"
+         id="feOffset10" />
       <feGaussianBlur
-         id="feGaussianBlur12"
-         stdDeviation="10"
+         in="shadowOffsetOuter1"
          result="shadowBlurOuter1"
-         in="shadowOffsetOuter1" />
+         stdDeviation="10"
+         id="feGaussianBlur12" />
       <feColorMatrix
-         id="feColorMatrix14"
+         in="shadowBlurOuter1"
          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-         in="shadowBlurOuter1" />
+         id="feColorMatrix14" />
     </filter>
     <linearGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.2198451,0.81977622)"
-       y2="849.14575"
+       id="f"
+       x1="357.80527"
+       x2="357.80527"
        y1="11.17625"
-       x2="357.80527"
-       x1="357.80527"
-       id="f">
+       y2="849.14575"
+       gradientTransform="scale(1.2198451,0.81977622)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop17"
+         offset="0%"
          stop-color="#7331D4"
-         offset="0%" />
+         id="stop17" />
       <stop
-         id="stop19"
+         offset="100%"
          stop-color="#461B84"
-         offset="100%" />
+         id="stop19" />
     </linearGradient>
     <path
-       d="m 355.967,132.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z"
-       id="e" />
+       id="e"
+       d="m 355.967,132.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z" />
     <filter
-       filterUnits="objectBoundingBox"
-       y="-0.043000001"
-       x="-0.039999999"
-       height="1.12"
+       id="d"
        width="1.08"
-       id="d">
+       height="1.12"
+       x="-0.039999999"
+       y="-0.043000001"
+       filterUnits="objectBoundingBox">
       <feOffset
-         id="feOffset23"
-         result="shadowOffsetOuter1"
+         dy="10"
          in="SourceAlpha"
-         dy="10" />
+         result="shadowOffsetOuter1"
+         id="feOffset23" />
       <feGaussianBlur
-         id="feGaussianBlur25"
-         stdDeviation="10"
+         in="shadowOffsetOuter1"
          result="shadowBlurOuter1"
-         in="shadowOffsetOuter1" />
+         stdDeviation="10"
+         id="feGaussianBlur25" />
       <feColorMatrix
-         id="feColorMatrix27"
+         in="shadowBlurOuter1"
          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-         in="shadowBlurOuter1" />
+         id="feColorMatrix27" />
     </filter>
     <linearGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.2198451,0.81977622)"
-       y2="714.96283"
-       y1="0.59955388"
-       x2="357.80527"
+       id="i"
        x1="357.80527"
-       id="i">
+       x2="357.80527"
+       y1="0.59955388"
+       y2="714.96283"
+       gradientTransform="scale(1.2198451,0.81977622)"
+       gradientUnits="userSpaceOnUse">
       <stop
-         id="stop30"
+         offset="0%"
          stop-color="#905BDD"
-         offset="0%" />
+         id="stop30" />
       <stop
-         id="stop32"
+         offset="100%"
          stop-color="#5521A0"
-         offset="100%" />
+         id="stop32" />
     </linearGradient>
     <path
-       d="m 355.967,22.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z"
-       id="h" />
+       id="h"
+       d="m 355.967,22.807 -322,216.395 c -44.275,29.754 -44.275,78.443 0,108.197 l 322,216.395 c 44.275,29.754 116.725,29.754 161,0 l 322,-216.395 c 44.275,-29.754 44.275,-78.443 0,-108.197 l -322,-216.395 c -44.275,-29.754 -116.725,-29.754 -161,0 z" />
     <filter
-       filterUnits="objectBoundingBox"
-       y="-0.043000001"
-       x="-0.039999999"
-       height="1.12"
+       id="g"
        width="1.08"
-       id="g">
+       height="1.12"
+       x="-0.039999999"
+       y="-0.043000001"
+       filterUnits="objectBoundingBox">
       <feOffset
-         id="feOffset36"
-         result="shadowOffsetOuter1"
+         dy="10"
          in="SourceAlpha"
-         dy="10" />
+         result="shadowOffsetOuter1"
+         id="feOffset36" />
       <feGaussianBlur
-         id="feGaussianBlur38"
-         stdDeviation="10"
+         in="shadowOffsetOuter1"
          result="shadowBlurOuter1"
-         in="shadowOffsetOuter1" />
+         stdDeviation="10"
+         id="feGaussianBlur38" />
       <feColorMatrix
-         id="feColorMatrix40"
+         in="shadowBlurOuter1"
          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-         in="shadowBlurOuter1" />
+         id="feColorMatrix40" />
     </filter>
   </defs>
   <g
-     style="fill:none"
-     transform="matrix(0.85004599,0,0,0.85004599,-34.770495,1.4366421)"
-     id="g65">
+     id="g65"
+     transform="matrix(0.425023,0,0,0.425023,-17.385247,0.71832069)"
+     style="fill:none">
     <g
-       id="g49"
-       transform="translate(75,23)">
+       transform="translate(75,23)"
+       id="g49">
       <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
-         style="fill:#000000;filter:url(#a)"
+         xlink:href="#b"
          id="use45"
-         xlink:href="#b" />
-      <use
-         height="100%"
-         width="100%"
-         y="0"
+         style="fill:#000000;filter:url(#a)"
          x="0"
-         style="fill:url(#c)"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#b"
          id="use47"
-         xlink:href="#b" />
+         style="fill:url(#c)"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
     </g>
     <g
-       id="g55"
-       transform="translate(75,23)">
+       transform="translate(75,23)"
+       id="g55">
       <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
-         style="fill:#000000;filter:url(#d)"
+         xlink:href="#e"
          id="use51"
-         xlink:href="#e" />
-      <use
-         height="100%"
-         width="100%"
-         y="0"
+         style="fill:#000000;filter:url(#d)"
          x="0"
-         style="fill:url(#f)"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#e"
          id="use53"
-         xlink:href="#e" />
+         style="fill:url(#f)"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
     </g>
     <g
-       id="g61"
-       transform="translate(75,23)">
+       transform="translate(75,23)"
+       id="g61">
       <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
-         style="fill:#000000;filter:url(#g)"
+         xlink:href="#h"
          id="use57"
-         xlink:href="#h" />
-      <use
-         height="100%"
-         width="100%"
-         y="0"
+         style="fill:#000000;filter:url(#g)"
          x="0"
-         style="fill:url(#i)"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#h"
          id="use59"
-         xlink:href="#h" />
+         style="fill:url(#i)"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
     </g>
     <path
-       style="fill:#ffffff"
+       d="M 558.273,447.667 308.036,279.5 406.018,213.653 c 42.83,-28.784 96.789,-31.483 134.245,-6.311 26.044,17.502 31.214,46.615 11.444,65.724 l 1.389,0.934 c 38.324,-19.932 84.107,-18.527 117.396,3.845 44.046,29.6 38.671,68.419 -14.561,104.193 z M 447.112,331.01 497.054,297.448 c 36.935,-24.822 42.31,-48.249 15.224,-66.451 -24.798,-16.665 -55.49,-14.453 -85.851,5.95 l -59.641,40.081 z m 176.532,35.663 c 37.63,-25.289 42.136,-48.832 13.203,-68.276 -28.932,-19.444 -64.163,-15.614 -104.042,11.186 l -58.789,39.508 87.92,59.084 z"
        id="path63"
-       d="M 558.273,447.667 308.036,279.5 406.018,213.653 c 42.83,-28.784 96.789,-31.483 134.245,-6.311 26.044,17.502 31.214,46.615 11.444,65.724 l 1.389,0.934 c 38.324,-19.932 84.107,-18.527 117.396,3.845 44.046,29.6 38.671,68.419 -14.561,104.193 z M 447.112,331.01 497.054,297.448 c 36.935,-24.822 42.31,-48.249 15.224,-66.451 -24.798,-16.665 -55.49,-14.453 -85.851,5.95 l -59.641,40.081 z m 176.532,35.663 c 37.63,-25.289 42.136,-48.832 13.203,-68.276 -28.932,-19.444 -64.163,-15.614 -104.042,11.186 l -58.789,39.508 87.92,59.084 z" />
+       style="fill:#ffffff" />
   </g>
 </svg>
