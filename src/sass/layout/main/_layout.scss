@@ -1,5 +1,7 @@
-$nav-height: 6rem;
+$nav-height: 4em;
 $section-height: 80vh;
+$center-viewheight: $nav-height * 2;
+$about-height: calc(100vh - #{$center-viewheight});
 
 $portfolio-bg: rgba($color-bg, 0.9);
 $portfolio-radius: $border-radius-lg;
@@ -20,7 +22,7 @@ $portfolio-shadow: $shadow-lg;
 }
 
 .main--about {
-  height: 85vh;
+  height: $about-height;
   .content {
     height: 100%;
     background-color: transparent;

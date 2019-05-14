@@ -83,12 +83,21 @@ $avatar-range-grow: (120px, 240px);
 }
 
 .about__skills {
+  flex: 1 1 auto;
+  @include flex($dir: column, $align: center);
+  overflow: hidden;
   h1 {
+    flex: 0 0 auto;
     width: 100%;
     text-align: center;
     font-size: 1.1em;
     font-family: $font-nav;
-    padding: 2em 1.5em 0;
+    padding: 2em 0 1em;
+  }
+  &:after {
+    content: '';
+    @include overlay;
+    background: linear-gradient($alpha-dark, transparent 15%, transparent 85%, $alpha-dark);
   }
 }
 
@@ -99,5 +108,16 @@ $avatar-range-grow: (120px, 240px);
   @include flex($dir: row, $justify: center, $align: center);
   flex-wrap: wrap;
   color: $color-text;
-  padding: 1em;
+  padding-bottom: 2em;
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid $alpha-light;
+    border-radius: $border-radius-lg;
+  }
 }
