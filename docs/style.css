@@ -263,7 +263,8 @@ body {
   flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 [class^="main--"],
 [class*=" main--"] {
@@ -297,10 +298,28 @@ body {
         flex-direction: row; } }
 
 .main--portfolio {
-  min-height: 80vh;
-  position: relative; }
+  height: calc(100vh - 4em);
+  position: absolute;
+  top: calc(100vh - 4em);
+  -webkit-transition: 500ms ease-out;
+  transition: 500ms ease-out;
+  z-index: 2; }
   .main--portfolio .content {
-    background-color: rgba(250, 250, 250, 0.9);
+    background-color: #fafafa;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
+    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
+
+.main--contact {
+  height: calc(100vh - 4em);
+  position: absolute;
+  top: calc(100vh - 4.5em);
+  -webkit-transition: 500ms ease-out;
+  transition: 500ms ease-out;
+  z-index: 1; }
+  .main--contact .content {
+    background-color: #fafafa;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
@@ -469,6 +488,14 @@ body {
   text-align: center;
   padding: 1em 2em; }
 
+.contact__header {
+  display: block;
+  font-family: "Orbitron";
+  font-size: 1.2em;
+  color: #212121;
+  text-align: center;
+  padding: 1em 2em; }
+
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }
 
@@ -571,3 +598,6 @@ body {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.fx__section-view {
+  top: 4em; }

@@ -12,6 +12,49 @@ if (document.getElementById('particles')) {
   });
 }
 
+const animations = {};
+const view = animations.view;
+
+// if (anime) {
+//   animations.view = {
+//     portfolio: anime({
+//       targets: document.querySelector('#portfolio'),
+//       top: [0, '-80%'],
+//       duration: 1200,
+//       easing: 'easeOutQuad',
+//       autoplay: false
+//     }),
+//     contact: anime({
+//       targets: document.querySelector('#contact'),
+//       top: [0, '-80%'],
+//       duration: 1200,
+//       easing: 'easeOutQuad',
+//       autoplay: false
+//     })
+//   }
+//
+// }
+
+const actions = {};
+
+const portfolio = document.querySelector('#portfolio');
+const contact = document.querySelector('#contact');
+
+actions.view = {
+  home: () => {
+    portfolio.classList.remove('fx__section-view');
+    contact.classList.remove('fx__section-view');
+  },
+  portfolio: () => {
+    contact.classList.remove('fx__section-view');
+    portfolio.classList.add('fx__section-view');
+  },
+  contact: () => {
+    portfolio.classList.remove('fx__section-view');
+    contact.classList.add('fx__section-view');
+  }
+}
+
 // load animation
 // if (anime) {
 //   var loadAnimation = anime.timeline({
@@ -84,26 +127,17 @@ if (document.getElementById('particles')) {
 // change view function
 function changeView(view) {
   switch(view){
-    case 'about':
-      viewAbout();
+    case 'home':
+      actions.view.home();
       break;
     case 'portfolio':
-      viewPortfolio();
+      actions.view.portfolio();
       break;
     case 'contact':
-      viewContact();
+      actions.view.contact();
       break;
     default:
       return;
-  }
-  function viewAbout(){
-    console.log('view:about');
-  }
-  function viewPortfolio(){
-    console.log('view:portfolio');
-  }
-  function viewContact(){
-    console.log('view:contact');
   }
 }
 
@@ -117,7 +151,8 @@ if (navButtons.length > 0) {
           button.classList.remove('selected');
         });
         e.target.classList.add('selected');
-        changeView(e.target.dataset.view);
+        // changeView(e.target.dataset.view);
+        actions.view[e.target.dataset.view]();
       }
     }
   })
