@@ -38,7 +38,7 @@ $portfolio-shadow: $shadow-lg;
   height: $section-height;
   position: absolute;
   top: calc(100vh - 4em);
-  transition: $transition-med ease-out;
+  transition: $transition-med $bezier-quart;
   z-index: 2;
   .content {
     background-color: $portfolio-bg;
@@ -51,8 +51,8 @@ $portfolio-shadow: $shadow-lg;
 .main--contact {
   height: $section-height;
   position: absolute;
-  top: calc(100vh - 4.5em);
-  transition: $transition-med ease-out;
+  top: calc(100vh - 5em);
+  transition: $transition-med $bezier-quart;
   z-index: 1;
   .content {
     background-color: $portfolio-bg;

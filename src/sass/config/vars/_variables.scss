@@ -36,6 +36,7 @@ $nav-height: 4em;
 
 // helper
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+$bezier-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 $transition-sec: 1s;
 $transition-slow: 800ms;
