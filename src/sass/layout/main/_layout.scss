@@ -1,13 +1,11 @@
 $section-height: calc(100vh - #{$nav-height});
-$center-viewheight: $nav-height * 2;
-$about-height: calc(100vh - #{$center-viewheight});
 
 $portfolio-bg: $color-bg;
 $portfolio-radius: $border-radius-lg;
 $portfolio-shadow: $shadow-lg;
 
 .body {
-  height: 100%;
+  height: $section-height;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,15 +17,20 @@ $portfolio-shadow: $shadow-lg;
 [class*=" main--"] {
   display: block;
   width: 100%;
-}
-
-.main--about {
-  height: $about-height;
+  height: $section-height;
+  top: 0;
+  transition: $transition-med $bezier-quart;
   .content {
     height: 100%;
     background-color: transparent;
     @include flex($dir: column, $justify: center, $align: center);
     padding: 2em;
+  }
+}
+
+.main--about {
+  position: relative;
+  .content {
     @media only screen and (orientation: landscape) {
       flex-direction: row;
     }
@@ -35,29 +38,11 @@ $portfolio-shadow: $shadow-lg;
 }
 
 .main--portfolio {
-  height: $section-height;
   position: absolute;
-  top: calc(100vh - 4em);
-  transition: $transition-med $bezier-quart;
   z-index: 2;
-  .content {
-    background-color: $portfolio-bg;
-    border-top-left-radius: $portfolio-radius;
-    border-top-right-radius: $portfolio-radius;
-    box-shadow: $portfolio-shadow;
-  }
 }
 
 .main--contact {
-  height: $section-height;
   position: absolute;
-  top: calc(100vh - 5em);
-  transition: $transition-med $bezier-quart;
   z-index: 1;
-  .content {
-    background-color: $portfolio-bg;
-    border-top-left-radius: $portfolio-radius;
-    border-top-right-radius: $portfolio-radius;
-    box-shadow: $portfolio-shadow;
-  }
 }

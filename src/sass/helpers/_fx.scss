@@ -16,6 +16,17 @@
   to {opacity: 1;}
 }
 
-.fx__section-view {
-  top: 4em;
+.fx__view--l {
+  left: -100%;
+  opacity: 0;
+}
+
+.fx__view--m {
+  left: 0;
+  opacity: 1;
+}
+
+.fx__view--r {
+  left: 100%;
+  opacity: 0;
 }

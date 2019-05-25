@@ -9,6 +9,8 @@ html(lang="en")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js")
     script(src="bundle.js" defer)
   body
-    include _body
+    .fx__fade-in
+      include _nav
+      include _body
     canvas#particles
     script(src="bundle.js")

@@ -12,46 +12,45 @@ if (document.getElementById('particles')) {
   });
 }
 
-const animations = {};
-const view = animations.view;
-
-// if (anime) {
-//   animations.view = {
-//     portfolio: anime({
-//       targets: document.querySelector('#portfolio'),
-//       top: [0, '-80%'],
-//       duration: 1200,
-//       easing: 'easeOutQuad',
-//       autoplay: false
-//     }),
-//     contact: anime({
-//       targets: document.querySelector('#contact'),
-//       top: [0, '-80%'],
-//       duration: 1200,
-//       easing: 'easeOutQuad',
-//       autoplay: false
-//     })
-//   }
-//
-// }
-
 const actions = {};
 
+const about = document.querySelector('#about');
 const portfolio = document.querySelector('#portfolio');
 const contact = document.querySelector('#contact');
+const sections = [about, portfolio, contact];
+
+const viewAnim = {
+  l: {
+    left: '-100%',
+    opacity: 0
+  },
+  m: {
+    left: 0,
+    opacity: 1
+  },
+  r: {
+    left: '100%',
+    opacity: 0
+  }
+}
+
+function assignView(pos) {
+  if (pos.length >= 3) {
+    Object.assign(about.style, viewAnim[pos[0]]);
+    Object.assign(portfolio.style, viewAnim[pos[1]]);
+    Object.assign(contact.style, viewAnim[pos[2]]);
+  }
+}
 
 actions.view = {
   home: () => {
-    portfolio.classList.remove('fx__section-view');
-    contact.classList.remove('fx__section-view');
+    assignView(['m','r','r']);
   },
   portfolio: () => {
-    contact.classList.remove('fx__section-view');
-    portfolio.classList.add('fx__section-view');
+    assignView(['l','m','r']);
   },
   contact: () => {
-    portfolio.classList.remove('fx__section-view');
-    contact.classList.add('fx__section-view');
+    assignView(['l','l','m']);
   }
 }
 
@@ -156,4 +155,17 @@ if (navButtons.length > 0) {
       }
     }
   })
+}
+
+// helpers
+function removeClassByPrefix(el, prefix) {
+  var regx = new RegExp('\\b' + prefix + '.*?\\b', 'g');
+  if (Array.isArray(el)) {
+    el.forEach(elem => {
+      elem.className = elem.className.replace(regx, '');
+    });
+  } else {
+    el.className = el.className.replace(regx, '');
+  }
+  return el;
 }

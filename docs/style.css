@@ -252,7 +252,7 @@ body {
   width: 200px; }
 
 .body {
-  height: 100%;
+  height: calc(100vh - 4em);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,11 +269,13 @@ body {
 [class^="main--"],
 [class*=" main--"] {
   display: block;
-  width: 100%; }
-
-.main--about {
-  height: calc(100vh - 8em); }
-  .main--about .content {
+  width: 100%;
+  height: calc(100vh - 4em);
+  top: 0;
+  -webkit-transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+  [class^="main--"] .content,
+  [class*=" main--"] .content {
     height: 100%;
     background-color: transparent;
     display: -webkit-box;
@@ -290,40 +292,23 @@ body {
     -ms-flex-align: center;
     align-items: center;
     padding: 2em; }
-    @media only screen and (orientation: landscape) {
-      .main--about .content {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row; } }
+
+.main--about {
+  position: relative; }
+  @media only screen and (orientation: landscape) {
+    .main--about .content {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; } }
 
 .main--portfolio {
-  height: calc(100vh - 4em);
   position: absolute;
-  top: calc(100vh - 4em);
-  -webkit-transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 2; }
-  .main--portfolio .content {
-    background-color: #fafafa;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
-    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
 
 .main--contact {
-  height: calc(100vh - 4em);
   position: absolute;
-  top: calc(100vh - 5em);
-  -webkit-transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 1; }
-  .main--contact .content {
-    background-color: #fafafa;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
-    box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4); }
 
 .about__profile {
   display: -webkit-box;
@@ -484,7 +469,7 @@ body {
   display: block;
   font-family: "Orbitron";
   font-size: 1.2em;
-  color: #212121;
+  color: #fafafa;
   text-align: center;
   padding: 1em 2em; }
 
@@ -507,7 +492,7 @@ body {
   display: block;
   font-family: "Orbitron";
   font-size: 1.2em;
-  color: #212121;
+  color: #fafafa;
   text-align: center;
   padding: 1em 2em; }
 
@@ -614,5 +599,14 @@ body {
   to {
     opacity: 1; } }
 
-.fx__section-view {
-  top: 4em; }
+.fx__view--l {
+  left: -100%;
+  opacity: 0; }
+
+.fx__view--m {
+  left: 0;
+  opacity: 1; }
+
+.fx__view--r {
+  left: 100%;
+  opacity: 0; }
