@@ -15,3 +15,12 @@ body {
   overflow: hidden;
   @include mediaQueryRange($rules: (font-size: (12px, 18px)), $delay: 1);
 }
+
+::-webkit-scrollbar {
+  max-width: 8px;
+  max-height: 8px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}

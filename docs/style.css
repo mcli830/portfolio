@@ -72,6 +72,14 @@ body {
     body {
       font-size: 20px; } }
 
+::-webkit-scrollbar {
+  max-width: 8px;
+  max-height: 8px; }
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background-color: transparent; }
+
 [class^="container--"],
 [class*=" container--"] {
   width: 96%;
@@ -473,7 +481,7 @@ body {
   text-align: center;
   padding: 1em 2em; }
 
-.portfolio-container {
+.project-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,7 +494,66 @@ body {
   justify-content: center;
   -webkit-box-align: start;
   -ms-flex-align: start;
-  align-items: flex-start; }
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+  padding: 0 2em;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  overflow-y: auto; }
+  .project-container .project {
+    height: 100px;
+    width: 150px;
+    height: 100;
+    width: 150;
+    position: relative; }
+    @media only screen and (min-width: 480px) {
+      .project-container .project {
+        height: 115;
+        width: 172.5; } }
+    @media only screen and (min-width: 600px) {
+      .project-container .project {
+        height: 130;
+        width: 195; } }
+    @media only screen and (min-width: 768px) {
+      .project-container .project {
+        height: 145;
+        width: 217.5; } }
+    @media only screen and (min-width: 992px) {
+      .project-container .project {
+        height: 160;
+        width: 240; } }
+    @media only screen and (min-width: 1200px) {
+      .project-container .project {
+        height: 175;
+        width: 262.5; } }
+    .project-container .project img {
+      pointer-events: none;
+      -o-object-fit: cover;
+      object-fit: cover; }
+    .project-container .project .overlay {
+      -webkit-transition: 250ms;
+      transition: 250ms;
+      opacity: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .project-container .project .overlay h2 {
+        font-family: "Alegreya Sans SC";
+        color: #fafafa; }
+    .project-container .project:hover .overlay, .project-container .project:focus .overlay, .project-container .project:active .overlay {
+      background-color: rgba(33, 33, 33, 0.8);
+      opacity: 1; }
 
 .contact__header {
   display: block;

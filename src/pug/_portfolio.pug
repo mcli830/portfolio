@@ -1,5 +1,24 @@
+mixin project(name, url)
+  a.project(href=url title=name target='_blank')
+    img.project(src=`/assets/projects/${name.replace(' ', '_').toLowerCase()}.jpg` alt=name)
+    .overlay
+      h2= name
+
 section#portfolio.main--portfolio.fx__view--r
   .container--wide.content
     h1.portfolio__header Projects
     .project-container
-      
+      +project('Llama', 'http://llamareads.me/')
+      +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/')
+      +project('Fruitbowl', 'https://fruitbowl.glitch.me/')
+      +project('Phrase Generator', 'https://sunny-space.glitch.me/')
+      +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV')
+      +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV')
+      +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/')
+      +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp')
+      +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv')
+      +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv')
+      +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq')
+      +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp')
+      +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp')
+      +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit')

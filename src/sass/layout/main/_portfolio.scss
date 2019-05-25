@@ -7,7 +7,43 @@
   padding: 1em 2em;
 }
 
-.portfolio-container {
+.project-container {
   @include flex($dir: row, $justify: center);
+  height: auto;
+  width: 100%;
+  padding: 0 2em;
+  flex-wrap: wrap;
+  overflow-y: auto;
 
+  .project {
+    height: 100px;
+    width: 150px;
+    @include mediaQueryRange((
+      height: (100, 160),
+      width: (150, 240)
+    ))
+    position: relative;
+    img {
+      pointer-events: none;
+      object-fit: cover;
+    }
+    .overlay {
+      transition: $transition-fast;
+      opacity: 0;
+      @include flex(center);
+      h2 {
+        font-family: $font-badge;
+        color: $color-text-invert;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .overlay {
+        background-color: $alpha-black;
+        opacity: 1;
+      }
+    }
+  }
 }
