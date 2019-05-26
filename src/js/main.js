@@ -1,59 +1,62 @@
-const Particles = require('particlesjs')
-const anime = require('animejs')
+// PARTICLES.JS
+// const Particles = require('particlesjs')
+// const anime = require('animejs')
+//
+// if (document.getElementById('particles')) {
+//   Particles.init({
+//     selector: '#particles',
+//     maxParticles: 150,
+//     speed: 0.25,
+//     color: '#67daff',
+//     minDistance: 30,
+//     connectParticles: true
+//   });
+// }
 
-if (document.getElementById('particles')) {
-  Particles.init({
-    selector: '#particles',
-    maxParticles: 150,
-    speed: 0.25,
-    color: '#67daff',
-    minDistance: 30,
-    connectParticles: true
-  });
-}
+// VIEW ANIMATION
+// const actions = {};
+//
+// const about = document.querySelector('#about');
+// const portfolio = document.querySelector('#portfolio');
+// const contact = document.querySelector('#contact');
+// const sections = [about, portfolio, contact];
+//
+// const viewAnim = {
+//   l: {
+//     left: '-100%',
+//     opacity: 0
+//   },
+//   m: {
+//     left: 0,
+//     opacity: 1
+//   },
+//   r: {
+//     left: '100%',
+//     opacity: 0
+//   }
+// }
+//
+// function assignView(pos) {
+//   if (pos.length >= 3) {
+//     Object.assign(about.style, viewAnim[pos[0]]);
+//     Object.assign(portfolio.style, viewAnim[pos[1]]);
+//     Object.assign(contact.style, viewAnim[pos[2]]);
+//   }
+// }
+//
+// actions.view = {
+//   home: () => {
+//     assignView(['m','r','r']);
+//   },
+//   portfolio: () => {
+//     assignView(['l','m','r']);
+//   },
+//   contact: () => {
+//     assignView(['l','l','m']);
+//   }
+// }
 
-const actions = {};
-
-const about = document.querySelector('#about');
-const portfolio = document.querySelector('#portfolio');
-const contact = document.querySelector('#contact');
-const sections = [about, portfolio, contact];
-
-const viewAnim = {
-  l: {
-    left: '-100%',
-    opacity: 0
-  },
-  m: {
-    left: 0,
-    opacity: 1
-  },
-  r: {
-    left: '100%',
-    opacity: 0
-  }
-}
-
-function assignView(pos) {
-  if (pos.length >= 3) {
-    Object.assign(about.style, viewAnim[pos[0]]);
-    Object.assign(portfolio.style, viewAnim[pos[1]]);
-    Object.assign(contact.style, viewAnim[pos[2]]);
-  }
-}
-
-actions.view = {
-  home: () => {
-    assignView(['m','r','r']);
-  },
-  portfolio: () => {
-    assignView(['l','m','r']);
-  },
-  contact: () => {
-    assignView(['l','l','m']);
-  }
-}
-
+// ANIME.JS
 // load animation
 // if (anime) {
 //   var loadAnimation = anime.timeline({
@@ -123,49 +126,50 @@ actions.view = {
 //   });
 // }
 
-// change view function
-function changeView(view) {
-  switch(view){
-    case 'home':
-      actions.view.home();
-      break;
-    case 'portfolio':
-      actions.view.portfolio();
-      break;
-    case 'contact':
-      actions.view.contact();
-      break;
-    default:
-      return;
-  }
-}
+// VIEW ANIMATION HELPERS
+// // change view function
+// function changeView(view) {
+//   switch(view){
+//     case 'home':
+//       actions.view.home();
+//       break;
+//     case 'portfolio':
+//       actions.view.portfolio();
+//       break;
+//     case 'contact':
+//       actions.view.contact();
+//       break;
+//     default:
+//       return;
+//   }
+// }
+//
+// // nav button function
+// const navButtons = Array.from(document.querySelectorAll('.nav__button'));
+// if (navButtons.length > 0) {
+//   navButtons.forEach(elem => {
+//     elem.onclick = e => {
+//       if (e.target.classList.contains('nav__button') && !e.target.classList.contains('selected')) {
+//         navButtons.forEach(button => {
+//           button.classList.remove('selected');
+//         });
+//         e.target.classList.add('selected');
+//         // changeView(e.target.dataset.view);
+//         actions.view[e.target.dataset.view]();
+//       }
+//     }
+//   })
+// }
 
-// nav button function
-const navButtons = Array.from(document.querySelectorAll('.nav__button'));
-if (navButtons.length > 0) {
-  navButtons.forEach(elem => {
-    elem.onclick = e => {
-      if (e.target.classList.contains('nav__button') && !e.target.classList.contains('selected')) {
-        navButtons.forEach(button => {
-          button.classList.remove('selected');
-        });
-        e.target.classList.add('selected');
-        // changeView(e.target.dataset.view);
-        actions.view[e.target.dataset.view]();
-      }
-    }
-  })
-}
-
-// helpers
-function removeClassByPrefix(el, prefix) {
-  var regx = new RegExp('\\b' + prefix + '.*?\\b', 'g');
-  if (Array.isArray(el)) {
-    el.forEach(elem => {
-      elem.className = elem.className.replace(regx, '');
-    });
-  } else {
-    el.className = el.className.replace(regx, '');
-  }
-  return el;
-}
+// GENERAL HELPERS
+// function removeClassByPrefix(el, prefix) {
+//   var regx = new RegExp('\\b' + prefix + '.*?\\b', 'g');
+//   if (Array.isArray(el)) {
+//     el.forEach(elem => {
+//       elem.className = elem.className.replace(regx, '');
+//     });
+//   } else {
+//     el.className = el.className.replace(regx, '');
+//   }
+//   return el;
+// }
