@@ -35,6 +35,15 @@
   .filter {
     display: inline-block;
     padding: 1em;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: $transition-fast;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $theme-pri-light;
+      border-color: $theme-pri;
+    }
   }
   @media only screen and (orientation: landscape) {
     width: auto;

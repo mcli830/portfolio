@@ -3,15 +3,18 @@ mixin project(name, url)
     img.project(src=`/assets/projects/${name.replace(' ', '_').toLowerCase()}.jpg` alt=name)
     .overlay
       h2= name
+      
+mixin filter(tag)
+  li.filter= tag
 
 section#portfolio.portfolio
   h1.portfolio__header Projects
   .portfolio__projects
     ul.portfolio__projects__filters
-        li.filter React
-        li.filter Ruby/Rails
-        li.filter Node/Express
-        li.filter UI/Design
+      li.filter(data-tags='[""]') React
+      li.filter(data-tags='[""]') Ruby/Rails
+      li.filter(data-tags='[""]') Node/Express
+      li.filter(data-tags='[""]') UI/Design
     .portfolio__projects__list
       +project('Llama', 'http://llamareads.me/')
       +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/')

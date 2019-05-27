@@ -13,6 +13,11 @@
 //   });
 // }
 
+// STATE
+const state = {
+  filters: []
+}
+
 // VIEW ANIMATION
 // const actions = {};
 //
@@ -125,6 +130,16 @@
 //     console.log('load animation finished');
 //   });
 // }
+
+// ACTION FUNCTIONS
+function filterProjects(tag){
+  console.log(tag);
+  if (state.filters.includes(tag)) {
+    state.filters.push(tag)
+  } else {
+    state.filters = state.filters.filter(activeTag => activeTag != tag);
+  }
+}
 
 // VIEW ANIMATION HELPERS
 // // change view function

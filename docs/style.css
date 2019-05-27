@@ -332,7 +332,14 @@ body {
   width: 100%; }
   .portfolio__projects__filters .filter {
     display: inline-block;
-    padding: 1em; }
+    padding: 1em;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    -webkit-transition: 250ms;
+    transition: 250ms; }
+    .portfolio__projects__filters .filter:hover, .portfolio__projects__filters .filter:focus, .portfolio__projects__filters .filter:active {
+      color: #6ec6ff;
+      border-color: #2196F3; }
   @media only screen and (orientation: landscape) {
     .portfolio__projects__filters {
       width: auto;
