@@ -3,8 +3,10 @@ mixin filter(name, tag)
 
 mixin project(name, url, tags)
   - var tagStr = '[' + tags.map(tag => `"${tag}"`).join(',') + ']'
-  a.project(href=url title=name target='_blank' data-tags=tagStr)
-    img.project(src=`/assets/projects/${name.replace(' ', '_').toLowerCase()}.jpg` alt=name)
+  - var dataId = name.replace(' ', '_').toLowerCase()
+  - var src = `/assets/projects/${dataId}.jpg`
+  a.project(id=dataId href=url title=name target='_blank' data-tags=tagStr)
+    img.project(src=src alt=name)
     .overlay
       h2= name
 

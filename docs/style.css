@@ -386,16 +386,12 @@ body {
   width: 100%;
   padding: 0 2em;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+  flex-wrap: wrap; }
   .portfolio__projects__list .project {
     height: 100px;
     width: 150px;
     height: 100;
     width: 150;
-    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative; }
     @media only screen and (min-width: 480px) {
       .portfolio__projects__list .project {

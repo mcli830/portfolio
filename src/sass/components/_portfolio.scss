@@ -80,7 +80,6 @@ $filter-selected: $theme-pri-light;
   width: 100%;
   padding: 0 2em;
   flex-wrap: wrap;
-  transition: $transition-fast $bezier-quart;
 
   .project {
     height: 100px;
@@ -89,7 +88,6 @@ $filter-selected: $theme-pri-light;
       height: (100, 140),
       width: (150, 210)
     ));
-    transition: $transition-fast $bezier-quart;
     position: relative;
     img {
       pointer-events: none;
