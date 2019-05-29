@@ -34,11 +34,12 @@ $filter-selected: $theme-pri-light;
   text-transform: capitalize;
   text-align: center;
   width: 100%;
+  margin-bottom: 2em;
   // @include flex($dir: row, $justify: center);
   .filter {
     position: relative;
     display: inline-block;
-    padding: 1em;
+    padding: 0.4em 0.8em;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     transition: $transition-fast $bezier-quart;
@@ -46,29 +47,36 @@ $filter-selected: $theme-pri-light;
       content: '';
       @include overlay;
       border-bottom: 2px solid $filter-border;
+      left: 50%;
       width: 0;
       transition: inherit;
     }
     &:hover,
-    &:focus {
+    &:focus,
+    &.selected {
       &:after {
         width: 100%;
+        left: 0;
       }
     }
     &.selected {
       color: $filter-selected;
       &:after {
-        width: 100%;
         border-color: $filter-selected;
       }
     }
   }
+  // .portfolio__projects__filters media query
   @media only screen and (orientation: landscape) {
     width: auto;
     text-align: left;
+    margin-bottom: 0;
     .filter {
       display: block;
-      padding: 0.1em;
+      padding: 0.2em;
+      &:after {
+        left: 0;
+      }
     }
   }
 }
