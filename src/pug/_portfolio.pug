@@ -2,7 +2,7 @@ mixin filter(name, tag)
   li.filter(data-tag=tag)= name
 
 mixin project(name, url, tags)
-  - var tagStr = '[' + tags.map(tag => `"${tag}"`).join(',') + ']'
+  - var tagStr = tags.join(' ')
   - var dataId = name.replace(' ', '_').toLowerCase()
   - var src = `/assets/projects/${dataId}.jpg`
   a.project(id=dataId href=url title=name target='_blank' data-tags=tagStr)
