@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', init)
+
+function init(){
+  initFilterFunctions();
+}
+
+
 // PARTICLES.JS
 // const Particles = require('particlesjs')
 // const anime = require('animejs')
@@ -14,39 +21,36 @@
 // }
 
 // FILTER TAGS FUNCTIONS
-const filters = Array.from(document.querySelectorAll('.portfolio__projects__filters .filter'));
-filters.forEach(f => {
-  f.onclick = () => {
-    var ftag = f.dataset.tag;
-    var projs = getProjects();
-    filters.forEach(elem => elem.classList.remove('selected'));
-    projs.forEach(p => {
-      var ptags = JSON.parse(p.dataset.tags);
-      if (ptags.includes(ftag) || ftag === 'all') {
-        reveal(p);
-      } else {
-        hide(p);
-      }
-    });
-    f.classList.add('selected');
+function initFilterFunctions(){
+  const filters = Array.from(document.querySelectorAll('.portfolio__projects__filters .filter'));
+  filters.forEach(f => {
+    f.onclick = () => {
+      var ftag = f.dataset.tag;
+      var projs = Array.from(document.querySelectorAll('.portfolio__projects__list a.project'));
+      filters.forEach(elem => elem.classList.remove('selected'));
+      projs.forEach(p => {
+        var ptags = JSON.parse(p.dataset.tags);
+        if (ptags.includes(ftag) || ftag === 'all') {
+          reveal(p);
+        } else {
+          hide(p);
+        }
+      });
+      f.classList.add('selected');
 
-    function reveal(elem){
-      if (!(/invis/g.test(elem.classList))) {
-        elem.classList.add('invis');
+      function reveal(el){
+        if (!(/invis/g.test(el.classList))) {
+          el.classList.add('invis');
+        }
+        el.classList.remove('hidden');
+        el.classList.remove('invis');
       }
-      elem.classList.remove('hidden');
-      elem.classList.remove('invis');
+      function hide(el) {
+        el.classList.add('invis');
+        setTimeout(()=>el.classList.add('hidden'), 250);
+      }
     }
-    function hide(elem) {
-      elem.classList.add('invis');
-      setTimeout(()=>elem.classList.add('hidden'), 250);
-    }
-  }
-});
-
-// FILTER TAGS ANIMATION HELPERS
-function getProjects(){
-  return Array.from(document.querySelectorAll('.portfolio__projects__list a.project'));
+  });
 }
 
 // VIEW ANIMATION
@@ -161,6 +165,16 @@ function getProjects(){
 //     console.log('load animation finished');
 //   });
 // }
+
+// ACTION FUNCTIONS
+function filterProjects(tag){
+  console.log(tag);
+  if (state.filters.includes(tag)) {
+    state.filters.push(tag)
+  } else {
+    state.filters = state.filters.filter(activeTag => activeTag != tag);
+  }
+}
 
 // VIEW ANIMATION HELPERS
 // // change view function
