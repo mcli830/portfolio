@@ -1,5 +1,9 @@
-mixin project(name, url)
-  a.project(href=url title=name target='_blank')
+mixin filter(name, tag)
+  li.filter(data-tag=tag)= name
+
+mixin project(name, url, tags)
+  - var tagStr = '[' + tags.map(tag => `"${tag}"`).join(',') + ']'
+  a.project(href=url title=name target='_blank' data-tags=tagStr)
     img.project(src=`/assets/projects/${name.replace(' ', '_').toLowerCase()}.jpg` alt=name)
     .overlay
       h2= name
@@ -8,22 +12,27 @@ section#portfolio.portfolio
   h1.portfolio__header Projects
   .portfolio__projects
     ul.portfolio__projects__filters
-        li.filter React
-        li.filter Ruby/Rails
-        li.filter Node/Express
-        li.filter UI/Design
+      +filter('React', 'react')
+      +filter('Ruby/Rails', 'rails')
+      +filter('Node/Express', 'node')
+      +filter('MongoDB', 'mongo')
+      +filter('UI/Design', 'uides')
+      +filter('API', 'api')
+      +filter('D3', 'd3')
+      +filter('socket.io', 'socket')
+      +filter('Tools', 'tool')
     .portfolio__projects__list
-      +project('Llama', 'http://llamareads.me/')
-      +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/')
-      +project('Fruitbowl', 'https://fruitbowl.glitch.me/')
-      +project('Phrase Generator', 'https://sunny-space.glitch.me/')
-      +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV')
-      +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV')
+      +project('Llama', 'http://llamareads.me/', ['react', 'rails', 'uides'])
+      +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'uides'])
+      +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uides', 'socket'])
+      +project('Phrase Generator', 'https://sunny-space.glitch.me/', ['node', 'api'])
+      +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uides'])
+      +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV', ['react'])
       //- +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/')
-      +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp')
-      +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv')
-      +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv')
+      +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp', ['api'])
+      +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv', ['tool'])
+      +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uides', 'api'])
       //- +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq')
-      +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp')
-      +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp')
+      +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp', ['d3'])
+      +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
       //- +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit')
