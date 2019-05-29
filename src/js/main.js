@@ -13,6 +13,42 @@
 //   });
 // }
 
+// FILTER TAGS FUNCTIONS
+const filters = Array.from(document.querySelectorAll('.portfolio__projects__filters .filter'));
+filters.forEach(f => {
+  f.onclick = () => {
+    var ftag = f.dataset.tag;
+    var projs = getProjects();
+    filters.forEach(elem => elem.classList.remove('selected'));
+    projs.forEach(p => {
+      var ptags = JSON.parse(p.dataset.tags);
+      if (ptags.includes(ftag) || ftag === 'all') {
+        reveal(p);
+      } else {
+        hide(p);
+      }
+    });
+    f.classList.add('selected');
+
+    function reveal(elem){
+      if (!(/invis/g.test(elem.classList))) {
+        elem.classList.add('invis');
+      }
+      elem.classList.remove('hidden');
+      elem.classList.remove('invis');
+    }
+    function hide(elem) {
+      elem.classList.add('invis');
+      setTimeout(()=>elem.classList.add('hidden'), 250);
+    }
+  }
+});
+
+// FILTER TAGS ANIMATION HELPERS
+function getProjects(){
+  return Array.from(document.querySelectorAll('.portfolio__projects__list a.project'));
+}
+
 // VIEW ANIMATION
 // const actions = {};
 //

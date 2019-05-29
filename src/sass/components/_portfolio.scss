@@ -25,6 +25,9 @@
   }
 }
 
+$filter-border: $theme-pri;
+$filter-selected: $theme-pri-light;
+
 .portfolio__projects__filters {
   font-size: 0.9em;
   font-family: $font-pri-condense;
@@ -33,8 +36,32 @@
   width: 100%;
   // @include flex($dir: row, $justify: center);
   .filter {
+    position: relative;
     display: inline-block;
     padding: 1em;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: $transition-fast $bezier-quart;
+    &:after {
+      content: '';
+      @include overlay;
+      border-bottom: 2px solid $filter-border;
+      width: 0;
+      transition: inherit;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        width: 100%;
+      }
+    }
+    &.selected {
+      color: $filter-selected;
+      &:after {
+        width: 100%;
+        border-color: $filter-selected;
+      }
+    }
   }
   @media only screen and (orientation: landscape) {
     width: auto;
@@ -53,6 +80,7 @@
   width: 100%;
   padding: 0 2em;
   flex-wrap: wrap;
+  transition: $transition-fast $bezier-quart;
 
   .project {
     height: 100px;
@@ -60,7 +88,8 @@
     @include mediaQueryRange((
       height: (100, 140),
       width: (150, 210)
-    ))
+    ));
+    transition: $transition-fast $bezier-quart;
     position: relative;
     img {
       pointer-events: none;
