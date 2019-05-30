@@ -8,20 +8,32 @@
   };
 }
 
-.portfolio__header {
-  display: block;
-  font-family: $font-pri-condense;
-  font-size: 1.2em;
-  color: $color-text;
-  text-align: center;
-  padding: 1em 2em;
-  margin: 1em 0;
-}
-
 .portfolio__projects {
   @include flex($dir: column);
+  padding: 1em 0;
+  .panel {
+    @include flex($dir: column, $align: center);
+    width: 100%;
+  }
   @media only screen and (orientation: landscape) {
     @include flex($dir: row);
+    .panel {
+      align-items: flex-start;
+      width: auto;
+    }
+  }
+}
+
+.portfolio__header {
+  display: block;
+  font-family: $font-header;
+  color: transparent;
+  text-align: center;
+  padding: 0.5em;
+  @media only screen and (orientation: landscape) {
+    color: $color-text;
+    padding: 0.5em 0.25em;
+    text-align: left;
   }
 }
 
@@ -30,16 +42,20 @@ $filter-selected: $theme-pri-light;
 
 .portfolio__projects__filters {
   font-size: 0.9em;
-  font-family: $font-pri-condense;
+  font-family: $font-filter;
   text-transform: capitalize;
   text-align: center;
   width: 100%;
   margin-bottom: 2em;
-  // @include flex($dir: row, $justify: center);
+  @include flex($dir: row, $justify: center);
+  flex-wrap: wrap;
+  padding: 0 10%;
   .filter {
     position: relative;
     display: inline-block;
-    padding: 0.4em 0.8em;
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 1em 0;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     transition: $transition-fast $bezier-quart;
@@ -71,9 +87,13 @@ $filter-selected: $theme-pri-light;
     width: auto;
     text-align: left;
     margin-bottom: 0;
+    display: initial;
+    padding: 0;
     .filter {
       display: block;
-      padding: 0.2em;
+      flex: none;
+      text-align: left;
+      padding: 0.25em;
       &:after {
         left: 0;
       }

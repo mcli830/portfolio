@@ -11,19 +11,20 @@ mixin project(name, url, tags)
       h2= name
 
 section#portfolio.portfolio
-  h1.portfolio__header Projects
   .portfolio__projects
-    ul.portfolio__projects__filters
-      li.filter.selected(data-tag='all') All
-      +filter('React', 'react')
-      +filter('Ruby/Rails', 'rails')
-      +filter('Node/Express', 'node')
-      +filter('MongoDB', 'mongo')
-      +filter('UI/Design', 'uides')
-      +filter('API', 'api')
-      +filter('D3', 'd3')
-      +filter('socket.io', 'socket')
-      +filter('Tools', 'tool')
+    .panel
+      h1.portfolio__header Portfolio
+      ul.portfolio__projects__filters
+        li.filter.selected(data-tag='all') All
+        +filter('React', 'react')
+        +filter('Ruby/Rails', 'rails')
+        +filter('Node/Express', 'node')
+        +filter('MongoDB', 'mongo')
+        +filter('UI/Design', 'uides')
+        +filter('API', 'api')
+        +filter('D3', 'd3')
+        +filter('socket.io', 'socket')
+        +filter('Tools', 'tool')
     .portfolio__projects__list
       +project('Llama', 'http://llamareads.me/', ['react', 'rails', 'uides'])
       +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'uides'])

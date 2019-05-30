@@ -244,15 +244,6 @@ body {
       padding-left: 12.5%;
       padding-right: 12.5%; } }
 
-.portfolio__header {
-  display: block;
-  font-family: "Roboto Condensed";
-  font-size: 1.2em;
-  color: #212121;
-  text-align: center;
-  padding: 1em 2em;
-  margin: 1em 0; }
-
 .portfolio__projects {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,7 +257,23 @@ body {
   justify-content: flex-start;
   -webkit-box-align: start;
   -ms-flex-align: start;
-  align-items: flex-start; }
+  align-items: flex-start;
+  padding: 1em 0; }
+  .portfolio__projects .panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%; }
   @media only screen and (orientation: landscape) {
     .portfolio__projects {
       display: -webkit-box;
@@ -281,7 +288,24 @@ body {
       justify-content: flex-start;
       -webkit-box-align: start;
       -ms-flex-align: start;
-      align-items: flex-start; } }
+      align-items: flex-start; }
+      .portfolio__projects .panel {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        width: auto; } }
+
+.portfolio__header {
+  display: block;
+  font-family: "Roboto";
+  color: transparent;
+  text-align: center;
+  padding: 0.5em; }
+  @media only screen and (orientation: landscape) {
+    .portfolio__header {
+      color: #212121;
+      padding: 0.5em 0.25em;
+      text-align: left; } }
 
 .portfolio__projects__filters {
   font-size: 0.9em;
@@ -289,11 +313,31 @@ body {
   text-transform: capitalize;
   text-align: center;
   width: 100%;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 10%; }
   .portfolio__projects__filters .filter {
     position: relative;
     display: inline-block;
-    padding: 0.4em 0.8em;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 1em 0;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -322,10 +366,16 @@ body {
     .portfolio__projects__filters {
       width: auto;
       text-align: left;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      display: initial;
+      padding: 0; }
       .portfolio__projects__filters .filter {
         display: block;
-        padding: 0.2em; }
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        text-align: left;
+        padding: 0.25em; }
         .portfolio__projects__filters .filter:after {
           left: 0; } }
 
