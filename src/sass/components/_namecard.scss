@@ -7,13 +7,21 @@
   z-index: 2;
 }
 
+$ripple-timing: $transition-fast;
+$ripple-delay: $ripple-timing / 2;
+$nudge-timing: $transition-med;
+$nudge-delay: $nudge-timing / 2;
+$spin-timing: $transition-fast;
+$spin-delay: $spin-timing / 2;
+
 .namecard__content {
   position: relative;
   @include flex($dir: row, $justify: center, $align: center);
   padding: 0.5em;
   // overflow: hidden;
   border-radius: $border-radius-lg;
-  cursor: pointer;
+  top: 0;
+  transition: top $nudge-timing $bezier-bounce 0ms;
 
   [class^="avatar"],
   [class*=" avatar"] {
@@ -23,6 +31,7 @@
     img {
       position: relative;
       z-index: 2;
+      cursor: pointer;
     }
   }
 
@@ -35,28 +44,80 @@
     width: 0;
     border-radius: 50%;
     background-color: $color-bg;
-    transition: $transition-fast $bezier-quart 100ms;
+    transition: $ripple-timing $bezier-quart 100ms;
+    // &.expand {
+    //   top: -500%;
+    //   left: -500%;
+    //   height: 1100%;
+    //   width: 1100%;
+    //   box-shadow: $shadow-lg;
+    // }
   }
 
-  // .namecard__content
+  $texts-offset: 33px; // avatar-sm(25) + margin(8)
+  $texts-padding: 8px;
+
+  .namecard__text {
+    position: relative;
+    z-index: 2;
+    margin-left: 8px;
+  }
+
+  .namecard__text__name {
+    position: relative;
+    z-index: 2;
+    padding: $texts-padding;
+    font-size: 1.2em;
+    font-family: $font-name;
+    font-weight: bold;
+  }
+
+  .namecard__text__contact {
+    position: absolute;
+    font-family: $font-text;
+    font-size: 0.6em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    @include flex($dir: row, $justify: flex-start, $align: center);
+    opacity: 0;
+    transform-origin: ($texts-offset * -1) 50%;
+    transition: $spin-timing $bezier-quart 0ms;
+
+    .text {
+      padding: $texts-padding;
+      white-space: pre;
+      text-align: right;
+      line-height: 1.4;
+      transform-origin: 50% 50%;
+      transform: rotate(180deg);
+    }
+    // .namecard__text__contact:hover
+    // &.expand {
+    //   opacity: 1;
+    //   transform: rotate(180deg);
+    // }
+  }
+
+
+  // .namecard__content:hover
   &:hover {
-    height: 30em;
-    width: 70vw;
+    top: 2em;
+    transition-delay: $ripple-delay;
+
     .ripple-bg {
-      top: -50vw;
-      left: -50vw;
-      height: calc(100vw + 100%);
-      width: calc(100vw + 100%);
+      top: -500%;
+      left: -500%;
+      height: 1100%;
+      width: 1100%;
+      box-shadow: $shadow-lg;
+      transition-delay: 0ms;
+    }
+    .namecard__text__contact {
+      opacity: 1;
+      transform: rotate(180deg);
+      transition-delay: $ripple-timing + $nudge-delay;
     }
   }
-}
-
-.namecard__name {
-  position: relative;
-  z-index: 2;
-  margin-left: 0.5em;
-  padding: 0.5em;
-  font-size: 1.2em;
-  font-family: $font-name;
-  font-weight: bold;
 }

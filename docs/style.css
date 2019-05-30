@@ -215,7 +215,9 @@ body {
   align-items: center;
   padding: 0.5em;
   border-radius: 12px;
-  cursor: pointer; }
+  top: 0;
+  -webkit-transition: top 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms;
+  transition: top 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms; }
   .namecard__content [class^="avatar"],
   .namecard__content [class*=" avatar"] {
     position: relative;
@@ -224,7 +226,8 @@ body {
     .namecard__content [class^="avatar"] img,
     .namecard__content [class*=" avatar"] img {
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      cursor: pointer; }
   .namecard__content .ripple-bg {
     position: absolute;
     z-index: 1;
@@ -236,23 +239,71 @@ body {
     background-color: #fafafa;
     -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms;
     transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms; }
+  .namecard__content .namecard__text {
+    position: relative;
+    z-index: 2;
+    margin-left: 8px; }
+  .namecard__content .namecard__text__name {
+    position: relative;
+    z-index: 2;
+    padding: 8px;
+    font-size: 1.2em;
+    font-family: "Raleway";
+    font-weight: bold; }
+  .namecard__content .namecard__text__contact {
+    position: absolute;
+    font-family: "Roboto Condensed";
+    font-size: 0.6em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    -webkit-transform-origin: -33px 50%;
+    transform-origin: -33px 50%;
+    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms; }
+    .namecard__content .namecard__text__contact .text {
+      padding: 8px;
+      white-space: pre;
+      text-align: right;
+      line-height: 1.4;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
   .namecard__content:hover {
-    height: 30em;
-    width: 70vw; }
+    top: 2em;
+    -webkit-transition-delay: 125ms;
+    transition-delay: 125ms; }
     .namecard__content:hover .ripple-bg {
-      top: -50vw;
-      left: -50vw;
-      height: calc(100vw + 100%);
-      width: calc(100vw + 100%); }
-
-.namecard__name {
-  position: relative;
-  z-index: 2;
-  margin-left: 0.5em;
-  padding: 0.5em;
-  font-size: 1.2em;
-  font-family: "Raleway";
-  font-weight: bold; }
+      top: -500%;
+      left: -500%;
+      height: 1100%;
+      width: 1100%;
+      -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
+      box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
+      -webkit-transition-delay: 0ms;
+      transition-delay: 0ms; }
+    .namecard__content:hover .namecard__text__contact {
+      opacity: 1;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      -webkit-transition-delay: 500ms;
+      transition-delay: 500ms; }
 
 .portfolio {
   display: block; }
