@@ -7,10 +7,11 @@ $avatar-lg: 200px;
 [class*="__avatar"] {
   overflow: hidden;
   border-radius: 50%;
-  @include flex(center);
   img {
     height: 100%;
     width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
     object-fit: center;
   }
 }

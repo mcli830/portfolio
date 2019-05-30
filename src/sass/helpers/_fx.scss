@@ -2,6 +2,15 @@
   opacity: 0;
 }
 
+.hidden {
+  display: none;
+}
+
+.disable {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
 .fx__fade-in {
   opacity: 0;
   animation: fade-in $load-fade-in-time linear forwards;
@@ -10,4 +19,19 @@
 @keyframes fade-in {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+.fx__view--l {
+  left: -100%;
+  opacity: 0;
+}
+
+.fx__view--m {
+  left: 0;
+  opacity: 1;
+}
+
+.fx__view--r {
+  left: 100%;
+  opacity: 0;
 }

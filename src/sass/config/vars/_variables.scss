@@ -3,11 +3,13 @@ $device-breakpoints: 600px 768px 992px 1200px;
 
 // type
 $font-pri: 'Roboto';
-$font-pri-condense: 'Roboto Condensed';
 $font-pri-mono: 'Roboto Mono';
 $font-sec: 'Roboto Slab';
 $font-nav: 'Orbitron';
 $font-badge: 'Alegreya Sans SC';
+$font-name: 'Raleway';
+$font-header: 'Roboto';
+$font-filter: 'Roboto Condensed';
 $rem: 16px;
 
 // colors
@@ -31,8 +33,11 @@ $theme-tri: $purple;
 $theme-tri-dark: $purple-dark;
 $theme-tri-light: $purple-light;
 
+$nav-height: 4em;
+
 // helper
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+$bezier-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 $transition-sec: 1s;
 $transition-slow: 800ms;
@@ -40,7 +45,10 @@ $transition-med: 500ms;
 $transition-fast: 250ms;
 
 $alpha-light: rgba($white, 0.4);
+$alpha-silver: rgba($silver, 0.4);
 $alpha-dark: rgba($black, 0.4);
+$alpha-white: rgba($white, 0.8);
+$alpha-black: rgba($black, 0.8);
 
 $shadow-sm-size: 2px 2px 5px;
 $shadow-md-size: 5px 5px 10px;

@@ -10,8 +10,16 @@ body {
   font-size: $rem;
   color: $color-text;
   width: 100vw;
-  height: 100vh;
-  background: linear-gradient(-3deg, $bg-d, $bg-l);
-  overflow: hidden;
-  @include mediaQueryRange((font-size: (10px, 18px)));
+  min-height: 100vh;
+  background-color: $color-bg;
+  @include mediaQueryRange($rules: (font-size: (12px, 18px)), $delay: 1);
+}
+
+::-webkit-scrollbar {
+  max-width: 8px;
+  max-height: 8px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
 }

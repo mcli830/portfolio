@@ -1,0 +1,144 @@
+.portfolio {
+  display: block;
+  @media only screen and (orientation: landscape){
+    @include mediaQueryRange((
+      padding-left: (0, 10%),
+      padding-right: (0, 10%)
+    ));
+  };
+}
+
+.portfolio__projects {
+  @include flex($dir: column);
+  padding: 1em 0;
+  .panel {
+    @include flex($dir: column, $align: center);
+    width: 100%;
+  }
+  @media only screen and (orientation: landscape) {
+    @include flex($dir: row);
+    .panel {
+      align-items: flex-start;
+      width: auto;
+    }
+  }
+}
+
+.portfolio__header {
+  display: block;
+  font-family: $font-header;
+  color: transparent;
+  text-align: center;
+  padding: 0.5em;
+  @media only screen and (orientation: landscape) {
+    color: $color-text;
+    padding: 0.5em 0.25em;
+    text-align: left;
+  }
+}
+
+$filter-border: $theme-pri;
+$filter-selected: $theme-pri-light;
+
+.portfolio__projects__filters {
+  font-size: 0.9em;
+  font-family: $font-filter;
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2em;
+  @include flex($dir: row, $justify: center);
+  flex-wrap: wrap;
+  padding: 0 10%;
+  .filter {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: $transition-fast $bezier-quart;
+    &:after {
+      content: '';
+      @include overlay;
+      border-bottom: 2px solid $filter-border;
+      left: 50%;
+      width: 0;
+      transition: inherit;
+    }
+    &:hover,
+    &:focus,
+    &.selected {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+    &.selected {
+      color: $filter-selected;
+      &:after {
+        border-color: $filter-selected;
+      }
+    }
+  }
+  // .portfolio__projects__filters media query
+  @media only screen and (orientation: landscape) {
+    width: auto;
+    text-align: left;
+    margin-bottom: 0;
+    display: initial;
+    padding: 0;
+    .filter {
+      display: block;
+      flex: none;
+      text-align: left;
+      padding: 0.25em;
+      &:after {
+        left: 0;
+      }
+    }
+  }
+}
+
+.portfolio__projects__list {
+  flex: 1 1 auto;
+  @include flex($dir: row, $justify: center);
+  height: auto;
+  width: 100%;
+  padding: 0 2em;
+  flex-wrap: wrap;
+
+  .project {
+    height: 100px;
+    width: 150px;
+    @include mediaQueryRange((
+      height: (100, 140),
+      width: (150, 210)
+    ));
+    transition: opacity $transition-fast $bezier-quart;
+    position: relative;
+    img {
+      pointer-events: none;
+      object-fit: cover;
+    }
+    .overlay {
+      transition: $transition-fast;
+      opacity: 0;
+      @include flex(center);
+      h2 {
+        font-family: $font-badge;
+        color: $color-text-invert;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .overlay {
+        background-color: $alpha-black;
+        opacity: 1;
+      }
+    }
+  }
+}
