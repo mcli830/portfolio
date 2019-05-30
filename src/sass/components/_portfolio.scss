@@ -116,7 +116,7 @@ $filter-selected: $theme-pri-light;
       height: (100, 140),
       width: (150, 210)
     ));
-    transition: opacity $transition-fast ease-out;
+    transition: opacity $transition-fast $bezier-quart;
     position: relative;
     img {
       pointer-events: none;

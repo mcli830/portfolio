@@ -139,47 +139,6 @@ body {
     .container--wide {
       width: 81.25%; } }
 
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: auto;
-  width: 100%;
-  padding: 0.5em; }
-
-.nav__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0.5em; }
-
-.nav__name {
-  margin-left: 0.5em;
-  padding: 0.5em;
-  font-size: 1.2em;
-  font-family: "Raleway";
-  font-weight: bold; }
-
 #particles {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, 0.4)), color-stop(5em, transparent));
   background: linear-gradient(rgba(33, 33, 33, 0.4), transparent 5em);
@@ -202,6 +161,8 @@ body {
   [class*="__avatar"] img {
     height: 100%;
     width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
     -o-object-fit: center;
     object-fit: center; }
 
@@ -216,6 +177,82 @@ body {
 .avatar--lg {
   height: 200px;
   width: 200px; }
+
+.namecard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 5em;
+  width: 100%;
+  padding: 0.5em;
+  z-index: 2; }
+
+.namecard__content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 12px;
+  cursor: pointer; }
+  .namecard__content [class^="avatar"],
+  .namecard__content [class*=" avatar"] {
+    position: relative;
+    overflow: visible;
+    z-index: 1; }
+    .namecard__content [class^="avatar"] img,
+    .namecard__content [class*=" avatar"] img {
+      position: relative;
+      z-index: 2; }
+  .namecard__content .ripple-bg {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    background-color: #fafafa;
+    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms;
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 100ms; }
+  .namecard__content:hover {
+    height: 30em;
+    width: 70vw; }
+    .namecard__content:hover .ripple-bg {
+      top: -50vw;
+      left: -50vw;
+      height: calc(100vw + 100%);
+      width: calc(100vw + 100%); }
+
+.namecard__name {
+  position: relative;
+  z-index: 2;
+  margin-left: 0.5em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  font-family: "Raleway";
+  font-weight: bold; }
 
 .portfolio {
   display: block; }
@@ -406,8 +443,8 @@ body {
     width: 150px;
     height: 100;
     width: 150;
-    -webkit-transition: opacity 250ms ease-out;
-    transition: opacity 250ms ease-out;
+    -webkit-transition: opacity 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative; }
     @media only screen and (min-width: 480px) {
       .portfolio__projects__list .project {
