@@ -249,32 +249,6 @@ body {
     z-index: 2;
     margin-left: 8px;
     pointer-events: none; }
-    .namecard__content .namecard__text > [class*="namecard__text__"] {
-      position: absolute;
-      font-family: "Roboto Condensed";
-      font-size: 0.8em;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: auto;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      opacity: 0;
-      -webkit-transform-origin: -33px 50%;
-      transform-origin: -33px 50%;
-      -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
-      transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms; }
     .namecard__content .namecard__text .text {
       position: relative;
       white-space: pre;
@@ -290,14 +264,43 @@ body {
     font-weight: bold;
     cursor: pointer; }
   .namecard__content .namecard__text__intro {
+    position: absolute;
+    font-family: "Roboto Condensed";
     font-size: 0.8em;
-    max-width: 40vw; }
+    opacity: 0;
+    top: 0;
+    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms; }
     .namecard__content .namecard__text__intro .text {
       text-align: center;
-      -webkit-transform: translate(-30%, 0) rotate(-90deg);
-      transform: translate(-30%, 0) rotate(-90deg); }
+      -webkit-transform: translate(calc(-50% - 33px), 0);
+      transform: translate(calc(-50% - 33px), 0); }
   .namecard__content .namecard__text__contact {
-    font-size: 0.8em; }
+    position: absolute;
+    font-family: "Roboto Condensed";
+    font-size: 0.8em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    -webkit-transform-origin: -33px 50%;
+    transform-origin: -33px 50%;
+    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms; }
     .namecard__content .namecard__text__contact .text {
       text-align: left;
       -webkit-transform: rotate(180deg);
@@ -371,16 +374,17 @@ body {
           width: 1200%; } }
     .namecard__content:hover .namecard__text, .namecard__content.on .namecard__text {
       pointer-events: visible; }
-    .namecard__content:hover .namecard__text > [class*="namecard__text__"], .namecard__content.on .namecard__text > [class*="namecard__text__"] {
+    .namecard__content:hover .namecard__text__intro, .namecard__content.on .namecard__text__intro {
       opacity: 1;
+      top: calc(2em + 60px);
+      -webkit-transition-delay: 812.5ms;
+      transition-delay: 812.5ms; }
+    .namecard__content:hover .namecard__text__contact, .namecard__content.on .namecard__text__contact {
+      opacity: 1;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
       -webkit-transition-delay: 500ms;
       transition-delay: 500ms; }
-    .namecard__content:hover .namecard__text__intro, .namecard__content.on .namecard__text__intro {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg); }
-    .namecard__content:hover .namecard__text__contact, .namecard__content.on .namecard__text__contact {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg); }
 
 .portfolio {
   display: block;

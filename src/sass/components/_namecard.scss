@@ -12,7 +12,9 @@ $ripple-delay: $ripple-timing / 2;
 $nudge-timing: $transition-med;
 $nudge-delay: $nudge-timing / 2;
 $spin-timing: $transition-fast;
-$spin-delay: $spin-timing / 2;
+$spin-delay: $spin-timing / 4;
+$intro-timing: $transition-fast;
+$intro-delay: $transition-fast / 2;
 
 .namecard__content {
   position: relative;
@@ -64,19 +66,6 @@ $spin-delay: $spin-timing / 2;
     z-index: 2;
     margin-left: 8px;
     pointer-events: none;
-    & > [class*="namecard__text__"] {
-      position: absolute;
-      font-family: $font-text;
-      font-size: 0.8em;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: auto;
-      @include flex($dir: row, $justify: flex-start, $align: center);
-      opacity: 0;
-      transform-origin: ($texts-offset * -1) 50%;
-      transition: $spin-timing $bezier-quart 0ms;
-    }
     .text {
       position: relative;
       white-space: pre;
@@ -96,25 +85,34 @@ $spin-delay: $spin-timing / 2;
   }
 
   .namecard__text__intro {
+    position: absolute;
+    font-family: $font-text;
     font-size: 0.8em;
-    max-width: 40vw;
+    opacity: 0;
+    top: 0;
+    transition: $intro-timing $bezier-quart 0ms;
     .text {
       text-align: center;
-      transform: translate(-30%, 0) rotate(-90deg);
+      transform: translate(calc(-50% - #{$texts-offset}), 0);
     }
   }
 
   .namecard__text__contact {
+    position: absolute;
+    font-family: $font-text;
     font-size: 0.8em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    @include flex($dir: row, $justify: flex-start, $align: center);
+    opacity: 0;
+    transform-origin: ($texts-offset * -1) 50%;
+    transition: $spin-timing $bezier-quart 0ms;
     .text {
       text-align: left;
       transform: rotate(180deg);
     }
-    // .namecard__text__contact:hover
-    // &.expand {
-    //   opacity: 1;
-    //   transform: rotate(180deg);
-    // }
   }
 
 
@@ -152,15 +150,15 @@ $spin-delay: $spin-timing / 2;
     .namecard__text {
       pointer-events: visible;
     }
-    .namecard__text > [class*="namecard__text__"] {
-      opacity: 1;
-      transition-delay: $ripple-timing + $nudge-delay;
-    }
     .namecard__text__intro {
-      transform: rotate(90deg);
+      opacity: 1;
+      top: calc(2em + #{$avatar-size * 1.2});
+      transition-delay: $ripple-timing + $nudge-timing + $spin-delay;
     }
     .namecard__text__contact {
+      opacity: 1;
       transform: rotate(180deg);
+      transition-delay: $ripple-timing + $nudge-delay;
     }
   }
 }
