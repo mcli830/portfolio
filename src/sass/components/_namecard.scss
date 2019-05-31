@@ -63,10 +63,29 @@ $spin-delay: $spin-timing / 2;
     position: relative;
     z-index: 2;
     margin-left: 8px;
+    & > [class*="namecard__text__"] {
+      position: absolute;
+      font-family: $font-text;
+      font-size: 0.8em;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: auto;
+      @include flex($dir: row, $justify: flex-start, $align: center);
+      opacity: 0;
+      transform-origin: ($texts-offset * -1) 50%;
+      transition: $spin-timing $bezier-quart 0ms;
+    }
+    .text {
+      position: relative;
+      white-space: pre;
+      line-height: 1.4;
+      padding: $texts-padding;
+      transform-origin: 50% 50%;
+    }
   }
 
-  .namecard__text__name {
-    position: relative;
+  .namecard__name {
     z-index: 2;
     padding: $texts-padding;
     font-size: 1.2em;
@@ -75,25 +94,18 @@ $spin-delay: $spin-timing / 2;
     cursor: pointer;
   }
 
-  .namecard__text__contact {
-    position: absolute;
-    font-family: $font-text;
+  .namecard__text__intro {
     font-size: 0.8em;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: auto;
-    @include flex($dir: row, $justify: flex-start, $align: center);
-    opacity: 0;
-    transform-origin: ($texts-offset * -1) 50%;
-    transition: $spin-timing $bezier-quart 0ms;
-
     .text {
-      padding: $texts-padding;
-      white-space: pre;
+      text-align: center;
+      transform: translate(-30%, 0) rotate(-90deg);
+    }
+  }
+
+  .namecard__text__contact {
+    font-size: 0.8em;
+    .text {
       text-align: left;
-      line-height: 1.4;
-      transform-origin: 50% 50%;
       transform: rotate(180deg);
     }
     // .namecard__text__contact:hover
@@ -135,10 +147,15 @@ $spin-delay: $spin-timing / 2;
       box-shadow: $shadow-lg;
       transition-delay: 0ms;
     }
-    .namecard__text__contact {
+    .namecard__text > [class*="namecard__text__"] {
       opacity: 1;
-      transform: rotate(180deg);
       transition-delay: $ripple-timing + $nudge-delay;
+    }
+    .namecard__text__intro {
+      transform: rotate(90deg);
+    }
+    .namecard__text__contact {
+      transform: rotate(180deg);
     }
   }
 }
