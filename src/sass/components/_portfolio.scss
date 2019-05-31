@@ -1,6 +1,7 @@
 .portfolio {
   display: block;
   position: relative;
+  width: 100%;
 
   .overlay {
     transition: $transition-fast $bezier-quart;

@@ -63,6 +63,7 @@ $spin-delay: $spin-timing / 2;
     position: relative;
     z-index: 2;
     margin-left: 8px;
+    pointer-events: none;
     & > [class*="namecard__text__"] {
       position: absolute;
       font-family: $font-text;
@@ -96,6 +97,7 @@ $spin-delay: $spin-timing / 2;
 
   .namecard__text__intro {
     font-size: 0.8em;
+    max-width: 40vw;
     .text {
       text-align: center;
       transform: translate(-30%, 0) rotate(-90deg);
@@ -146,6 +148,9 @@ $spin-delay: $spin-timing / 2;
       ));
       box-shadow: $shadow-lg;
       transition-delay: 0ms;
+    }
+    .namecard__text {
+      pointer-events: visible;
     }
     .namecard__text > [class*="namecard__text__"] {
       opacity: 1;
