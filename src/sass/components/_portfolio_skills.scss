@@ -12,6 +12,40 @@
   }
 }
 
-.skills_list {
+.skills__list {
+  margin: auto;
   width: 300px;
+  max-width: 90vw;
+  .skill {
+    display: block;
+    height: 2em;
+    @include flex($dir: row, $align: center);
+    .skill__name {
+      flex: 0 0 6em;
+      height: 100%;
+      display: inline-block;
+      @include flex($dir: row-reverse, $align: center);
+      font-family: $font-skill;
+      font-size: 0.9em;
+      font-weight: normal;
+      padding-right: 1em;
+    }
+    .skill__level {
+      flex: 1 1 auto;
+      height: 100%;
+      display: inline-block;
+      @include flex($dir: row, $align: center);
+      .bar {
+        background-color: $theme-pri;
+        height: 40%;
+        @include flex($dir: row-reverse, $align: center);
+        span {
+          font-size: 0.5em;
+          font-style: italic;
+          color: $theme-pri-light;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
 }

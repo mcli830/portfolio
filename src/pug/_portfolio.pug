@@ -12,11 +12,11 @@ mixin project(name, url, tags)
   
 mixin skill(name, level)
   - var width = "width:" + level + "%;"
-  figure.skill
+  li.skill
     .skill__name
       h3= name
-    .skill__level
-      .skill__level__bar(style=width)
+    figure.skill__level
+      .bar(style=width)
         span #{level}%
 
 section#portfolio.portfolio
@@ -56,5 +56,14 @@ section#portfolio.portfolio
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
       #skills.portfolio__skills.hide
-        h3 Skills
+        ul.skills__list
+          +skill('HTML', 80)
+          +skill('CSS', 80)
+          +skill('JavaScript', 90)
+          +skill('Node.js', 90)
+          +skill('React', 70)
+          +skill('Ruby/Rails', 60)
+          +skill('SQL', 60)
+          +skill('Java', 40)
+          +skill('Linux', 70)
   .overlay
