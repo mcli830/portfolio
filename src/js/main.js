@@ -1,7 +1,6 @@
 // IMPORTS
 // const initParticles = require('./particlesBG.js')
 const initFilterFunctions = require('./filter.js')
-// const initNamecardAnimation = require('./namecardAnim.js')
 
 // STATE
 const state = {}
@@ -11,13 +10,27 @@ const state = {}
 document.addEventListener('DOMContentLoaded', init)
 function init(){
   initFilterFunctions(state);
-  // init animations
-  // Object.assign(animations, require('./animations.js'));
-  // initNamecardAnimation(state);
+  initNamecardClick();
 }
 
+function initNamecardClick(){
+  const namecard = document.querySelector('.namecard__content');
+  const portfolio = document.querySelector('#portfolio');
+  const overlay = document.querySelector('.portfolio > .overlay');
+  namecard.onclick = namecardClick;
 
-// function simulateHover(elem, className){
-//   elem.onmouseenter = () => elem.classList.add(className);
-//   elem.onmouseleave = () => elem.classList.remove(className);
-// }
+  function namecardClick(e) {
+    e.preventDefault();
+    namecard.onclick = null;
+    namecard.classList.add('on');
+    overlay.classList.add('on');
+    portfolio.onclick = (e) => {
+      e.preventDefault();
+      portfolio.onclick = null;
+      namecard.classList.remove('on');
+      overlay.classList.remove('on');
+      namecard.onclick = namecardClick;
+    }
+
+  }
+}

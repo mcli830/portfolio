@@ -1,5 +1,15 @@
 .portfolio {
   display: block;
+  position: relative;
+
+  .overlay {
+    transition: $transition-fast $bezier-quart;
+    background-color: transparent;
+    &.on {
+      background-color: $alpha-white;
+    }
+  }
+
   @media only screen and (orientation: landscape){
     @include mediaQueryRange((
       padding-left: (0, 10%),

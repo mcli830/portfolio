@@ -56,6 +56,8 @@ body {
   color: #212121;
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   background-color: #fafafa;
   font-size: 12px; }
   @media only screen and (min-width: 600px) {
@@ -193,7 +195,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 5em;
+  height: 6em;
   width: 100%;
   padding: 0.5em;
   z-index: 2; }
@@ -216,8 +218,9 @@ body {
   padding: 0.5em;
   border-radius: 12px;
   top: 0;
-  -webkit-transition: top 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms;
-  transition: top 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms; }
+  left: 0;
+  -webkit-transition: 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms;
+  transition: 500ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms; }
   .namecard__content [class^="avatar"],
   .namecard__content [class*=" avatar"] {
     position: relative;
@@ -227,7 +230,9 @@ body {
     .namecard__content [class*=" avatar"] img {
       position: relative;
       z-index: 2;
-      cursor: pointer; }
+      cursor: pointer;
+      -webkit-transition: 250ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms;
+      transition: 250ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 0ms; }
   .namecard__content .ripple-bg {
     position: absolute;
     z-index: 1;
@@ -249,11 +254,12 @@ body {
     padding: 8px;
     font-size: 1.2em;
     font-family: "Raleway";
-    font-weight: bold; }
+    font-weight: bold;
+    cursor: pointer; }
   .namecard__content .namecard__text__contact {
     position: absolute;
     font-family: "Roboto Condensed";
-    font-size: 0.6em;
+    font-size: 0.8em;
     top: 0;
     left: 0;
     height: 100%;
@@ -279,17 +285,37 @@ body {
     .namecard__content .namecard__text__contact .text {
       padding: 8px;
       white-space: pre;
-      text-align: right;
+      text-align: left;
       line-height: 1.4;
       -webkit-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg); }
-  .namecard__content:hover {
+  .namecard__content:hover, .namecard__content.on {
     top: 2em;
+    left: 2em;
     -webkit-transition-delay: 125ms;
     transition-delay: 125ms; }
-    .namecard__content:hover .ripple-bg {
+    @media only screen and (min-width: 600px) {
+      .namecard__content:hover, .namecard__content.on {
+        left: 2em; } }
+    @media only screen and (min-width: 768px) {
+      .namecard__content:hover, .namecard__content.on {
+        left: 1em; } }
+    @media only screen and (min-width: 992px) {
+      .namecard__content:hover, .namecard__content.on {
+        left: 0; } }
+    @media only screen and (min-width: 1200px) {
+      .namecard__content:hover, .namecard__content.on {
+        left: 0; } }
+    .namecard__content:hover [class^="avatar"] img,
+    .namecard__content:hover [class*=" avatar"] img, .namecard__content.on [class^="avatar"] img,
+    .namecard__content.on [class*=" avatar"] img {
+      -webkit-transition-delay: 500ms;
+      transition-delay: 500ms;
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
+    .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
       top: -500%;
       left: -500%;
       height: 1100%;
@@ -298,7 +324,7 @@ body {
       box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms; }
-    .namecard__content:hover .namecard__text__contact {
+    .namecard__content:hover .namecard__text__contact, .namecard__content.on .namecard__text__contact {
       opacity: 1;
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
@@ -306,7 +332,14 @@ body {
       transition-delay: 500ms; }
 
 .portfolio {
-  display: block; }
+  display: block;
+  position: relative; }
+  .portfolio .overlay {
+    -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: transparent; }
+    .portfolio .overlay.on {
+      background-color: rgba(250, 250, 250, 0.8); }
   @media only screen and (orientation: landscape) {
     .portfolio {
       padding-left: 0;
@@ -557,7 +590,8 @@ body {
   height: 100%;
   width: 100%;
   left: 0;
-  top: 0; }
+  top: 0;
+  pointer-events: none; }
 
 .overlay--dark {
   background-color: #212121; }
