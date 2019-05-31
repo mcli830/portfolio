@@ -293,7 +293,7 @@ body {
       transform: rotate(180deg); }
   .namecard__content:hover, .namecard__content.on {
     top: 2em;
-    left: 2em;
+    left: 3em;
     -webkit-transition-delay: 125ms;
     transition-delay: 125ms; }
     @media only screen and (min-width: 600px) {
@@ -320,10 +320,44 @@ body {
       left: -500%;
       height: 1100%;
       width: 1100%;
+      top: -300%;
+      left: -300%;
+      height: 700%;
+      width: 700%;
       -webkit-box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
       box-shadow: 10px 10px 20px rgba(33, 33, 33, 0.4);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms; }
+      @media only screen and (min-width: 480px) {
+        .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
+          top: -350%;
+          left: -350%;
+          height: 800%;
+          width: 800%; } }
+      @media only screen and (min-width: 600px) {
+        .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
+          top: -400%;
+          left: -400%;
+          height: 900%;
+          width: 900%; } }
+      @media only screen and (min-width: 768px) {
+        .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
+          top: -450%;
+          left: -450%;
+          height: 1000%;
+          width: 1000%; } }
+      @media only screen and (min-width: 992px) {
+        .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
+          top: -500%;
+          left: -500%;
+          height: 1100%;
+          width: 1100%; } }
+      @media only screen and (min-width: 1200px) {
+        .namecard__content:hover .ripple-bg, .namecard__content.on .ripple-bg {
+          top: -550%;
+          left: -550%;
+          height: 1200%;
+          width: 1200%; } }
     .namecard__content:hover .namecard__text__contact, .namecard__content.on .namecard__text__contact {
       opacity: 1;
       -webkit-transform: rotate(180deg);

@@ -108,7 +108,7 @@ $spin-delay: $spin-timing / 2;
   &:hover,
   &.on {
     top: 2em;
-    left: 2em;
+    left: 3em;
     @include mediaQueryStep($delay: 1, $rules: (
       left: (2em, 1em, 0)
     ));
@@ -126,6 +126,12 @@ $spin-delay: $spin-timing / 2;
       left: -500%;
       height: 1100%;
       width: 1100%;
+      @include mediaQueryRange((
+        top: (-300%, -500%),
+        left: (-300%, -500%),
+        height: (700%, 1100%),
+        width: (700%, 1100%)
+      ));
       box-shadow: $shadow-lg;
       transition-delay: 0ms;
     }
