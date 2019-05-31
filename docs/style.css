@@ -199,6 +199,9 @@ body {
   width: 100%;
   padding: 0.5em;
   z-index: 2; }
+  @media only screen and (orientation: landscape) {
+    .namecard {
+      padding-right: 10%; } }
 
 .namecard__content {
   position: relative;
@@ -404,23 +407,23 @@ body {
   @media only screen and (orientation: landscape) and (min-width: 480px) {
     .portfolio {
       padding-left: 2.5%;
-      padding-right: 2.5%; } }
+      padding-right: 5%; } }
   @media only screen and (orientation: landscape) and (min-width: 600px) {
     .portfolio {
       padding-left: 5%;
-      padding-right: 5%; } }
+      padding-right: 10%; } }
   @media only screen and (orientation: landscape) and (min-width: 768px) {
     .portfolio {
       padding-left: 7.5%;
-      padding-right: 7.5%; } }
+      padding-right: 15%; } }
   @media only screen and (orientation: landscape) and (min-width: 992px) {
     .portfolio {
       padding-left: 10%;
-      padding-right: 10%; } }
+      padding-right: 20%; } }
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .portfolio {
       padding-left: 12.5%;
-      padding-right: 12.5%; } }
+      padding-right: 25%; } }
 
 .portfolio__content {
   display: -webkit-box;
@@ -440,7 +443,7 @@ body {
 .portfolio__sections {
   position: relative;
   width: 80%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,7 +731,9 @@ body {
 .skills__list {
   margin: auto;
   width: 300px;
-  max-width: 90vw; }
+  max-width: 90vw;
+  -webkit-transform: translate(-20%, 0);
+  transform: translate(-20%, 0); }
   .skills__list .skill {
     display: block;
     height: 2em;

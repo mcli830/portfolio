@@ -15,7 +15,7 @@
   @media only screen and (orientation: landscape){
     @include mediaQueryRange((
       padding-left: (0, 10%),
-      padding-right: (0, 10%)
+      padding-right: (0, 20%)
     ));
   };
 }
@@ -30,7 +30,7 @@ $header-selected: $theme-sec-light;
 .portfolio__sections {
   position: relative;
   width: 80%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   @include flex($dir: row, $justify: center, $align: center);
   .selector {
     position: absolute;
