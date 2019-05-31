@@ -1,7 +1,7 @@
 .namecard {
   position: relative;
   @include flex(center);
-  height: 6em;
+  height: $namecard-height;
   width: 100%;
   padding: 0.5em;
   z-index: 2;

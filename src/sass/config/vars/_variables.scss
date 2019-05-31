@@ -27,9 +27,9 @@ $color-bg-light: $white-light;
 $theme-pri: $blue;
 $theme-pri-dark: $blue-dark;
 $theme-pri-light: $blue-light;
-$theme-sec: $red;
-$theme-sec-dark: $red-dark;
-$theme-sec-light: $red-light;
+$theme-sec: $green;
+$theme-sec-dark: $green-dark;
+$theme-sec-light: $green-light;
 $theme-tri: $purple;
 $theme-tri-dark: $purple-dark;
 $theme-tri-light: $purple-light;
@@ -71,3 +71,5 @@ $load-fade-in-time: 1s;
 
 $avatar-size: 200px;
 $avatar-half: $avatar-size / 2;
+
+$namecard-height: 6em;

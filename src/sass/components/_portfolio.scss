@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   width: 100%;
+  min-height: calc(100vh - $namecard-height);
 
   .overlay {
     transition: $transition-fast $bezier-quart;
@@ -19,137 +20,72 @@
   };
 }
 
-.portfolio__projects {
-  @include flex($dir: column);
-  padding: 1em 0;
-  .panel {
-    @include flex($dir: column, $align: center);
-    width: 100%;
-  }
-  @media only screen and (orientation: landscape) {
-    @include flex($dir: row);
-    .panel {
-      align-items: flex-start;
-      width: auto;
+.portfolio__content {
+  @include flex($dir: column, $align: center);
+}
+
+$header-hover: $theme-sec;
+$header-selected: $theme-sec-light;
+
+.portfolio__sections {
+  position: relative;
+  width: 80%;
+  margin-bottom: 1em;
+  @include flex($dir: row, $justify: center, $align: center);
+  .selector {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    border-bottom: 2px solid $header-selected;
+    pointer-events: none;
+    transition: $transition-med $bezier-quart;
+    &.selector__projects {
+      left: 0;
+    }
+    &.selector__skills {
+      left: 50%;
     }
   }
 }
 
 .portfolio__header {
-  display: block;
-  font-family: $font-header;
-  color: transparent;
-  text-align: center;
-  padding: 0.5em;
-  @media only screen and (orientation: landscape) {
-    color: $color-text;
-    padding: 0.5em 0.25em;
-    text-align: left;
-  }
-}
-
-$filter-border: $theme-pri;
-$filter-selected: $theme-pri-light;
-
-.portfolio__projects__filters {
-  font-size: 0.9em;
+  display: inline-block;
+  flex: 0 0 50%;
   font-family: $font-filter;
-  text-transform: capitalize;
+  font-weight: bold;
   text-align: center;
-  width: 100%;
-  margin-bottom: 2em;
-  @include flex($dir: row, $justify: center);
-  flex-wrap: wrap;
-  padding: 0 10%;
-  .filter {
-    position: relative;
-    display: inline-block;
-    flex: 0 0 25%;
-    text-align: center;
-    padding: 1em 0;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: $transition-fast $bezier-quart;
-    &:after {
-      content: '';
-      @include overlay;
-      border-bottom: 2px solid $filter-border;
-      left: 50%;
-      width: 0;
-      transition: inherit;
-    }
-    &:hover,
-    &:focus,
-    &.selected {
-      &:after {
-        width: 100%;
-        left: 0;
-      }
-    }
-    &.selected {
-      color: $filter-selected;
-      &:after {
-        border-color: $filter-selected;
-      }
-    }
+  padding: 0.5em 0;
+  opacity: 0.3;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: $transition-fast $bezier-quart;
+  &:hover,
+  &:focus,
+  &.selected {
+    opacity: 1;
   }
-  // .portfolio__projects__filters media query
-  @media only screen and (orientation: landscape) {
-    width: auto;
-    text-align: left;
-    margin-bottom: 0;
-    display: initial;
-    padding: 0;
-    .filter {
-      display: block;
-      flex: none;
-      text-align: left;
-      padding: 0.25em;
-      &:after {
-        left: 0;
-      }
-    }
+  &.selected {
+    color: $header-selected;
   }
 }
 
-.portfolio__projects__list {
+.portfolio__view {
   flex: 1 1 auto;
-  @include flex($dir: row, $justify: center);
+  position: relative;
+  @include flex($dir: column);
   height: auto;
   width: 100%;
-  padding: 0 2em;
-  flex-wrap: wrap;
-
-  .project {
-    height: 100px;
-    width: 150px;
-    @include mediaQueryRange((
-      height: (100, 140),
-      width: (150, 210)
-    ));
-    transition: opacity $transition-fast $bezier-quart;
-    position: relative;
-    img {
+  & > * {
+    transition: $transition-med $bezier-quart;
+    &.hide {
       pointer-events: none;
-      object-fit: cover;
-    }
-    .overlay {
-      transition: $transition-fast;
-      opacity: 0;
-      @include flex(center);
-      h2 {
-        font-family: $font-badge;
-        color: $color-text-invert;
-      }
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      .overlay {
-        background-color: $alpha-black;
-        opacity: 1;
-      }
     }
   }
+  @media only screen and (orientation: landscape){
+    flex-direction: row;
+  }
 }
+
+@import 'portfolio_projects';
+@import 'portfolio_skills';

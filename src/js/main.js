@@ -1,6 +1,7 @@
 // IMPORTS
 // const initParticles = require('./particlesBG.js')
 const initFilterFunctions = require('./filter.js')
+const initSectionButtons = require('./sections.js')
 
 // STATE
 const state = {}
@@ -9,6 +10,7 @@ const state = {}
 // DOM CONTENT LOADED
 document.addEventListener('DOMContentLoaded', init)
 function init(){
+  initSectionButtons();
   initFilterFunctions(state);
   initNamecardClick();
 }

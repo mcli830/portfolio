@@ -1,46 +1,22 @@
 function initFilterFunctions(state){
   initProjectState(state);
-  const filters = Array.from(document.querySelectorAll('.portfolio__projects__filters .filter'));
+  const filters = Array.from(document.querySelectorAll('.portfolio__filters .filter'));
   filters.forEach(f => {
     f.onclick = () => {
       var ftag = f.dataset.tag;
       filters.forEach(elem => elem.classList.remove('selected'));
       updateProjects(state, ftag);
       moveProjects(state);
-      // projs.forEach(p => {
-      //   var ptags = JSON.parse(p.dataset.tags);
-      //   if (ptags.includes(ftag) || ftag === 'all') {
-      //     p.classList.remove('hidden');
-      //   } else {
-      //     p.classList.add('hidden');
-      //   }
-      //   moveProjects(state);
-      // });
       f.classList.add('selected');
     }
   });
 
-  // internal helper
-  // function reveal(el){
-  //   el.classList.remove('hidden');
-  //   el.classList.remove('invis');
-  //   moveProjects(state);
-  // }
-  // function hide(el) {
-  //   el.classList.add('invis');
-  //   el.classList.add('hidden');
-  //   moveProjects(state);
-  // }
 }
 
-// external helper
+// helper
 function getProjects(){
-  return Array.from(document.querySelectorAll('.portfolio__projects__list > a.project'));
+  return Array.from(document.querySelectorAll('.portfolio__list > a.project'));
 }
-// function getSelected(){
-//   return getProjects().filter(elem => !(/hidden/g.test(elem.classList)));
-// }
-
 function initProjectState(state){
   state.projects = getProjects().map(proj => {
     return {
@@ -72,20 +48,6 @@ function updateProjects(state, filter = 'all'){
   });
   state.projects.forEach(proj => proj.next.rect = proj.node.getBoundingClientRect());
 }
-
-// function updateProjectState(state, filter = 'all') {
-//   state.projects.forEach(proj => {
-//     proj.prev = proj.next;
-//     proj.next.view = proj.id === filter || filter === 'all';
-//   });
-//   moveProjects(state)
-// }
-
-// function updateProjectRect(state) {
-//   state.projects.forEach(proj => {
-//     proj.next.rect = proj.node.getBoundingClientRect();
-//   });
-// }
 
 function moveProjects(state){
   var options = {

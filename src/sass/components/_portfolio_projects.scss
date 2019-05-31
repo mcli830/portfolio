@@ -1,0 +1,128 @@
+.portfolio__projects {
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  @include flex($dir: column, $align: center);
+  &.hide {
+    opacity: 0;
+    left: -100%;
+  }
+  @media only screen and (orientation: landscape) {
+    @include flex($dir: row);
+    width: auto;
+  }
+}
+
+$filter-hover: $theme-pri;
+$filter-selected: $theme-pri-light;
+
+.portfolio__filters {
+  font-size: 0.9em;
+  font-family: $font-filter;
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1em;
+  @include flex($dir: row, $justify: center);
+  flex-wrap: wrap;
+  padding: 0 10%;
+  .filter {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: $transition-fast $bezier-quart;
+    &:after {
+      content: '';
+      @include overlay;
+      border-bottom: 2px solid $filter-hover;
+      left: 50%;
+      width: 0;
+      transition: inherit;
+    }
+    &:hover,
+    &:focus,
+    &.selected {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+    &.selected {
+      color: $filter-selected;
+      &:after {
+        border-color: $filter-selected;
+      }
+    }
+  }
+  // .portfolio__filters media query
+  @media only screen and (orientation: landscape) {
+    width: auto;
+    text-align: left;
+    display: initial;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 2em;
+    .filter {
+      display: block;
+      flex: none;
+      text-align: left;
+      padding: 0.25em;
+      padding-right: 1.25em;
+      &:after {
+        left: 0;
+      }
+    }
+  }
+}
+
+.portfolio__list {
+  @include flex($dir: row, $justify: center);
+  height: auto;
+  width: 100%;
+  padding: 0 1em;
+  flex-wrap: wrap;
+
+  .project {
+    @include mediaQueryRange((
+      height: (80, 120),
+      width: (120, 180)
+    ));
+    transition: opacity $transition-fast $bezier-quart;
+    position: relative;
+    img {
+      pointer-events: none;
+      object-fit: cover;
+    }
+    .overlay {
+      transition: $transition-fast;
+      opacity: 0;
+      @include flex(center);
+      h2 {
+        font-family: $font-badge;
+        color: $color-text-invert;
+      }
+    }
+
+    // .project:hover
+    &:hover,
+    &:focus,
+    &:active {
+      .overlay {
+        background-color: $alpha-black;
+        opacity: 1;
+      }
+    }
+  }
+
+  // .portfolio__list @media
+  @media only screen and (orientation: landscape){
+    justify-content: flex-start;
+    padding: 0;
+  }
+}

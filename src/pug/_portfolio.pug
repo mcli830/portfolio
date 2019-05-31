@@ -9,35 +9,52 @@ mixin project(name, url, tags)
     img.project(src=src alt=name)
     .overlay
       h2= name
+  
+mixin skill(name, level)
+  - var width = "width:" + level + "%;"
+  figure.skill
+    .skill__name
+      h3= name
+    .skill__level
+      .skill__level__bar(style=width)
+        span #{level}%
 
 section#portfolio.portfolio
-  .portfolio__projects
-    .panel
-      h1.portfolio__header Portfolio
-      ul.portfolio__projects__filters
-        li.filter.selected(data-tag='all') All
-        +filter('React', 'react')
-        +filter('Ruby/Rails', 'rails')
-        +filter('Node/Express', 'node')
-        +filter('MongoDB', 'mongo')
-        +filter('UI/Design', 'uides')
-        +filter('API', 'api')
-        +filter('D3', 'd3')
-        +filter('socket.io', 'socket')
-        +filter('Tools', 'tool')
-    .portfolio__projects__list
-      +project('Llama', 'http://llamareads.me/', ['react', 'rails', 'uides'])
-      +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'uides'])
-      +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uides', 'socket'])
-      +project('Phrase Generator', 'https://sunny-space.glitch.me/', ['node', 'api'])
-      +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uides'])
-      +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV', ['react'])
-      //- +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/')
-      +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp', ['api'])
-      +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv', ['tool'])
-      +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uides', 'api'])
-      //- +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq')
-      +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp', ['d3'])
-      +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
-      //- +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit')
+  .portfolio__content
+    .portfolio__sections
+      h1.portfolio__header.selected(data-section='projects') Portfolio
+      h2.portfolio__header(data-section='skills') Skills
+      .selector.selector__projects
+    .portfolio__view
+      #projects.portfolio__projects
+        ul.portfolio__filters
+          li.filter.selected(data-tag='all') All
+          +filter('React', 'react')
+          +filter('Ruby/Rails', 'rails')
+          +filter('Node/Express', 'node')
+          +filter('SQL', 'sql')
+          +filter('MongoDB', 'mongo')
+          +filter('Firebase', 'firebase')
+          +filter('UI/Design', 'uides')
+          +filter('API', 'api')
+          +filter('D3', 'd3')
+          +filter('socket.io', 'socket')
+          +filter('Tools', 'tool')
+        .portfolio__list
+          +project('Llama', 'http://llamareads.me/', ['react', 'firebase', 'uides'])
+          +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'sql', 'uides'])
+          +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uides', 'socket'])
+          +project('Phrase Generator', 'https://sunny-space.glitch.me/', ['node', 'api'])
+          +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uides'])
+          +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV', ['react'])
+          +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/', ['rails', 'sql', 'uides'])
+          +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp', ['api', 'tool'])
+          +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv', ['react', 'tool'])
+          +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uides', 'api'])
+          //- +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq')
+          +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp', ['d3'])
+          +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
+          +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
+      #skills.portfolio__skills.hide
+        h3 Skills
   .overlay
