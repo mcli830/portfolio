@@ -16,7 +16,7 @@ mixin skill(name, level)
     .skill__name
       h3= name
     figure.skill__level
-      .bar(style=width)
+      .bar(data-level=level style=width)
         span #{level}%
 
 section#portfolio.portfolio

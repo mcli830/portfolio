@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function(animations) {
   const buttons = document.querySelectorAll('.portfolio__header');
   buttons.forEach(b => {
     b.onclick = changeSection;
@@ -13,5 +13,9 @@ module.exports = function() {
     // change section elements
     document.querySelector(`#${prev.dataset.section}`).classList.add('hide');
     document.querySelector(`#${this.dataset.section}`).classList.remove('hide');
+
+    if (this.dataset.section === 'skills'){
+      animations.skills.play();
+    }
   }
 }

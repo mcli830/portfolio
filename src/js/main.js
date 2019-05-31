@@ -2,17 +2,19 @@
 // const initParticles = require('./particlesBG.js')
 const initFilterFunctions = require('./filter.js')
 const initSectionButtons = require('./sections.js')
+const skillsAnimation = require('./skillsAnim.js')
 
 // STATE
 const state = {}
-// const animations = {}
+const animations = {}
 
 // DOM CONTENT LOADED
 document.addEventListener('DOMContentLoaded', init)
 function init(){
-  initSectionButtons();
+  initSectionButtons(animations);
   initFilterFunctions(state);
   initNamecardClick();
+  animations.skills = skillsAnimation();
 }
 
 function initNamecardClick(){

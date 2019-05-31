@@ -39,6 +39,7 @@
         background-color: $theme-pri;
         height: 40%;
         @include flex($dir: row-reverse, $align: center);
+        overflow: hidden;
         span {
           font-size: 0.5em;
           font-style: italic;
