@@ -20,21 +20,30 @@ $spin-delay: $spin-timing / 4;
 $intro-timing: $transition-fast;
 $intro-delay: $transition-fast / 2;
 
+// @keyframes glaze {
+//   from { box-shadow: none; }
+//   50% { box-shadow: none; }
+//   to { box-shadow: 4px 4px 10px 2px rgba($silver, 0.6); }
+// }
+
 .namecard__content {
   position: relative;
   @include flex($dir: row, $justify: center, $align: center);
-  padding: 0.5em;
+  padding: 0.5em 1em;
   // overflow: hidden;
-  border-radius: 15%;
+  border-radius: 20px;
   top: 0;
   left: 0;
+  box-shadow: 4px 2px 10px 2px rgba($silver, 0.6);
   transition: $nudge-timing $bezier-quart 0ms;
+  // animation: glaze 4s 2s alternate infinite;
 
   [class^="avatar"],
   [class*=" avatar"] {
     position: relative;
     overflow: visible;
     z-index: 1;
+    user-select: none;
     img {
       position: relative;
       z-index: 2;
@@ -100,6 +109,7 @@ $intro-delay: $transition-fast / 2;
     transform: scale(0.2);
     .text {
       text-align: center;
+      padding-top: 1.5em;
       border-top: 1px solid $grey;
       transform: translate(calc(-50% - #{$texts-offset}), 0);
     }
@@ -109,6 +119,7 @@ $intro-delay: $transition-fast / 2;
     position: absolute;
     font-family: $font-text;
     font-size: 0.8em;
+    color: $color-text-light;
     top: 0;
     left: 0;
     height: 100%;
@@ -132,6 +143,7 @@ $intro-delay: $transition-fast / 2;
     @include mediaQueryStep($delay: 1, $rules: (
       left: (2em, 1em, 0)
     ));
+    box-shadow: none;
     transition-timing-function: $bezier-bounce;
     transition-delay: $ripple-delay;
 
@@ -164,7 +176,7 @@ $intro-delay: $transition-fast / 2;
     .namecard__text__intro {
       opacity: 1;
       transition-delay: $ripple-timing + $nudge-delay + $spin-delay;
-      top: calc(1.5em + #{$avatar-size * 1.2});
+      top: calc(1.2em + #{$avatar-size * 1.2});
       transform: scale(1);
       @media only screen and (orientation: landscape){
         top: calc(2.5em + #{$avatar-size * 1.2});
