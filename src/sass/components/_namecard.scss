@@ -3,12 +3,9 @@
   @include flex(center);
   height: $namecard-height;
   width: 100%;
-  padding: 0.5em;
+  padding: 1rem;
   z-index: 2;
   background: transparent;
-  @media only screen and (orientation: landscape){
-    padding-right: 10%;
-  }
 }
 
 $ripple-timing: $transition-fast;
@@ -29,7 +26,7 @@ $intro-delay: $transition-fast / 2;
 .namecard__content {
   position: relative;
   @include flex($dir: row, $justify: center, $align: center);
-  padding: 0.5em 1em;
+  padding: 1rem 2rem;
   // overflow: hidden;
   border-radius: 20px;
   top: 0;

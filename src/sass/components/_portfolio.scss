@@ -26,6 +26,7 @@
 }
 
 $header-selected: rgba($color-text-light, 0.7);
+$header-margin: 1rem;
 
 .portfolio__sections {
   position: relative;
@@ -35,7 +36,7 @@ $header-selected: rgba($color-text-light, 0.7);
   .selector {
     position: absolute;
     width: 50%;
-    bottom: 0;
+    bottom: $header-margin;
     border-bottom: 2px solid $header-selected;
     pointer-events: none;
     transition: $transition-med $bezier-quart;
@@ -55,7 +56,9 @@ $header-selected: rgba($color-text-light, 0.7);
   font-weight: 500;
   letter-spacing: 0.05em;
   text-align: center;
-  padding: 0.5em 0;
+  text-transform: uppercase;
+  padding: 1em 0;
+  margin: $header-margin 0;
   opacity: 0.3;
   border-bottom: 2px solid transparent;
   cursor: pointer;

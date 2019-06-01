@@ -19,7 +19,7 @@ $filter-hover: $theme-pri;
 $filter-selected: $theme-pri-light;
 
 .portfolio__filters {
-  font-size: 0.9em;
+  font-size: 1em;
   font-family: $font-filter;
   text-transform: capitalize;
   text-align: center;
@@ -67,7 +67,7 @@ $filter-selected: $theme-pri-light;
     display: initial;
     padding: 0;
     margin-bottom: 0;
-    margin-right: 2em;
+    margin-right: 2rem;
     .filter {
       display: block;
       flex: none;
