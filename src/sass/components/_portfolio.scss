@@ -12,13 +12,6 @@
       background-color: $alpha-white;
     }
   }
-
-  @media only screen and (orientation: landscape){
-    @include mediaQueryRange((
-      padding-left: (0, 3%),
-      padding-right: (0, 7%)
-    ));
-  };
 }
 
 .portfolio__content {
@@ -30,7 +23,7 @@ $header-margin: 1rem;
 
 .portfolio__sections {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin-bottom: 2em;
   @include flex($dir: row, $justify: center, $align: center);
   .selector {
@@ -58,19 +51,20 @@ $header-margin: 1rem;
   text-align: center;
   text-transform: uppercase;
   padding: 1em 0;
-  margin: $header-margin 0;
-  opacity: 0.3;
-  border-bottom: 2px solid transparent;
+  margin-bottom: $header-margin;
+  background-color: $color-bg-dark;
+  color: $color-text-light;
   cursor: pointer;
   user-select: none;
   transition: $transition-fast $bezier-quart;
   &:hover,
-  &:focus,
-  &.selected {
-    opacity: 1;
+  &:focus {
+    background-color: rgba($theme-pri-dark, 0.3);
+    color: $color-text;
   }
   &.selected {
-    color: $header-selected;
+    background-color: $theme-pri-dark;
+    color: $color-text-invert-light;
   }
 }
 

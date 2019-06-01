@@ -13,7 +13,16 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: $color-bg;
+  padding: 0;
   @include mediaQueryRange($rules: (font-size: (12px, 18px)), $delay: 1);
+  @media only screen and (orientation: landscape){
+    & > * {
+      @include mediaQueryStep($delay: 2, $rules: (
+        padding-left: (3%, 6%, 9%),
+        padding-right: (4%, 7%, 10%)
+      ));
+    }
+  }
 }
 
 ::-webkit-scrollbar {
