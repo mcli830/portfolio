@@ -138,15 +138,16 @@ $intro-delay: $transition-fast / 2;
       }
     }
     .ripple-bg {
+      border-radius: 20%;
       top: -500%;
       left: -500%;
       height: 1100%;
       width: 1100%;
       @include mediaQueryRange((
-        top: (-300%, -500%),
-        left: (-300%, -500%),
-        height: (700%, 1100%),
-        width: (700%, 1100%)
+        top: (-200%, -400%),
+        left: (-200%, -400%),
+        height: (500%, 900%),
+        width: (500%, 900%)
       ));
       box-shadow: $shadow-lg;
       transition-delay: 0ms;
