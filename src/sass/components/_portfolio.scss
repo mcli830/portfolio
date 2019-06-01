@@ -14,8 +14,8 @@
 
   @media only screen and (orientation: landscape){
     @include mediaQueryRange((
-      padding-left: (0, 10%),
-      padding-right: (0, 20%)
+      padding-left: (0, 13%),
+      padding-right: (0, 17%)
     ));
   };
 }

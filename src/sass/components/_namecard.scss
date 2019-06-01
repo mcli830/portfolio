@@ -96,6 +96,7 @@ $intro-delay: $transition-fast / 2;
     transition: $intro-timing $bezier-quart 0ms;
     .text {
       text-align: center;
+      border-top: 1px solid $grey;
       transform: translate(calc(-50% - #{$texts-offset}), 0);
     }
   }
@@ -155,8 +156,11 @@ $intro-delay: $transition-fast / 2;
     }
     .namecard__text__intro {
       opacity: 1;
-      top: calc(2em + #{$avatar-size * 1.2});
       transition-delay: $ripple-timing + $nudge-timing + $spin-delay;
+      top: calc(1.5em + #{$avatar-size * 1.2});
+      @media only screen and (orientation: landscape){
+        top: calc(2.5em + #{$avatar-size * 1.2});
+      }
     }
     .namecard__text__contact {
       opacity: 1;

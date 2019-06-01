@@ -12,32 +12,38 @@
   }
 }
 
+$skill-border: $black;
+
 .skills__list {
   margin: auto;
-  width: 300px;
+  width: 400px;
   max-width: 90vw;
   .skill {
     display: block;
-    height: 2em;
+    height: 1.3em;
+    margin-bottom: 0.7em;
     @include flex($dir: row, $align: center);
     .skill__name {
-      flex: 0 0 6em;
+      flex: 0 0 7em;
       height: 100%;
       display: inline-block;
       @include flex($dir: row-reverse, $align: center);
       font-family: $font-skill;
       font-size: 0.9em;
       font-weight: normal;
-      padding-right: 1em;
+      padding: 0 1em;
+      color: $color-text-invert;
+      background-color: $skill-border;
     }
     .skill__level {
       flex: 1 1 auto;
       height: 100%;
       display: inline-block;
-      @include flex($dir: row, $align: center);
+      border-bottom: 0.2em solid $skill-border;
+      @include flex($dir: row, $align: flex-end);
       .bar {
         background-color: $theme-pri;
-        height: 40%;
+        height: 0.9em;
         @include flex($dir: row-reverse, $align: center);
         overflow: hidden;
         span {
