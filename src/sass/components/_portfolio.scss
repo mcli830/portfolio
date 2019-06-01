@@ -19,26 +19,14 @@
 }
 
 $header-selected: rgba($color-text-light, 0.7);
-$header-margin: 1rem;
 
 .portfolio__sections {
   position: relative;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
   @include flex($dir: row, $justify: center, $align: center);
-  .selector {
-    position: absolute;
-    width: 50%;
-    bottom: $header-margin;
-    border-bottom: 2px solid $header-selected;
-    pointer-events: none;
-    transition: $transition-med $bezier-quart;
-    &.selector__projects {
-      left: 0;
-    }
-    &.selector__skills {
-      left: 50%;
-    }
+  @media only screen and (orientation: landscape) {
+    margin-bottom: 3rem;
   }
 }
 
@@ -51,7 +39,6 @@ $header-margin: 1rem;
   text-align: center;
   text-transform: uppercase;
   padding: 1em 0;
-  margin-bottom: $header-margin;
   background-color: $color-bg-dark;
   color: $color-text-light;
   cursor: pointer;
@@ -82,6 +69,7 @@ $header-margin: 1rem;
   }
   @media only screen and (orientation: landscape){
     flex-direction: row;
+    @include body-contain;
   }
 }
 

@@ -74,21 +74,6 @@ body {
     body {
       font-size: 20px; } }
 
-@media only screen and (orientation: landscape) and (min-width: 768px) {
-  body > * {
-    padding-left: 3%;
-    padding-right: 4%; } }
-
-@media only screen and (orientation: landscape) and (min-width: 992px) {
-  body > * {
-    padding-left: 6%;
-    padding-right: 7%; } }
-
-@media only screen and (orientation: landscape) and (min-width: 1200px) {
-  body > * {
-    padding-left: 9%;
-    padding-right: 10%; } }
-
 ::-webkit-scrollbar {
   max-width: 8px;
   max-height: 8px; }
@@ -216,6 +201,21 @@ body {
   z-index: 2;
   background: transparent; }
 
+@media only screen and (orientation: landscape) and (min-width: 768px) {
+  .namecard {
+    padding-left: 3%;
+    padding-right: 4%; } }
+
+@media only screen and (orientation: landscape) and (min-width: 992px) {
+  .namecard {
+    padding-left: 6%;
+    padding-right: 7%; } }
+
+@media only screen and (orientation: landscape) and (min-width: 1200px) {
+  .namecard {
+    padding-left: 9%;
+    padding-right: 10%; } }
+
 .namecard__content {
   position: relative;
   display: -webkit-box;
@@ -231,7 +231,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
   border-radius: 20px;
   top: 0;
   left: 0;
@@ -556,7 +556,7 @@ body {
 .portfolio__sections {
   position: relative;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,18 +570,9 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  .portfolio__sections .selector {
-    position: absolute;
-    width: 50%;
-    bottom: 1rem;
-    border-bottom: 2px solid rgba(72, 72, 72, 0.7);
-    pointer-events: none;
-    -webkit-transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1); }
-    .portfolio__sections .selector.selector__projects {
-      left: 0; }
-    .portfolio__sections .selector.selector__skills {
-      left: 50%; }
+  @media only screen and (orientation: landscape) {
+    .portfolio__sections {
+      margin-bottom: 3rem; } }
 
 .portfolio__header {
   display: inline-block;
@@ -594,7 +585,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   padding: 1em 0;
-  margin-bottom: 1rem;
   background-color: #eeeeee;
   color: #484848;
   cursor: pointer;
@@ -642,6 +632,18 @@ body {
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row; } }
+  @media only screen and (orientation: landscape) and (min-width: 768px) {
+    .portfolio__view {
+      padding-left: 3%;
+      padding-right: 4%; } }
+  @media only screen and (orientation: landscape) and (min-width: 992px) {
+    .portfolio__view {
+      padding-left: 6%;
+      padding-right: 7%; } }
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .portfolio__view {
+      padding-left: 9%;
+      padding-right: 10%; } }
 
 .portfolio__projects {
   position: relative;
