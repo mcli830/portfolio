@@ -1,10 +1,16 @@
+mixin stringSpan(str)
+  - var arr = str.split('');
+  each char in arr
+    span= char
+
 section#namecard.namecard
   .namecard__content
     figure.avatar--sm
       .ripple-bg
       img(src="assets/profile.jpg")
     .namecard__text
-      h1.namecard__name Michael Li
+      h1.namecard__name
+        +stringSpan('Michael Li')
       .namecard__text__intro
         .text
           | Hi, I'm a full-stack web developer, and self-taught programmer.

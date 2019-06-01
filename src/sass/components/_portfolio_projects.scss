@@ -90,8 +90,8 @@ $filter-selected: $theme-pri-light;
 
   .project {
     @include mediaQueryRange((
-      height: (80, 120),
-      width: (120, 180)
+      height: (80, 200),
+      width: (120, 300)
     ));
     transition: opacity $transition-fast $bezier-quart;
     position: relative;

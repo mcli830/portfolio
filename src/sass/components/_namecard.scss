@@ -5,6 +5,7 @@
   width: 100%;
   padding: 0.5em;
   z-index: 2;
+  background: transparent;
   @media only screen and (orientation: landscape){
     padding-right: 10%;
   }
@@ -24,10 +25,10 @@ $intro-delay: $transition-fast / 2;
   @include flex($dir: row, $justify: center, $align: center);
   padding: 0.5em;
   // overflow: hidden;
-  border-radius: $border-radius-lg;
+  border-radius: 15%;
   top: 0;
   left: 0;
-  transition: $nudge-timing $bezier-bounce 0ms;
+  transition: $nudge-timing $bezier-quart 0ms;
 
   [class^="avatar"],
   [class*=" avatar"] {
@@ -38,7 +39,7 @@ $intro-delay: $transition-fast / 2;
       position: relative;
       z-index: 2;
       cursor: pointer;
-      transition: $spin-timing $bezier-bounce 0ms;
+      transition: $spin-timing $bezier-quart 0ms;
     }
   }
 
@@ -83,8 +84,10 @@ $intro-delay: $transition-fast / 2;
     padding: $texts-padding;
     font-size: 1.2em;
     font-family: $font-name;
-    font-weight: bold;
     cursor: pointer;
+    * {
+      font-weight: bold;
+    }
   }
 
   .namecard__text__intro {
@@ -128,11 +131,13 @@ $intro-delay: $transition-fast / 2;
     @include mediaQueryStep($delay: 1, $rules: (
       left: (2em, 1em, 0)
     ));
+    transition-timing-function: $bezier-bounce;
     transition-delay: $ripple-delay;
 
     [class^="avatar"],
     [class*=" avatar"] {
       img {
+        transition-timing-function: $bezier-bounce;
         transition-delay: $ripple-timing + $nudge-delay;
         transform: scale(1.2);
       }

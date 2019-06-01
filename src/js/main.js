@@ -2,6 +2,7 @@
 // const initParticles = require('./particlesBG.js')
 const initFilterFunctions = require('./filter.js')
 const initSectionButtons = require('./sections.js')
+const namecardAnimation = require('./namecardAnim.js')
 const skillsAnimation = require('./skillsAnim.js')
 
 // STATE
@@ -11,9 +12,14 @@ const animations = {}
 // DOM CONTENT LOADED
 document.addEventListener('DOMContentLoaded', init)
 function init(){
+  initAnimations();
   initSectionButtons(animations);
   initFilterFunctions(state);
   initNamecardClick();
+}
+
+function initAnimations(){
+  animations.namecard = namecardAnimation();
   animations.skills = skillsAnimation();
 }
 
@@ -25,6 +31,8 @@ function initNamecardClick(){
 
   function namecardClick(e) {
     e.preventDefault();
+    animations.namecard.pause();
+    animations.namecard.seek(0);
     namecard.onclick = null;
     namecard.classList.add('on');
     overlay.classList.add('on');
@@ -34,6 +42,7 @@ function initNamecardClick(){
       namecard.classList.remove('on');
       overlay.classList.remove('on');
       namecard.onclick = namecardClick;
+      animations.namecard.play();
     }
 
   }
