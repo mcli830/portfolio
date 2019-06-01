@@ -11,13 +11,17 @@ mixin project(name, url, tags)
       h2= name
   
 mixin skill(name, level)
+  - var gradient = ['#607D8B', '#5382A0', '#4787B5', '#3A8CC9', '#2E91DE', '#2196F3', '#337FE4', '#4468D5', '#5651C6', '#673AB7']
   - var width = "width:" + level + "%;"
+  - var bg = "background-color:" + gradient[(level / 10) - 1] + ";"
+  - var style = width + bg
   li.skill
     .skill__name
       h3= name
     figure.skill__level
-      .bar(data-level=level style=width)
+      .bar(data-level=level style=style)
         span #{level}%
+
 
 section#portfolio.portfolio
   .portfolio__content
