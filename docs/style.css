@@ -275,7 +275,9 @@ body {
     opacity: 0;
     top: 0;
     -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
-    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms; }
+    transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2); }
     .namecard__content .namecard__text__intro .text {
       text-align: center;
       border-top: 1px solid #9E9E9E;
@@ -387,9 +389,11 @@ body {
       pointer-events: visible; }
     .namecard__content:hover .namecard__text__intro, .namecard__content.on .namecard__text__intro {
       opacity: 1;
-      -webkit-transition-delay: 812.5ms;
-      transition-delay: 812.5ms;
-      top: calc(1.5em + 60px); }
+      -webkit-transition-delay: 562.5ms;
+      transition-delay: 562.5ms;
+      top: calc(1.5em + 60px);
+      -webkit-transform: scale(1);
+      transform: scale(1); }
       @media only screen and (orientation: landscape) {
         .namecard__content:hover .namecard__text__intro, .namecard__content.on .namecard__text__intro {
           top: calc(2.5em + 60px); } }

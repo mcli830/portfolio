@@ -97,6 +97,7 @@ $intro-delay: $transition-fast / 2;
     opacity: 0;
     top: 0;
     transition: $intro-timing $bezier-quart 0ms;
+    transform: scale(0.2);
     .text {
       text-align: center;
       border-top: 1px solid $grey;
@@ -162,8 +163,9 @@ $intro-delay: $transition-fast / 2;
     }
     .namecard__text__intro {
       opacity: 1;
-      transition-delay: $ripple-timing + $nudge-timing + $spin-delay;
+      transition-delay: $ripple-timing + $nudge-delay + $spin-delay;
       top: calc(1.5em + #{$avatar-size * 1.2});
+      transform: scale(1);
       @media only screen and (orientation: landscape){
         top: calc(2.5em + #{$avatar-size * 1.2});
       }
