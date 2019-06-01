@@ -11,9 +11,10 @@ mixin project(name, url, tags)
       h2= name
   
 mixin skill(name, level)
-  - var gradient = ['#607D8B', '#5382A0', '#4787B5', '#3A8CC9', '#2E91DE', '#2196F3', '#337FE4', '#4468D5', '#5651C6', '#673AB7']
+  //- - var gradient = ['#607D8B', '#5382A0', '#4787B5', '#3A8CC9', '#2E91DE', '#2196F3', '#337FE4', '#4468D5', '#5651C6', '#673AB7']
+  - var gradient = ['#2196F3', '#298CEC', '#3182E6', '#3877DF', '#406DD8', '#4863D2', '#5059CB', '#574EC4', '#5F44BE', '#673AB7']
   - var width = "width:" + level + "%;"
-  - var bg = "background-color:" + gradient[(level / 10) - 1] + ";"
+  - var bg = `background:linear-gradient(90deg, #2196F3, ${gradient[(level / 10) - 1]});`
   - var style = width + bg
   li.skill
     .skill__name

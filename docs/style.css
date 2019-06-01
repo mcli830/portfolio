@@ -477,7 +477,7 @@ body {
     position: absolute;
     width: 50%;
     bottom: 0;
-    border-bottom: 2px solid #80e27e;
+    border-bottom: 2px solid rgba(72, 72, 72, 0.7);
     pointer-events: none;
     -webkit-transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -491,7 +491,7 @@ body {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
-  font-family: "Quicksand";
+  font-family: "Montserrat";
   font-weight: 500;
   letter-spacing: 0.05em;
   text-align: center;
@@ -508,7 +508,7 @@ body {
   .portfolio__header:hover, .portfolio__header:focus, .portfolio__header.selected {
     opacity: 1; }
   .portfolio__header.selected {
-    color: #80e27e; }
+    color: rgba(72, 72, 72, 0.7); }
 
 .portfolio__view {
   -webkit-box-flex: 1;

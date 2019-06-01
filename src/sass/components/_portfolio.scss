@@ -25,8 +25,7 @@
   @include flex($dir: column, $align: center);
 }
 
-$header-hover: $theme-sec;
-$header-selected: $theme-sec-light;
+$header-selected: rgba($color-text-light, 0.7);
 
 .portfolio__sections {
   position: relative;
