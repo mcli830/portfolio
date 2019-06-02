@@ -14,8 +14,8 @@ module.exports = function(animations) {
     document.querySelector(`#${prev.dataset.section}`).classList.add('hide');
     document.querySelector(`#${this.dataset.section}`).classList.remove('hide');
 
-    if (this.dataset.section === 'skills'){
-      animations.skills.play();
+    if (this.dataset.section === 'proficiency'){
+      animations.prof.forEach(anim => anim.play());
     }
   }
 }

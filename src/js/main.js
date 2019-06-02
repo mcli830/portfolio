@@ -4,9 +4,9 @@ const initFilterFunctions = require('./filter.js')
 const initSectionButtons = require('./sections.js')
 const initNamecardFunctions = require('./namecard.js')
 const namecardAnimation = require('./namecardAnim.js')
-const skillsAnimation = require('./skillsAnim.js')
+const profAnimation = require('./profAnim.js')
 
-// STATE
+// GLOBALS
 const state = {}
 const animations = {}
 
@@ -21,5 +21,5 @@ function init(){
 
 function initAnimations(){
   animations.namecard = namecardAnimation();
-  animations.skills = skillsAnimation();
+  animations.prof = profAnimation();
 }

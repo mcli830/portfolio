@@ -1,4 +1,4 @@
-.portfolio__skills {
+.portfolio__profs {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   }
 }
 
-.skills__category {
+.profs__category {
   width: 400px;
   max-width: 80vw;
   &:nth-child(even) {
@@ -32,7 +32,7 @@
     order: 2;
   }
   h4 {
-    font-family: $font-skill-cat;
+    font-family: $font-prof-cat;
     display: block;
     font-size: 1.1em;
     padding: 0.5em 1em;
@@ -51,32 +51,32 @@
   }
 }
 
-$skill-border: $black;
+$prof-border: $black;
 
-.skills__list {
+.profs__list {
   padding: 1.5em 0;
   display: block;
-  .skill {
+  .prof {
     display: block;
     margin-bottom: 0.7em;
     @include flex($dir: row, $align: center);
     height: 1.6em;
-    .skill__name {
+    .prof__name {
       flex: 0 0 7em;
       height: 100%;
       display: inline-block;
       @include flex($dir: row-reverse, $align: center);
-      font-family: $font-skill;
+      font-family: $font-prof;
       font-weight: normal;
       padding: 0 1em;
       color: $color-text-invert;
-      background-color: $skill-border;
+      background-color: $prof-border;
     }
-    .skill__level {
+    .prof__level {
       flex: 1 1 auto;
       height: 100%;
       display: inline-block;
-      border-bottom: 0.3em solid $skill-border;
+      border-bottom: 0.3em solid $prof-border;
       @include flex($dir: row, $align: flex-end);
       .bar {
         background-color: $theme-pri;

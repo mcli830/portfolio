@@ -16,16 +16,16 @@ mixin project(name, url, tags)
     .overlay
       h2= name
   
-mixin skill(name, level)
+mixin prof(name, level)
   //- - var gradient = ['#607D8B', '#5382A0', '#4787B5', '#3A8CC9', '#2E91DE', '#2196F3', '#337FE4', '#4468D5', '#5651C6', '#673AB7']
   - var gradient = ['#2196F3', '#298CEC', '#3182E6', '#3877DF', '#406DD8', '#4863D2', '#5059CB', '#574EC4', '#5F44BE', '#673AB7']
   - var width = "width:" + level + "%;"
   - var bg = `background:linear-gradient(90deg, #2196F3, ${gradient[(level / 10) - 1]});`
   - var style = width + bg
-  li.skill
-    .skill__name
+  li.prof
+    .prof__name
       h3= name
-    figure.skill__level
+    figure.prof__level
       .bar(data-level=level style=style)
         span #{level}
 
@@ -34,7 +34,7 @@ section#portfolio.portfolio
   .portfolio__content
     .portfolio__sections
       +section-header('Portfolio', 'projects', 'selected')
-      +section-header('Proficiency', 'skills')
+      +section-header('Proficiency', 'proficiency')
       //- .selector.selector__projects
     .portfolio__view
       #projects.portfolio__projects
@@ -49,58 +49,58 @@ section#portfolio.portfolio
           +filter('API', 'api')
           +filter('D3', 'd3')
           +filter('socket.io', 'socket')
-          +filter('UI/Design', 'uides')
+          +filter('UI/UX', 'uiux')
           +filter('Tools', 'tool')
         .portfolio__list
-          +project('Llama', 'http://llamareads.me/', ['react', 'firebase', 'uides'])
-          +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'sql', 'uides'])
-          +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uides', 'socket'])
+          +project('Llama', 'http://llamareads.me/', ['react', 'firebase', 'uiux'])
+          +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'sql', 'uiux'])
+          +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uiux', 'socket'])
           +project('Phrase Generator', 'https://sunny-space.glitch.me/', ['node', 'api'])
-          +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uides'])
+          +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uiux'])
           +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV', ['react'])
-          +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/', ['rails', 'sql', 'uides'])
+          +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/', ['rails', 'sql', 'uiux'])
           +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp', ['api', 'tool'])
           +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv', ['react', 'tool'])
-          +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uides', 'api'])
-          //- +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq')
+          +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uiux', 'api'])
+          +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq', ['react', 'uiux'])
           +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp', ['d3'])
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
-      #skills.portfolio__skills.hide
-        .skills__category
+      #proficiency.portfolio__profs.hide
+        #skills.profs__category
           h4 Skills
-          ul.skills__list
-            +skill('Front End', 80)
-            +skill('Back End', 70)
-            +skill('OOP', 80)
-            +skill('REST', 80)
-            +skill('Debugging', 70)
-            +skill('UI/UX', 80)
-            +skill('Deployment', 50)
-        .skills__category
+          ul.profs__list
+            +prof('Front End', 80)
+            +prof('Back End', 70)
+            +prof('OOP', 80)
+            +prof('REST', 80)
+            +prof('Debugging', 70)
+            +prof('UI/UX', 80)
+            +prof('Deployment', 50)
+        #langs.profs__category
           h4 Languages
-          ul.skills__list
-            +skill('HTML', 80)
-            +skill('CSS', 80)
-            +skill('JavaScript', 90)
-            +skill('Ruby/Rails', 60)
-            +skill('SQL', 60)
-            +skill('Java', 30)
-            +skill('Linux', 70)
-        .skills__category
+          ul.profs__list
+            +prof('HTML', 80)
+            +prof('CSS', 80)
+            +prof('JavaScript', 90)
+            +prof('Ruby/Rails', 60)
+            +prof('SQL', 60)
+            +prof('Java', 30)
+            +prof('Linux', 70)
+        #tools.profs__category
           h4 Tools
-          ul.skills__list
-            +skill('Node.js', 90)
-            +skill('Express.js', 80)
-            +skill('React.js', 70)
-            +skill('Redux.js', 70)
-            +skill('Pug', 90)
-            +skill('Sass', 90)
-            +skill('Bootstrap', 70)
-            +skill('Material UI', 50)
-            +skill('D3.js', 60)
-            +skill('MongoDB', 70)
-            +skill('socket.io', 40)
-            +skill('Webkit', 60)
-            +skill('Gulp', 70)
+          ul.profs__list
+            +prof('Node.js', 90)
+            +prof('Express.js', 80)
+            +prof('React.js', 70)
+            +prof('Redux.js', 70)
+            +prof('Pug', 90)
+            +prof('Sass', 90)
+            +prof('Bootstrap', 70)
+            +prof('Material UI', 50)
+            +prof('D3.js', 60)
+            +prof('MongoDB', 70)
+            +prof('socket.io', 40)
+            +prof('Webkit', 60)
+            +prof('Gulp', 70)
   .overlay
