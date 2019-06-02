@@ -36,7 +36,7 @@ $filter-selected: $theme-pri-dark;
     flex: 0 0 25%;
     text-align: center;
     padding: 1em 0;
-    border-bottom: 2px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: $transition-fast $bezier-quart;
     &:after {
@@ -58,11 +58,11 @@ $filter-selected: $theme-pri-dark;
       &:after {
         left: 0;
         width: 100%;
-        border-color: $filter-selected;
+        border-bottom: 2px solid $filter-selected;
       }
     }
   }
-  // .portfolio__filters media query
+  // .portfolio__filters @media
   @media only screen and (orientation: landscape) {
     width: auto;
     text-align: left;

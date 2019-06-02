@@ -4,7 +4,8 @@
   height: $namecard-height;
   width: 100%;
   z-index: 2;
-  background: transparent;
+  // background: linear-gradient(0deg, $theme-pri-dark, $theme-pri-light);
+  background-color: $color-bg-dark;
   @media only screen and (orientation: landscape) {
     @include body-contain;
   }
@@ -19,21 +20,16 @@ $spin-delay: $spin-timing / 4;
 $intro-timing: $transition-fast;
 $intro-delay: $transition-fast / 2;
 
-// @keyframes glaze {
-//   from { box-shadow: none; }
-//   50% { box-shadow: none; }
-//   to { box-shadow: 4px 4px 10px 2px rgba($silver, 0.6); }
-// }
-
 .namecard__content {
   position: relative;
   @include flex($dir: row, $justify: center, $align: center);
   padding: 1em 2em;
+  background-color: $color-bg;
   // overflow: hidden;
   border-radius: 20px;
   top: 0;
   left: 0;
-  box-shadow: 4px 2px 10px 2px rgba($silver, 0.6);
+  box-shadow: 4px 2px 10px 2px rgba($slate, 0.6);
   transition: $nudge-timing $bezier-quart 0ms;
   // animation: glaze 4s 2s alternate infinite;
 
@@ -61,13 +57,6 @@ $intro-delay: $transition-fast / 2;
     border-radius: 50%;
     background-color: $color-bg;
     transition: $ripple-timing $bezier-quart 100ms;
-    // &.expand {
-    //   top: -500%;
-    //   left: -500%;
-    //   height: 1100%;
-    //   width: 1100%;
-    //   box-shadow: $shadow-lg;
-    // }
   }
 
   $texts-offset: 33px; // avatar-sm(25) + margin(8)
