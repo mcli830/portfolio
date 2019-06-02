@@ -14,8 +14,12 @@ module.exports = function(animations) {
     document.querySelector(`#${prev.dataset.section}`).classList.add('hide');
     document.querySelector(`#${this.dataset.section}`).classList.remove('hide');
 
+    const overlays = document.querySelectorAll('.portfolio__header [class*="overlay"]')
     if (this.dataset.section === 'skills'){
+      overlays.forEach(o => o.style.transform = 'skew(-30deg)');
       animations.skills.play();
+    } else if (this.dataset.section === 'projects'){
+      overlays.forEach(o => o.style.transform = 'skew(30deg)');
     }
   }
 }
