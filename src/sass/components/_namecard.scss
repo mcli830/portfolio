@@ -4,7 +4,7 @@
   height: $namecard-height;
   width: 100%;
   z-index: 2;
-  background: transparent;
+  background: linear-gradient(0deg, $theme-pri-dark, $theme-pri-light);
   @media only screen and (orientation: landscape) {
     @include body-contain;
   }
@@ -29,11 +29,12 @@ $intro-delay: $transition-fast / 2;
   position: relative;
   @include flex($dir: row, $justify: center, $align: center);
   padding: 1em 2em;
+  background-color: $color-bg;
   // overflow: hidden;
   border-radius: 20px;
   top: 0;
   left: 0;
-  box-shadow: 4px 2px 10px 2px rgba($silver, 0.6);
+  box-shadow: 4px 2px 10px 2px rgba($slate, 0.6);
   transition: $nudge-timing $bezier-quart 0ms;
   // animation: glaze 4s 2s alternate infinite;
 

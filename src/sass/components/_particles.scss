@@ -1,9 +1,8 @@
-
 $particles: $cerulean-light;
 
 #particles {
   background: linear-gradient($alpha-dark, transparent 5em);
-  position: fixed;
+  position: absolute;
   z-index: -1;
   top: 0;
   left: 0;

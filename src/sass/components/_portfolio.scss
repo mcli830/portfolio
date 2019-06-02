@@ -64,8 +64,8 @@ $header-select-bg: $theme-pri-dark;
   }
   .overlay--base {
     background-color: $header-base-bg;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid $header-select-bg;
+    border-top: 2px solid $header-select-bg;
+    border-bottom: 2px solid transparent;
     width: 110%;
   }
   .overlay--select {
