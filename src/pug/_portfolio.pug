@@ -27,7 +27,7 @@ mixin skill(name, level)
       h3= name
     figure.skill__level
       .bar(data-level=level style=style)
-        span #{level}%
+        span #{level}
 
 
 section#portfolio.portfolio
@@ -67,14 +67,43 @@ section#portfolio.portfolio
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
       #skills.portfolio__skills.hide
-        ul.skills__list
-          +skill('HTML', 80)
-          +skill('CSS', 80)
-          +skill('JavaScript', 90)
-          +skill('Node.js', 90)
-          +skill('React', 70)
-          +skill('Ruby/Rails', 60)
-          +skill('SQL', 60)
-          +skill('Java', 40)
-          +skill('Linux', 70)
+        .skills__category
+          h4 Skills
+          ul.skills__list
+            +skill('Front End', 80)
+            +skill('Back End', 70)
+            +skill('OOP', 80)
+            +skill('REST', 80)
+            +skill('Debugging', 70)
+            +skill('UI/UX', 80)
+            +skill('Design', 50)
+            +skill('Animation', 60)
+            +skill('Deployment', 50)
+        .skills__category
+          h4 Languages
+          ul.skills__list
+            +skill('HTML', 80)
+            +skill('CSS', 80)
+            +skill('JavaScript', 90)
+            +skill('React', 70)
+            +skill('Ruby/Rails', 60)
+            +skill('SQL', 60)
+            +skill('Java', 30)
+            +skill('Linux', 70)
+        .skills__category
+          h4 Tools
+          ul.skills__list
+            +skill('Node.js', 90)
+            +skill('Express.js', 80)
+            +skill('Pug', 90)
+            +skill('Sass', 90)
+            +skill('Bootstrap', 70)
+            +skill('Material UI', 50)
+            +skill('D3.js', 60)
+            +skill('Redux.js', 70)
+            +skill('MongoDB', 70)
+            +skill('socket.io', 50)
+            +skill('Webkit', 60)
+            +skill('Gulp', 70)
+            +skill('Google Cloud', 60)
   .overlay

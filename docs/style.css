@@ -871,18 +871,96 @@ body {
   left: 0;
   height: auto;
   width: 100%;
-  text-align: center; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   .portfolio__skills.hide {
     opacity: 0;
     left: 100%; }
+  @media only screen and (orientation: landscape) {
+    .portfolio__skills {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      padding-left: 0%;
+      padding-right: 0%; } }
+  @media only screen and (orientation: landscape) and (min-width: 480px) {
+    .portfolio__skills {
+      padding-left: 1%;
+      padding-right: 1.25%; } }
+  @media only screen and (orientation: landscape) and (min-width: 600px) {
+    .portfolio__skills {
+      padding-left: 2%;
+      padding-right: 2.5%; } }
+  @media only screen and (orientation: landscape) and (min-width: 768px) {
+    .portfolio__skills {
+      padding-left: 3%;
+      padding-right: 3.75%; } }
+  @media only screen and (orientation: landscape) and (min-width: 992px) {
+    .portfolio__skills {
+      padding-left: 4%;
+      padding-right: 5%; } }
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .portfolio__skills {
+      padding-left: 5%;
+      padding-right: 6.25%; } }
+
+.skills__category {
+  width: 400px;
+  max-width: 80vw; }
+  .skills__category:nth-child(even) {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+  .skills__category:nth-child(odd) {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2; }
+  .skills__category h4 {
+    font-family: "Quicksand";
+    display: block;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    text-align: center; }
+  @media only screen and (orientation: landscape) {
+    .skills__category {
+      width: auto; }
+      .skills__category:nth-child(even) {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%; }
+      .skills__category:nth-child(odd) {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+        flex: 0 0 24%; } }
 
 .skills__list {
-  margin: auto;
-  width: 400px;
-  max-width: 90vw; }
+  padding: 1.5em 0;
+  display: block; }
   .skills__list .skill {
     display: block;
-    height: 1.3em;
     margin-bottom: 0.7em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -896,7 +974,8 @@ body {
     justify-content: flex-start;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    height: 1.6em; }
     .skills__list .skill .skill__name {
       -webkit-box-flex: 0;
       -ms-flex: 0 0 7em;
@@ -917,7 +996,6 @@ body {
       -ms-flex-align: center;
       align-items: center;
       font-family: "Abel";
-      font-size: 0.9em;
       font-weight: normal;
       padding: 0 1em;
       color: #fafafa;
@@ -928,7 +1006,7 @@ body {
       flex: 1 1 auto;
       height: 100%;
       display: inline-block;
-      border-bottom: 0.2em solid #212121;
+      border-bottom: 0.3em solid #212121;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -944,7 +1022,7 @@ body {
       align-items: flex-end; }
       .skills__list .skill .skill__level .bar {
         background-color: #2196F3;
-        height: 0.9em;
+        height: 1em;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -960,10 +1038,10 @@ body {
         align-items: center;
         overflow: hidden; }
         .skills__list .skill .skill__level .bar span {
-          font-size: 0.5em;
+          font-size: 0.7em;
           font-style: italic;
           color: #6ec6ff;
-          margin-right: 1em; }
+          margin-right: 0.5em; }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }

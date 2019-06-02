@@ -4,32 +4,69 @@
   left: 0;
   height: auto;
   width: 100%;
-  text-align: center;
+  @include flex($dir: column, $align: center);
 
   &.hide {
     opacity: 0;
     left: 100%;
+  }
+
+  @media only screen and (orientation: landscape) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    @include mediaQueryRange((
+      padding-left: (0%, 4%),
+      padding-right: (0%, 5%)
+    ))
+  }
+}
+
+.skills__category {
+  width: 400px;
+  max-width: 80vw;
+  &:nth-child(even) {
+    order: 1;
+  }
+  &:nth-child(odd) {
+    order: 2;
+  }
+  h4 {
+    font-family: $font-skill-cat;
+    display: block;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+  @media only screen and (orientation: landscape){
+    width: auto;
+    &:nth-child(even){
+      order: 1;
+      flex: 0 0 30%;
+    }
+    &:nth-child(odd){
+      order: 1;
+      flex: 0 0 24%;
+    }
   }
 }
 
 $skill-border: $black;
 
 .skills__list {
-  margin: auto;
-  width: 400px;
-  max-width: 90vw;
+  padding: 1.5em 0;
+  display: block;
   .skill {
     display: block;
-    height: 1.3em;
     margin-bottom: 0.7em;
     @include flex($dir: row, $align: center);
+    height: 1.6em;
     .skill__name {
       flex: 0 0 7em;
       height: 100%;
       display: inline-block;
       @include flex($dir: row-reverse, $align: center);
       font-family: $font-skill;
-      font-size: 0.9em;
       font-weight: normal;
       padding: 0 1em;
       color: $color-text-invert;
@@ -39,18 +76,18 @@ $skill-border: $black;
       flex: 1 1 auto;
       height: 100%;
       display: inline-block;
-      border-bottom: 0.2em solid $skill-border;
+      border-bottom: 0.3em solid $skill-border;
       @include flex($dir: row, $align: flex-end);
       .bar {
         background-color: $theme-pri;
-        height: 0.9em;
+        height: 1em;
         @include flex($dir: row-reverse, $align: center);
         overflow: hidden;
         span {
-          font-size: 0.5em;
+          font-size: 0.7em;
           font-style: italic;
           color: $theme-pri-light;
-          margin-right: 1em;
+          margin-right: 0.5em;
         }
       }
     }
