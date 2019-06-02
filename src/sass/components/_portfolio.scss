@@ -30,7 +30,16 @@ $header-selected: rgba($color-text-light, 0.7);
   }
 }
 
+$header-base-text: $color-text-light;
+$header-base-bg: $color-bg-dark;
+$header-hover-text: $theme-pri-dark;
+// $header-hover-bg: #dbe7f0;
+$header-hover-bg: #c9dae8;
+$header-select-text: $color-text-invert-light;
+$header-select-bg: $theme-pri-dark;
+
 .portfolio__header {
+  position: relative;
   display: inline-block;
   flex: 0 0 50%;
   font-family: $font-header;
@@ -39,19 +48,50 @@ $header-selected: rgba($color-text-light, 0.7);
   text-align: center;
   text-transform: uppercase;
   padding: 1em 0;
-  background-color: $color-bg-dark;
-  color: $color-text-light;
+  color: $header-base-text;
   cursor: pointer;
   user-select: none;
   transition: $transition-fast $bezier-quart;
+  span {
+    pointer-events: none;
+  }
+  [class^="overlay"],
+  [class*=" overlay"] {
+    z-index: -1;
+    width: 0;
+    transform: skew(30deg);
+    transition: inherit;
+  }
+  .overlay--base {
+    background-color: $header-base-bg;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid $header-select-bg;
+    width: 110%;
+  }
+  .overlay--select {
+    background-color: $header-select-bg;
+    width: 0;
+  }
+  &:first-child {
+    [class^="overlay"],
+    [class*=" overlay"] {
+      left: auto;
+      right: 0;
+    }
+  }
+  // .portfolio__header:hover
   &:hover,
   &:focus {
-    background-color: rgba($theme-pri-dark, 0.3);
-    color: $color-text;
+    color: $header-hover-text;
+    .overlay--base {
+      background-color: $header-hover-bg;
+    }
   }
   &.selected {
-    background-color: $theme-pri-dark;
-    color: $color-text-invert-light;
+    color: $header-select-text;
+    .overlay--select {
+      width: 110%;
+    }
   }
 }
 

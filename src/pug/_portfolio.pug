@@ -1,3 +1,9 @@
+mixin section-header(display, section, addclass)
+  h1.portfolio__header(class=addclass data-section=section)
+    .overlay--base
+    .overlay--select
+    .span= display
+
 mixin filter(name, tag)
   li.filter(data-tag=tag)= name
 
@@ -27,8 +33,8 @@ mixin skill(name, level)
 section#portfolio.portfolio
   .portfolio__content
     .portfolio__sections
-      h1.portfolio__header.selected(data-section='projects') Portfolio
-      h2.portfolio__header(data-section='skills') Proficiency
+      +section-header('Portfolio', 'projects', 'selected')
+      +section-header('Proficiency', 'skills')
       //- .selector.selector__projects
     .portfolio__view
       #projects.portfolio__projects

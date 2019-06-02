@@ -16,7 +16,7 @@
 }
 
 $filter-hover: $theme-pri;
-$filter-selected: $theme-pri-light;
+$filter-selected: $theme-pri-dark;
 
 .portfolio__filters {
   position: sticky;
@@ -47,17 +47,17 @@ $filter-selected: $theme-pri-light;
       width: 0;
       transition: inherit;
     }
+    // .filter:hover
     &:hover,
     &:focus,
     &.selected {
-      &:after {
-        width: 100%;
-        left: 0;
-      }
+      color: $filter-hover;
     }
     &.selected {
       color: $filter-selected;
       &:after {
+        left: 0;
+        width: 100%;
         border-color: $filter-selected;
       }
     }

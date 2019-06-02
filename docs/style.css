@@ -575,6 +575,7 @@ body {
       margin-bottom: 3rem; } }
 
 .portfolio__header {
+  position: relative;
   display: inline-block;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
@@ -585,7 +586,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   padding: 1em 0;
-  background-color: #eeeeee;
   color: #484848;
   cursor: pointer;
   -webkit-user-select: none;
@@ -594,12 +594,36 @@ body {
   user-select: none;
   -webkit-transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1); }
-  .portfolio__header:hover, .portfolio__header:focus {
-    background-color: rgba(0, 105, 192, 0.3);
-    color: #212121; }
-  .portfolio__header.selected {
+  .portfolio__header span {
+    pointer-events: none; }
+  .portfolio__header [class^="overlay"],
+  .portfolio__header [class*=" overlay"] {
+    z-index: -1;
+    width: 0;
+    -webkit-transform: skew(30deg);
+    transform: skew(30deg);
+    -webkit-transition: inherit;
+    transition: inherit; }
+  .portfolio__header .overlay--base {
+    background-color: #eeeeee;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid #0069c0;
+    width: 110%; }
+  .portfolio__header .overlay--select {
     background-color: #0069c0;
+    width: 0; }
+  .portfolio__header:first-child [class^="overlay"],
+  .portfolio__header:first-child [class*=" overlay"] {
+    left: auto;
+    right: 0; }
+  .portfolio__header:hover, .portfolio__header:focus {
+    color: #0069c0; }
+    .portfolio__header:hover .overlay--base, .portfolio__header:focus .overlay--base {
+      background-color: #c9dae8; }
+  .portfolio__header.selected {
     color: #ffffff; }
+    .portfolio__header.selected .overlay--select {
+      width: 110%; }
 
 .portfolio__view {
   -webkit-box-flex: 1;
@@ -737,13 +761,14 @@ body {
       width: 0;
       -webkit-transition: inherit;
       transition: inherit; }
-    .portfolio__filters .filter:hover:after, .portfolio__filters .filter:focus:after, .portfolio__filters .filter.selected:after {
-      width: 100%;
-      left: 0; }
+    .portfolio__filters .filter:hover, .portfolio__filters .filter:focus, .portfolio__filters .filter.selected {
+      color: #2196F3; }
     .portfolio__filters .filter.selected {
-      color: #6ec6ff; }
+      color: #0069c0; }
       .portfolio__filters .filter.selected:after {
-        border-color: #6ec6ff; }
+        left: 0;
+        width: 100%;
+        border-color: #0069c0; }
   @media only screen and (orientation: landscape) {
     .portfolio__filters {
       width: auto;
