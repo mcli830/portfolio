@@ -25,9 +25,10 @@ mixin prof(name, level)
   li.prof
     .prof__name
       h3= name
+      span= level
     figure.prof__level
       .bar(data-level=level style=style)
-        span #{level}
+        span= level
 
 
 section#portfolio.portfolio
@@ -67,16 +68,6 @@ section#portfolio.portfolio
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
       #proficiency.portfolio__profs.hide
-        #skills.profs__category
-          h4 Skills
-          ul.profs__list
-            +prof('Front End', 80)
-            +prof('Back End', 70)
-            +prof('OOP', 80)
-            +prof('REST', 80)
-            +prof('Debugging', 70)
-            +prof('UI/UX', 80)
-            +prof('Deployment', 50)
         #langs.profs__category
           h4 Languages
           ul.profs__list
@@ -103,4 +94,14 @@ section#portfolio.portfolio
             +prof('socket.io', 40)
             +prof('Webkit', 60)
             +prof('Gulp', 70)
+        #skills.profs__category
+          h4 Skills
+          ul.profs__list
+            +prof('Front End', 80)
+            +prof('Back End', 70)
+            +prof('OOP', 80)
+            +prof('REST', 80)
+            +prof('Debugging', 70)
+            +prof('UI/UX', 80)
+            +prof('Deployment', 50)
   .overlay

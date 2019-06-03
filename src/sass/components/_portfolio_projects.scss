@@ -19,8 +19,7 @@ $filter-hover: $theme-pri;
 $filter-selected: $theme-pri-dark;
 
 .portfolio__filters {
-  position: sticky;
-  top: 0.5rem;
+  position: relative;
   font-size: 1em;
   font-family: $font-filter;
   text-transform: capitalize;
@@ -64,6 +63,8 @@ $filter-selected: $theme-pri-dark;
   }
   // .portfolio__filters @media
   @media only screen and (orientation: landscape) {
+    position: sticky;
+    top: 0.5rem;
     width: auto;
     text-align: left;
     display: initial;

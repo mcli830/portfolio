@@ -17,20 +17,20 @@
     align-items: flex-start;
     @include mediaQueryRange((
       padding-left: (0%, 4%),
-      padding-right: (0%, 5%)
-    ))
+      padding-right: (0%, 6%)
+    ));
   }
 }
 
 .profs__category {
   width: 400px;
   max-width: 80vw;
-  &:nth-child(even) {
-    order: 1;
-  }
-  &:nth-child(odd) {
-    order: 2;
-  }
+  // &:nth-child(even) {
+  //   order: 1;
+  // }
+  // &:nth-child(odd) {
+  //   order: 2;
+  // }
   h4 {
     font-family: $font-prof-cat;
     display: block;
@@ -40,44 +40,44 @@
   }
   @media only screen and (orientation: landscape){
     width: auto;
-    &:nth-child(even){
-      order: 1;
-      flex: 0 0 30%;
-    }
-    &:nth-child(odd){
-      order: 1;
-      flex: 0 0 24%;
-    }
+    flex: 0 0 25%;
+    // &:nth-child(even){
+    //   order: 1;
+    // }
+    // &:nth-child(odd){
+    //   order: 1;
+    // }
   }
 }
 
-$prof-border: $black;
+$prof-bg: $black;
 
 .profs__list {
-  padding: 1.5em 0;
+  margin: 1.5em 0;
   display: block;
   .prof {
     display: block;
-    margin-bottom: 0.7em;
     @include flex($dir: row, $align: center);
-    height: 1.6em;
+    height: 1.8em;
     .prof__name {
       flex: 0 0 7em;
       height: 100%;
-      display: inline-block;
       @include flex($dir: row-reverse, $align: center);
       font-family: $font-prof;
       font-weight: normal;
       padding: 0 1em;
       color: $color-text-invert;
-      background-color: $prof-border;
+      background-color: $prof-bg;
+      span {
+        color: $theme-pri-light;
+        font-size: 0.8em;
+        display: none;
+      }
     }
     .prof__level {
       flex: 1 1 auto;
       height: 100%;
-      display: inline-block;
-      border-bottom: 0.3em solid $prof-border;
-      @include flex($dir: row, $align: flex-end);
+      @include flex($dir: row, $align: center);
       .bar {
         background-color: $theme-pri;
         height: 1em;
@@ -88,6 +88,37 @@ $prof-border: $black;
           font-style: italic;
           color: $theme-pri-light;
           margin-right: 0.5em;
+          user-select: visible;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+#langs.profs__category {
+  .profs__list {
+    border-bottom: 0.8em solid $prof-bg;
+    .prof {
+      display: block;
+      height: auto;
+      border-bottom: 0.2em solid $prof-bg;
+      .prof__name {
+        background-color: $prof-bg;
+        flex-direction: row;
+        padding: 0.5em 1em;
+        justify-content: space-between;
+        span {
+          display: inline-block;
+        }
+      }
+      .prof__level {
+        border-left: 1em solid $prof-bg;
+        .bar {
+          height: 0.6em;
+          span {
+            visibility: hidden;
+          }
         }
       }
     }
