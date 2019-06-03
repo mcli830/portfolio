@@ -91,7 +91,7 @@ $prof-bg: $black;
   }
 }
 
-.profs__category.cell {
+.profs__category:hover {
   .profs__list {
     border-bottom: 0.8em solid $prof-bg;
     .prof {

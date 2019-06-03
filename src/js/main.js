@@ -1,10 +1,10 @@
 // IMPORTS
 // const initParticles = require('./particlesBG.js')
-const initFilterFunctions = require('./filter.js')
+const initFilterFunc = require('./filter.js')
 const initSectionButtons = require('./sections.js')
-const initNamecardFunctions = require('./namecard.js')
-const namecardAnimation = require('./namecardAnim.js')
-const profAnimation = require('./profAnim.js')
+const initNamecardFunc = require('./namecard.js')
+const namecardAnim = require('./namecardAnim.js')
+const profAnim = require('./profAnim.js')
 
 // GLOBALS
 const state = {}
@@ -13,13 +13,13 @@ const animations = {}
 // DOM CONTENT LOADED
 document.addEventListener('DOMContentLoaded', init)
 function init(){
-  initAnimations();
+  initAnims();
   initSectionButtons(animations);
-  initFilterFunctions(state);
-  initNamecardFunctions(animations);
+  initFilterFunc(state);
+  initNamecardFunc(animations);
 }
 
-function initAnimations(){
-  animations.namecard = namecardAnimation();
-  animations.prof = profAnimation();
+function initAnims(){
+  animations.namecard = namecardAnim();
+  animations.prof = profAnim();
 }

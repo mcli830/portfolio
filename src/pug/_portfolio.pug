@@ -4,8 +4,10 @@ mixin section-header(display, section, addclass)
     .overlay--select
     .span= display
 
-mixin filter(name, tag)
-  li.filter(data-tag=tag)= name
+mixin filter(name, tag, addclass)
+  li.filter(class=addclass data-tag=tag)
+    .overlay
+    span= name
 
 mixin project(name, url, tags)
   - var tagStr = tags.join(' ')
@@ -46,7 +48,7 @@ section#portfolio.portfolio
     .portfolio__view
       #projects.portfolio__projects
         ul.portfolio__filters
-          li.filter.selected(data-tag='all') All
+          +filter('All', 'all', 'selected')
           +filter('React', 'react')
           +filter('Ruby/Rails', 'rails')
           +filter('Node/Express', 'node')
