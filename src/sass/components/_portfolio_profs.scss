@@ -26,8 +26,8 @@
   width: 320px;
   max-width: 80vw;
   &#langs { order: 1; }
-  &#tools { order: 1; }
-  &#skills { order: 1; }
+  &#tools { order: 2; }
+  &#skills { order: 3; }
   h4 {
     font-family: $font-prof-cat;
     display: block;
@@ -91,7 +91,7 @@ $prof-bg: $black;
   }
 }
 
-.profs__category:hover {
+.profs__category.cell {
   .profs__list {
     border-bottom: 0.8em solid $prof-bg;
     .prof {

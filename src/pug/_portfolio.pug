@@ -29,14 +29,15 @@ mixin prof(name, level, color)
   - var width = "width:" + level + "%;"
   - var bg = `background:linear-gradient(90deg, ${gradient[color][0]}, ${gradient[color][(level / 10) - 1]});`
   - var barStyle = width + bg
-  - var valStyle = `color:${gradient[color][0]}`
+  - var valStyle = `color:${gradient[color][0]};;`
   li.prof
     .prof__name
       h3= name
       span(style=valStyle)= level
     figure.prof__level
       .bar(data-level=level style=barStyle)
-        span= level
+        if level > 10
+          span= level
 
 
 section#portfolio.portfolio
@@ -76,18 +77,18 @@ section#portfolio.portfolio
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
       #proficiency.portfolio__profs.hide
-        #langs.profs__category.cell
+        #langs.profs__category
           h4 Languages
           ul.profs__list
             +prof('HTML', 80, 'blue')
             +prof('CSS', 80, 'blue')
             +prof('JavaScript', 90, 'blue')
-            +prof('Ruby/Rails', 60, 'blue')
+            +prof('Ruby/Rails', 70, 'blue')
             +prof('SQL', 60, 'blue')
             +prof('Java', 30, 'blue')
             +prof('Python', 10, 'blue')
-            +prof('Linux/Bash', 70, 'blue')
-        #tools.profs__category.cell
+            +prof('Linux/Bash', 60, 'blue')
+        #tools.profs__category
           h4 Tools
           ul.profs__list
             +prof('Node', 90, 'green')
@@ -103,15 +104,14 @@ section#portfolio.portfolio
             +prof('socket.io', 40, 'green')
             +prof('Webkit', 60, 'green')
             +prof('Gulp', 70, 'green')
-        #skills.profs__category
+        #skills.profs__category.cell
           h4 Skills
           ul.profs__list
             +prof('Front End', 80, 'red')
             +prof('UI/UX', 80, 'red')
             +prof('Back End', 70, 'red')
             +prof('OOP', 70, 'red')
-            +prof('REST', 80, 'red')
+            +prof('REST', 70, 'red')
             +prof('Testing', 50, 'red')
             +prof('Debugging', 50, 'red')
-            +prof('Deployment', 50, 'red')
   .overlay
