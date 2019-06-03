@@ -23,14 +23,11 @@
 }
 
 .profs__category {
-  width: 400px;
+  width: 320px;
   max-width: 80vw;
-  // &:nth-child(even) {
-  //   order: 1;
-  // }
-  // &:nth-child(odd) {
-  //   order: 2;
-  // }
+  &#langs { order: 1; }
+  &#tools { order: 1; }
+  &#skills { order: 1; }
   h4 {
     font-family: $font-prof-cat;
     display: block;
@@ -41,12 +38,9 @@
   @media only screen and (orientation: landscape){
     width: auto;
     flex: 0 0 25%;
-    // &:nth-child(even){
-    //   order: 1;
-    // }
-    // &:nth-child(odd){
-    //   order: 1;
-    // }
+    &#langs { order: 2; }
+    &#tools { order: 3; }
+    &#skills { order: 1; }
   }
 }
 
@@ -70,6 +64,7 @@ $prof-bg: $black;
       background-color: $prof-bg;
       span {
         color: $theme-pri-light;
+        font-weight: bold;
         font-size: 0.8em;
         display: none;
       }
@@ -86,7 +81,7 @@ $prof-bg: $black;
         span {
           font-size: 0.7em;
           font-style: italic;
-          color: $theme-pri-light;
+          color: rgba($color-text-invert, 0.7);
           margin-right: 0.5em;
           user-select: visible;
           visibility: visible;
@@ -96,7 +91,7 @@ $prof-bg: $black;
   }
 }
 
-#langs.profs__category {
+.profs__category.cell {
   .profs__list {
     border-bottom: 0.8em solid $prof-bg;
     .prof {

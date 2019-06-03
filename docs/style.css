@@ -898,11 +898,45 @@ body {
       justify-content: space-around;
       -webkit-box-align: start;
       -ms-flex-align: start;
-      align-items: flex-start; } }
+      align-items: flex-start;
+      padding-left: 0%;
+      padding-right: 0%; } }
+  @media only screen and (orientation: landscape) and (min-width: 480px) {
+    .portfolio__profs {
+      padding-left: 1%;
+      padding-right: 1.5%; } }
+  @media only screen and (orientation: landscape) and (min-width: 600px) {
+    .portfolio__profs {
+      padding-left: 2%;
+      padding-right: 3%; } }
+  @media only screen and (orientation: landscape) and (min-width: 768px) {
+    .portfolio__profs {
+      padding-left: 3%;
+      padding-right: 4.5%; } }
+  @media only screen and (orientation: landscape) and (min-width: 992px) {
+    .portfolio__profs {
+      padding-left: 4%;
+      padding-right: 6%; } }
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .portfolio__profs {
+      padding-left: 5%;
+      padding-right: 7.5%; } }
 
 .profs__category {
-  width: 400px;
+  width: 320px;
   max-width: 80vw; }
+  .profs__category#langs {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+  .profs__category#tools {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+  .profs__category#skills {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
   .profs__category h4 {
     font-family: "Quicksand";
     display: block;
@@ -914,7 +948,19 @@ body {
       width: auto;
       -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
-      flex: 0 0 25%; } }
+      flex: 0 0 25%; }
+      .profs__category#langs {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2; }
+      .profs__category#tools {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3; }
+      .profs__category#skills {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1; } }
 
 .profs__list {
   margin: 1.5em 0;
@@ -960,6 +1006,7 @@ body {
       background-color: #212121; }
       .profs__list .prof .prof__name span {
         color: #6ec6ff;
+        font-weight: bold;
         font-size: 0.8em;
         display: none; }
     .profs__list .prof .prof__level {
@@ -1000,7 +1047,7 @@ body {
         .profs__list .prof .prof__level .bar span {
           font-size: 0.7em;
           font-style: italic;
-          color: #6ec6ff;
+          color: rgba(250, 250, 250, 0.7);
           margin-right: 0.5em;
           -webkit-user-select: visible;
           -moz-user-select: visible;
@@ -1008,13 +1055,13 @@ body {
           user-select: visible;
           visibility: visible; }
 
-#langs.profs__category .profs__list {
+.profs__category.cell .profs__list {
   border-bottom: 0.8em solid #212121; }
-  #langs.profs__category .profs__list .prof {
+  .profs__category.cell .profs__list .prof {
     display: block;
     height: auto;
     border-bottom: 0.2em solid #212121; }
-    #langs.profs__category .profs__list .prof .prof__name {
+    .profs__category.cell .profs__list .prof .prof__name {
       background-color: #212121;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -1024,13 +1071,13 @@ body {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between; }
-      #langs.profs__category .profs__list .prof .prof__name span {
+      .profs__category.cell .profs__list .prof .prof__name span {
         display: inline-block; }
-    #langs.profs__category .profs__list .prof .prof__level {
+    .profs__category.cell .profs__list .prof .prof__level {
       border-left: 1em solid #212121; }
-      #langs.profs__category .profs__list .prof .prof__level .bar {
+      .profs__category.cell .profs__list .prof .prof__level .bar {
         height: 0.6em; }
-        #langs.profs__category .profs__list .prof .prof__level .bar span {
+        .profs__category.cell .profs__list .prof .prof__level .bar span {
           visibility: hidden; }
 
 .alpha--light {

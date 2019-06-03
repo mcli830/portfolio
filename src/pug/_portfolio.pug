@@ -15,19 +15,25 @@ mixin project(name, url, tags)
     img.project(src=src alt=name)
     .overlay
       h2= name
+      
+-
+  var gradient = {
+    blue: ['#2196F3','#298CEC','#3182E6','#3877DF','#406DD8','#4863D2','#5059CB','#574EC4','#5F44BE','#673AB7'],
+    green: ['#4CAF50','#44A647','#3B9D3E','#339335','#2A8A2C','#228124','#19781B','#116E12','#086509','#005C00'],
+    red: ['#FF5722','#EE4D1E','#DD441A','#CC3A17','#BB3013','#A9270F','#981D0B','#871308','#760A04','#650000']
+  }
   
-mixin prof(name, level)
-  //- - var gradient = ['#607D8B', '#5382A0', '#4787B5', '#3A8CC9', '#2E91DE', '#2196F3', '#337FE4', '#4468D5', '#5651C6', '#673AB7']
-  - var gradient = ['#2196F3', '#298CEC', '#3182E6', '#3877DF', '#406DD8', '#4863D2', '#5059CB', '#574EC4', '#5F44BE', '#673AB7']
+mixin prof(name, level, color)
   - var width = "width:" + level + "%;"
-  - var bg = `background:linear-gradient(90deg, #2196F3, ${gradient[(level / 10) - 1]});`
-  - var style = width + bg
+  - var bg = `background:linear-gradient(90deg, ${gradient[color][0]}, ${gradient[color][(level / 10) - 1]});`
+  - var barStyle = width + bg
+  - var valStyle = `color:${gradient[color][0]}`
   li.prof
     .prof__name
       h3= name
-      span= level
+      span(style=valStyle)= level
     figure.prof__level
-      .bar(data-level=level style=style)
+      .bar(data-level=level style=barStyle)
         span= level
 
 
@@ -68,40 +74,42 @@ section#portfolio.portfolio
           +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
           +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
       #proficiency.portfolio__profs.hide
-        #langs.profs__category
+        #langs.profs__category.cell
           h4 Languages
           ul.profs__list
-            +prof('HTML', 80)
-            +prof('CSS', 80)
-            +prof('JavaScript', 90)
-            +prof('Ruby/Rails', 60)
-            +prof('SQL', 60)
-            +prof('Java', 30)
-            +prof('Linux', 70)
-        #tools.profs__category
+            +prof('HTML', 80, 'blue')
+            +prof('CSS', 80, 'blue')
+            +prof('JavaScript', 90, 'blue')
+            +prof('Ruby/Rails', 60, 'blue')
+            +prof('SQL', 60, 'blue')
+            +prof('Java', 30, 'blue')
+            +prof('Python', 10, 'blue')
+            +prof('Linux/Bash', 70, 'blue')
+        #tools.profs__category.cell
           h4 Tools
           ul.profs__list
-            +prof('Node.js', 90)
-            +prof('Express.js', 80)
-            +prof('React.js', 70)
-            +prof('Redux.js', 70)
-            +prof('Pug', 90)
-            +prof('Sass', 90)
-            +prof('Bootstrap', 70)
-            +prof('Material UI', 50)
-            +prof('D3.js', 60)
-            +prof('MongoDB', 70)
-            +prof('socket.io', 40)
-            +prof('Webkit', 60)
-            +prof('Gulp', 70)
+            +prof('Node', 90, 'green')
+            +prof('Express', 80, 'green')
+            +prof('React', 70, 'green')
+            +prof('Redux', 70, 'green')
+            +prof('Pug', 90, 'green')
+            +prof('Sass', 90, 'green')
+            +prof('Bootstrap', 70, 'green')
+            +prof('Material UI', 50, 'green')
+            +prof('D3', 50, 'green')
+            +prof('MongoDB', 70, 'green')
+            +prof('socket.io', 40, 'green')
+            +prof('Webkit', 60, 'green')
+            +prof('Gulp', 70, 'green')
         #skills.profs__category
           h4 Skills
           ul.profs__list
-            +prof('Front End', 80)
-            +prof('Back End', 70)
-            +prof('OOP', 80)
-            +prof('REST', 80)
-            +prof('Debugging', 70)
-            +prof('UI/UX', 80)
-            +prof('Deployment', 50)
+            +prof('Front End', 80, 'red')
+            +prof('UI/UX', 80, 'red')
+            +prof('Back End', 70, 'red')
+            +prof('OOP', 70, 'red')
+            +prof('REST', 80, 'red')
+            +prof('Testing', 50, 'red')
+            +prof('Debugging', 50, 'red')
+            +prof('Deployment', 50, 'red')
   .overlay
