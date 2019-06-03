@@ -39,13 +39,60 @@ mixin prof(name, level, color)
         if level > 10
           span= level
 
+-
+  var projects = [
+    { name: 'Llama',
+      url: 'http://llamareads.me/',
+      tags: ['react', 'firebase', 'uiux'],
+      text: `Keep track of all the memorable books you've read and share them with friends. Follow your book's journey as it is shared to see how you've impacted your friends and community. As my final project created as a student at Le Wagon coding bootcamp, this was prepared in two weeks with two other students and best showcases my interest in simple yet effective UI/UX design. Effects and visuals all coded from scratch!`
+    },
+    { name: 'PopUp Shop',
+      url: 'http://baguette-popup-shop.herokuapp.com/',
+      tags: ['rails', 'sql', 'uiux'],
+      text: `An AirBnb-style digital marketplace aimed to connect artists to local store-owners that have the space and means to sell the artist's work. This was created as a student at Le Wagon coding bootcamp in one week, using a sleek modern style and a map API.`
+    },
+    { name: 'Fruitbowl',
+      url: 'https://fruitbowl.glitch.me/',
+      tags: ['node', 'mongo', 'uiux', 'socket'],
+      text: 'A simple and light-hearted instant messaging app. This was a personal study project exploring socket.io functionality and the depth of UX design needed for a good messaging app experience.'
+    },
+    { name: 'Phrase Generator',
+      url: 'https://sunny-space.glitch.me/',
+      tags: ['node', 'api'],
+      text: 'Inspired by URL name generation techniques used by sites like Glitch and gfycat, I created this tool to imitate their algorithms using the Datamuse API. Quickly generate your own fun and unique word combinations.'
+    },
+    { name: 'Pomodoro',
+      url: 'https://codepen.io/mykolodon/full/ajBBLV',
+      tags: ['react', 'uiux'],
+      text: 'Stay productive using this fun pomodoro clock tool. This single-page app was created using React.js with an intuitive user experience in mind.'
+    },
+    { name: 'Drum Pad',
+      url: 'https://codepen.io/mykolodon/full/wxBwVV',
+      tags: ['react'],
+      text: 'A basic drum machine made with React, and my first project coding UI controls from scratch. Hit the pad with your keyboard to make a wicked beat!'
+    },
+    { name: 'Mister Cocktail',
+      url: 'https://mr-cocktail-mcli830.herokuapp.com/',
+      tags: ['rails', 'sql', 'uiux'],
+      text: 'Discover interesting cocktails, or create your own.'
+    }.
+    { name: 'Datamuse Interface',
+      url: 'https://codepen.io/mykolodon/full/vMVEwp',
+      tags: ['api', 'tool'],
+      text: 'A simple interface to access the Datamuse API. Works kind of like a thesaurus, but with more options.'
+    },
+    { name: 'Calculator',
+      url: 'https://codepen.io/mykolodon/full/yqevJv',
+      tags: ['react', 'uiux', 'tool'],
+      text: `It's a calculator. Click or type. Made with React with UX in mind.`
+    }
+  ]
 
 section#portfolio.portfolio
   .portfolio__content
     .portfolio__sections
       +section-header('Portfolio', 'projects', 'selected')
       +section-header('Proficiency', 'proficiency')
-      //- .selector.selector__projects
     .portfolio__view
       #projects.portfolio__projects
         ul.portfolio__filters
