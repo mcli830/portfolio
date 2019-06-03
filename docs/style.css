@@ -958,7 +958,31 @@ body {
       .profs__category#skills {
         -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
-        order: 1; } }
+        order: 1; }
+      .profs__category#skills .profs__list {
+        border-bottom: 0.8em solid #212121; }
+        .profs__category#skills .profs__list .prof {
+          display: block;
+          height: auto;
+          border-bottom: 0.2em solid #212121; }
+          .profs__category#skills .profs__list .prof .prof__name {
+            background-color: #212121;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            padding: 0.5em 1em;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between; }
+            .profs__category#skills .profs__list .prof .prof__name span {
+              display: inline-block; }
+          .profs__category#skills .profs__list .prof .prof__level {
+            border-left: 1em solid #212121; }
+            .profs__category#skills .profs__list .prof .prof__level .bar {
+              height: 0.6em; }
+              .profs__category#skills .profs__list .prof .prof__level .bar span {
+                visibility: hidden; } }
 
 .profs__list {
   margin: 1.5em 0;
@@ -1052,31 +1076,6 @@ body {
           -ms-user-select: visible;
           user-select: visible;
           visibility: visible; }
-
-.profs__category.cell .profs__list {
-  border-bottom: 0.8em solid #212121; }
-  .profs__category.cell .profs__list .prof {
-    display: block;
-    height: auto;
-    border-bottom: 0.2em solid #212121; }
-    .profs__category.cell .profs__list .prof .prof__name {
-      background-color: #212121;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      padding: 0.5em 1em;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      .profs__category.cell .profs__list .prof .prof__name span {
-        display: inline-block; }
-    .profs__category.cell .profs__list .prof .prof__level {
-      border-left: 1em solid #212121; }
-      .profs__category.cell .profs__list .prof .prof__level .bar {
-        height: 0.6em; }
-        .profs__category.cell .profs__list .prof .prof__level .bar span {
-          visibility: hidden; }
 
 .alpha--light {
   background-color: rgba(250, 250, 250, 0.4); }

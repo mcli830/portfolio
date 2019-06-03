@@ -22,6 +22,8 @@
   }
 }
 
+$prof-bg: $black;
+
 .profs__category {
   width: 320px;
   max-width: 80vw;
@@ -41,10 +43,36 @@
     &#langs { order: 2; }
     &#tools { order: 3; }
     &#skills { order: 1; }
+    &#skills {
+      .profs__list {
+        border-bottom: 0.8em solid $prof-bg;
+        .prof {
+          display: block;
+          height: auto;
+          border-bottom: 0.2em solid $prof-bg;
+          .prof__name {
+            background-color: $prof-bg;
+            flex-direction: row;
+            padding: 0.5em 1em;
+            justify-content: space-between;
+            span {
+              display: inline-block;
+            }
+          }
+          .prof__level {
+            border-left: 1em solid $prof-bg;
+            .bar {
+              height: 0.6em;
+              span {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
-
-$prof-bg: $black;
 
 .profs__list {
   margin: 1.5em 0;
@@ -91,31 +119,31 @@ $prof-bg: $black;
   }
 }
 
-.profs__category.cell {
-  .profs__list {
-    border-bottom: 0.8em solid $prof-bg;
-    .prof {
-      display: block;
-      height: auto;
-      border-bottom: 0.2em solid $prof-bg;
-      .prof__name {
-        background-color: $prof-bg;
-        flex-direction: row;
-        padding: 0.5em 1em;
-        justify-content: space-between;
-        span {
-          display: inline-block;
-        }
-      }
-      .prof__level {
-        border-left: 1em solid $prof-bg;
-        .bar {
-          height: 0.6em;
-          span {
-            visibility: hidden;
-          }
-        }
-      }
-    }
-  }
-}
+// .profs__category.cell {
+//   .profs__list {
+//     border-bottom: 0.8em solid $prof-bg;
+//     .prof {
+//       display: block;
+//       height: auto;
+//       border-bottom: 0.2em solid $prof-bg;
+//       .prof__name {
+//         background-color: $prof-bg;
+//         flex-direction: row;
+//         padding: 0.5em 1em;
+//         justify-content: space-between;
+//         span {
+//           display: inline-block;
+//         }
+//       }
+//       .prof__level {
+//         border-left: 1em solid $prof-bg;
+//         .bar {
+//           height: 0.6em;
+//           span {
+//             visibility: hidden;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
