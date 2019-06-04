@@ -1,0 +1,40 @@
+[class^="button--"],
+[class*="button--"] {
+  padding: 0.5em 1em;
+  color: $color-text-invert;
+  transition: box-shadow $transition-fast $bezier-quart;
+  &:hover,
+  &:focus {
+    box-shadow: $shadow-md;
+  }
+  &:active {
+    transition: none;
+    box-shadow: none;
+  }
+}
+
+.button--pri {
+  background-color: $theme-pri;
+  &:hover,
+  &:focus {
+    background-color: $theme-pri-dark;
+  }
+}
+
+.button--sec {
+  background-color: $theme-sec;
+  &:hover,
+  &:focus {
+    background-color: $theme-sec-dark;
+  }
+
+}
+
+.button--tri {
+  background-color: $theme-tri;
+  &:hover,
+  &:focus {
+    background-color: $theme-tri-dark;
+  }
+
+}

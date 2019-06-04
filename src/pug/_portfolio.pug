@@ -4,19 +4,30 @@ mixin section-header(display, section, addclass)
     .overlay--select
     .span= display
 
-mixin filter(name, tag, addclass)
-  li.filter(class=addclass data-tag=tag)
+mixin filter(name, addclass)
+  li.filter(class=addclass data-tag=name)
     .overlay
     span= name
 
-mixin project(name, url, tags)
-  - var tagStr = tags.join(' ')
-  - var dataId = name.replace(' ', '_').toLowerCase()
+mixin project(obj)
+  - var tagStr = obj.tags.join(' ')
+  - var dataId = obj.name.replace(/\s/g, '_').toLowerCase()
   - var src = `assets/projects/${dataId}.jpg`
-  a.project(id=dataId href=url title=name target='_blank' data-tags=tagStr)
-    img.project(src=src alt=name)
+  li.project(id=dataId data-tags=tagStr)
+    .underlay
+      h2= obj.name
+      .text
+        p= obj.text
+        .footer
+          .tags
+            i.fas.fa-tags
+            span= obj.tags.join(' - ')
+          a.button--pri(href=obj.url target='_blank' title=obj.url)
+            i.fas.fa-globe-americas
+            span Visit
+    a.project__img(href=obj.url target='_blank')
+      img(src=src alt=obj.name)
     .overlay
-      h2= name
       
 -
   var gradient = {
@@ -43,50 +54,91 @@ mixin prof(name, level, color)
   var projects = [
     { name: 'Llama',
       url: 'http://llamareads.me/',
-      tags: ['react', 'firebase', 'uiux'],
-      text: `Keep track of all the memorable books you've read and share them with friends. Follow your book's journey as it is shared to see how you've impacted your friends and community. As my final project created as a student at Le Wagon coding bootcamp, this was prepared in two weeks with two other students and best showcases my interest in simple yet effective UI/UX design. Effects and visuals all coded from scratch!`
+      tags: ['React', 'Firebase', 'UI/UX'],
+      text: `Fun, UI-focused book-sharing app with UI effects built from scratch. Developed as a final project for Le Wagon in 2 weeks.`
     },
     { name: 'PopUp Shop',
       url: 'http://baguette-popup-shop.herokuapp.com/',
-      tags: ['rails', 'sql', 'uiux'],
-      text: `An AirBnb-style digital marketplace aimed to connect artists to local store-owners that have the space and means to sell the artist's work. This was created as a student at Le Wagon coding bootcamp in one week, using a sleek modern style and a map API.`
+      tags: ['Ruby/Rails', 'SQL', 'UI/UX'],
+      text: `AirBnb-style digital marketplace aimed to connect artists to local store-owners that have the space and means to sell the artist's work. Developed as a final project for Le Wagon in 1 week.`
     },
     { name: 'Fruitbowl',
       url: 'https://fruitbowl.glitch.me/',
-      tags: ['node', 'mongo', 'uiux', 'socket'],
-      text: 'A simple and light-hearted instant messaging app. This was a personal study project exploring socket.io functionality and the depth of UX design needed for a good messaging app experience.'
+      tags: ['Node/Express', 'MongoDB', 'UI/UX', 'socket.io'],
+      text: 'Light-heartedly themed instant messaging app. A personal study project exploring socket.io functionality and the depth of UX design needed for a good messaging app experience.'
     },
     { name: 'Phrase Generator',
       url: 'https://sunny-space.glitch.me/',
-      tags: ['node', 'api'],
-      text: 'Inspired by URL name generation techniques used by sites like Glitch and gfycat, I created this tool to imitate their algorithms using the Datamuse API. Quickly generate your own fun and unique word combinations.'
+      tags: ['Node/Express', 'API'],
+      text: 'Quickly generate your own fun and unique word combinations. Inspired by URL name generation techniques used by sites like Glitch and gfycat. Built with Datamuse API'
     },
-    { name: 'Pomodoro',
+    { name: 'Pomodoro Clock',
       url: 'https://codepen.io/mykolodon/full/ajBBLV',
-      tags: ['react', 'uiux'],
-      text: 'Stay productive using this fun pomodoro clock tool. This single-page app was created using React.js with an intuitive user experience in mind.'
+      tags: ['React', 'UI/UX'],
+      text: 'Stay productive using this fun pomodoro clock tool. Created using React.js with an intuitive user experience in mind.'
     },
     { name: 'Drum Pad',
       url: 'https://codepen.io/mykolodon/full/wxBwVV',
-      tags: ['react'],
-      text: 'A basic drum machine made with React, and my first project coding UI controls from scratch. Hit the pad with your keyboard to make a wicked beat!'
+      tags: ['React'],
+      text: 'Basic drum machine made with React. UI controls coded from scratch. Hit the pad with your keyboard to make a wicked beat!'
     },
-    { name: 'Mister Cocktail',
-      url: 'https://mr-cocktail-mcli830.herokuapp.com/',
-      tags: ['rails', 'sql', 'uiux'],
-      text: 'Discover interesting cocktails, or create your own.'
-    }.
+    // { name: 'Mister Cocktail',
+    //   url: 'https://mr-cocktail-mcli830.herokuapp.com/',
+    //   tags: ['Ruby/Rails', 'SQL', 'UI/UX'],
+    //   text: 'Discover interesting cocktails, or create your own.'
+    // },
     { name: 'Datamuse Interface',
       url: 'https://codepen.io/mykolodon/full/vMVEwp',
-      tags: ['api', 'tool'],
-      text: 'A simple interface to access the Datamuse API. Works kind of like a thesaurus, but with more options.'
+      tags: ['API', 'Tools'],
+      text: 'Bare-bones interface to access the Datamuse API. Works kind of like a thesaurus, but with more unique search queries.'
     },
     { name: 'Calculator',
       url: 'https://codepen.io/mykolodon/full/yqevJv',
-      tags: ['react', 'uiux', 'tool'],
-      text: `It's a calculator. Click or type. Made with React with UX in mind.`
-    }
+      tags: ['React', 'UI/UX', 'Tools'],
+      text: `It's a calculator. Click or type.`
+    },
+    { name: 'Weather Widget',
+      url: 'https://codepen.io/mykolodon/full/pVQYqv',
+      tags: ['UI/UX', 'API'],
+      text: `Simple weather app using the geolocation API.`
+    },
+    { name: 'Color Blocks',
+      url: 'https://codepen.io/mykolodon/full/MXxEyq',
+      tags: ['React'],
+      text: `A pointless game utilizing React lifecycle functions.`
+    },
+    { name: 'Goji Devkit',
+    url: 'https://www.npmjs.com/package/goji-devkit',
+    tags: ['Node/Express', 'Tools'],
+    text: `An npm package that I published of web development tools that I developed from scratch. Includes useful front-end functions and web components. Work in progress.`
+    },
+    { name: 'D3 Choropleth',
+      url: 'https://codepen.io/mykolodon/full/bjammp',
+      tags: ['D3'],
+      text: `Interactive data visualization project. Mouseover or click on the scale bar to filter counties.`
+    },
+    { name: 'D3 Treemap',
+      url: 'https://codepen.io/mykolodon/full/BPVOVp',
+      tags: ['D3'],
+      text: `Interactive data visualization project. Click on a section to zoom in the view box.`
+    },
+    { name: 'D3 Bar Chart',
+      url: 'https://codepen.io/mykolodon/full/QBvGLx',
+      tags: ['D3'],
+      text: `Interactive data visualization project. Mouseover data points for details.`
+    },
+    { name: 'D3 Scatterplot',
+      url: 'https://codepen.io/mykolodon/full/YjxNEY',
+      tags: ['D3'],
+      text: `Interactive data visualization project. Mouseover data points for details.`
+    },
+    { name: 'D3 Heatmap',
+    url: 'https://codepen.io/mykolodon/full/Zjaamd',
+    tags: ['D3'],
+    text: `Interactive data visualization project. Mouseover data points for details.`
+    },
   ]
+
 
 section#portfolio.portfolio
   .portfolio__content
@@ -96,33 +148,21 @@ section#portfolio.portfolio
     .portfolio__view
       #projects.portfolio__projects
         ul.portfolio__filters
-          +filter('All', 'all', 'selected')
-          +filter('React', 'react')
-          +filter('Ruby/Rails', 'rails')
-          +filter('Node/Express', 'node')
-          +filter('SQL', 'sql')
-          +filter('MongoDB', 'mongo')
-          +filter('Firebase', 'firebase')
-          +filter('API', 'api')
-          +filter('D3', 'd3')
-          +filter('socket.io', 'socket')
-          +filter('UI/UX', 'uiux')
-          +filter('Tools', 'tool')
-        .portfolio__list
-          +project('Llama', 'http://llamareads.me/', ['react', 'firebase', 'uiux'])
-          +project('PopUp Shop', 'http://baguette-popup-shop.herokuapp.com/', ['rails', 'sql', 'uiux'])
-          +project('Fruitbowl', 'https://fruitbowl.glitch.me/', ['node', 'mongo', 'uiux', 'socket'])
-          +project('Phrase Generator', 'https://sunny-space.glitch.me/', ['node', 'api'])
-          +project('Pomodoro', 'https://codepen.io/mykolodon/full/ajBBLV', ['react', 'uiux'])
-          +project('Drum Pad', 'https://codepen.io/mykolodon/full/wxBwVV', ['react'])
-          +project('Mister Cocktail', 'https://mr-cocktail-mcli830.herokuapp.com/', ['rails', 'sql', 'uiux'])
-          +project('Datamuse Interface', 'https://codepen.io/mykolodon/full/vMVEwp', ['api', 'tool'])
-          +project('Calculator', 'https://codepen.io/mykolodon/full/yqevJv', ['react', 'tool'])
-          +project('Weather App', 'https://codepen.io/mykolodon/full/pVQYqv', ['uiux', 'api'])
-          +project('Color Blocks', 'https://codepen.io/mykolodon/full/MXxEyq', ['react', 'uiux'])
-          +project('D3 Choropleth', 'https://codepen.io/mykolodon/full/bjammp', ['d3'])
-          +project('D3 Treemap', 'https://codepen.io/mykolodon/full/BPVOVp', ['d3'])
-          +project('Goji Devkit', 'https://www.npmjs.com/package/goji-devkit', ['node', 'tool'])
+          +filter('All', 'selected')
+          +filter('React')
+          +filter('Ruby/Rails')
+          +filter('Node/Express')
+          +filter('SQL')
+          +filter('MongoDB')
+          +filter('Firebase')
+          +filter('API')
+          +filter('D3')
+          +filter('socket.io')
+          +filter('UI/UX')
+          +filter('Tools')
+        ul.portfolio__list
+          each p in projects
+            +project(p)
       #proficiency.portfolio__profs.hide
         #langs.profs__category
           h4 Languages
@@ -140,6 +180,7 @@ section#portfolio.portfolio
           ul.profs__list
             +prof('Node', 90, 'green')
             +prof('Express', 80, 'green')
+            +prof('JQuery', 80, 'green')
             +prof('React', 70, 'green')
             +prof('Redux', 70, 'green')
             +prof('Pug', 90, 'green')
@@ -155,10 +196,12 @@ section#portfolio.portfolio
           h4 Skills
           ul.profs__list
             +prof('Front End', 80, 'red')
-            +prof('UI/UX', 80, 'red')
+            +prof('UI/UX Design', 80, 'red')
+            +prof('Responsive', 80, 'red')
+            +prof('AJAX', 80, 'red')
             +prof('Back End', 70, 'red')
+            +prof('APIs', 70, 'red')
             +prof('OOP', 70, 'red')
-            +prof('REST', 70, 'red')
-            +prof('Testing', 50, 'red')
+            +prof('Algorithms', 70, 'red')
             +prof('Debugging', 50, 'red')
   .overlay

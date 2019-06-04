@@ -15,7 +15,7 @@ function initFilterFunctions(state){
 
 // helper
 function getProjects(){
-  return Array.from(document.querySelectorAll('.portfolio__list > a.project'));
+  return Array.from(document.querySelectorAll('.portfolio__list > .project'));
 }
 function initProjectState(state){
   state.projects = getProjects().map(proj => {
@@ -30,11 +30,11 @@ function initProjectState(state){
   })
 }
 
-function updateProjects(state, filter = 'all'){
+function updateProjects(state, filter = 'All'){
   state.projects.forEach(proj => {
     proj.prev = Object.assign({}, proj.next);
     var tags = proj.node.dataset.tags.split(' ');
-    if (tags.includes(filter) || filter === 'all') {
+    if (tags.includes(filter) || filter == 'All') {
       proj.next.view = true;
       proj.node.style.display = '';
       setTimeout(()=>proj.node.style.opacity = 1, 50);

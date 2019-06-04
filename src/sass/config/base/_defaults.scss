@@ -17,6 +17,14 @@ body {
   @include mediaQueryRange($rules: (font-size: (12px, 18px)), $delay: 1);
 }
 
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
 ::-webkit-scrollbar {
   max-width: 8px;
   max-height: 8px;

@@ -89,37 +89,120 @@ $filter-selected: $theme-pri;
   @include flex($dir: row, $justify: center);
   height: auto;
   width: 100%;
-  padding: 0 1em;
+  padding: 0 2em;
+  margin-bottom: 10rem;
   flex-wrap: wrap;
 
-  .project {
+  .project,
+  .project__img img {
     @include mediaQueryRange((
       height: (80, 200),
       width: (120, 300)
     ));
-    transition: opacity $transition-fast $bezier-quart;
+  }
+
+  .project {
+    transition: $transition-fast $bezier-quart;
     position: relative;
-    img {
+    z-index: 1;
+    .underlay {
+      @include overlay;
+      pointer-events: visible;
+      @include flex($dir: column, $justify: space-between);
+      padding: 0.5em 2em;
+      opacity: 1;
+      transition: $transition-fast $bezier-quart;
+      & > * {
+        transition: inherit;
+        opacity: 0;
+      }
+      h2 {
+        font-family: $font-proj-h;
+        position: relative;
+        padding: 0.25em 0;
+        flex: 0 0 auto;
+        text-align: left;
+        color: $color-text;
+      }
+      .text {
+        height: 8.7em;
+        width: 100%;
+        @include flex($dir: column, $justify: space-between);
+        p {
+          flex: 1 1 auto;
+          width: 100%;
+          font-size: 0.8em;
+          color: $color-text;
+          font-family: $font-proj-text;
+          line-height: 1.1em;
+          overflow: hidden;
+        }
+        .footer {
+          @include flex($dir: row, $justify: space-between, $align: center);
+          width: 100%;
+          padding: 0.5em 0;
+          .tags {
+            font-size: 0.7em;
+            color: $theme-pri-dark;
+            font-family: $font-filter;
+          }
+          a {
+            flex: 0 0 auto;
+            font-size: 0.9em;
+            align-self: flex-end;
+            font-family: $font-link;
+          }
+          span {
+            margin-left: 0.5em;
+          }
+        }
+      }
+    }
+    .project__img {
+      position: relative;
       pointer-events: none;
-      object-fit: cover;
+      z-index: 2;
+      img {
+        cursor: pointer;
+        object-fit: cover;
+        transition: $transition-fast $bezier-quart;
+      }
     }
     .overlay {
       transition: $transition-fast;
+      padding: 0.5em;
       opacity: 0;
-      @include flex(center);
-      h2 {
-        font-family: $font-badge;
-        color: $color-text-invert;
-      }
+      box-shadow: inset 0 0 20px $alpha-dark;
+      // background-color: $alpha-dark;
     }
 
     // .project:hover
     &:hover,
     &:focus,
     &:active {
+      z-index: 2;
+      transform: translate(0,-2em) scale(1.2);
+      transition-delay: $transition-fast;
+      .underlay {
+        background-color: $color-bg;
+        border-radius: $border-radius-sm;
+        box-shadow: $shadow-lg;
+        top: -2em;
+        left: -2em;
+        width: calc(100% + 4em);
+        height: calc(100% + 12em);
+        // transition-timing-function: $bezier-bounce;
+        transition-delay: $transition-fast;
+        & > * {
+          opacity: 1;
+        }
+        @media only screen and (orientation:landscape) {
+          height: calc(100% + 9em);
+        }
+      }
       .overlay {
-        background-color: $alpha-black;
         opacity: 1;
+        z-index: 3;
       }
     }
   }
@@ -127,5 +210,27 @@ $filter-selected: $theme-pri;
   // .portfolio__list @media
   @media only screen and (orientation: landscape){
     padding: 0;
+
+    .project {
+      .project__img {
+        pointer-events: visible;
+      }
+      .underlay {
+        .text {
+          height: 5.7em;
+          p {
+            font-size: 0.7em;
+          }
+          .footer {
+            .tags {
+              font-size: 0.6em;
+            }
+            a {
+              font-size: 0.7em;
+            }
+          }
+        }
+      }
+    }
   }
 }

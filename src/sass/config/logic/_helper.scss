@@ -1,6 +1,6 @@
 @mixin body-contain {
   @include mediaQueryStep($delay: 2, $rules: (
-    padding-left: (3%, 6%, 9%),
-    padding-right: (4%, 7%, 10%)
+    padding-left: (3%, 5%, 7%),
+    padding-right: (4%, 6%, 8%)
   ));
 }
