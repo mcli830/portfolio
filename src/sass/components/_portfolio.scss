@@ -8,7 +8,9 @@
   .overlay {
     transition: $transition-fast $bezier-quart;
     background-color: transparent;
+    z-index: 1;
     &.on {
+      pointer-events: all;
       background-color: $alpha-white;
     }
   }

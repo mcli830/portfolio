@@ -1,7 +1,6 @@
 module.exports = function(animations) {
   const namecard = document.querySelector('.namecard__content');
-  const portfolio = document.querySelector('#portfolio');
-  const overlay = document.querySelector('.portfolio > .overlay');
+  const overlay = document.querySelector('#page-overlay');
   namecard.onmouseenter = () => {
     animations.namecard.pause();
     animations.namecard.seek(0);
@@ -18,9 +17,9 @@ module.exports = function(animations) {
     namecard.onclick = null;
     namecard.classList.add('on');
     overlay.classList.add('on');
-    portfolio.onclick = (e) => {
+    overlay.onclick = (e) => {
       e.preventDefault();
-      portfolio.onclick = null;
+      overlay.onclick = null;
       namecard.classList.remove('on');
       overlay.classList.remove('on');
       namecard.onclick = namecardClick;

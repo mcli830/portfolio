@@ -12,6 +12,7 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: $color-bg;
   padding: 0;
   @include mediaQueryRange($rules: (font-size: (12px, 18px)), $delay: 1);

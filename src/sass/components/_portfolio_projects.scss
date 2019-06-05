@@ -35,7 +35,7 @@ $filter-selected: $theme-pri;
     text-align: center;
     padding: 1em 0;
     color: $color-text-invert;
-    background-color: $black;
+    background-color: $black-light;
     cursor: pointer;
     transition: $transition-fast $bezier-quart;
     span {
@@ -104,7 +104,7 @@ $filter-selected: $theme-pri;
   .project {
     transition: $transition-fast $bezier-quart;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     .underlay {
       @include overlay;
       pointer-events: visible;
@@ -184,6 +184,7 @@ $filter-selected: $theme-pri;
       transform: translate(0,-2em) scale(1.2);
       transition-delay: $transition-fast;
       .underlay {
+        outline: 5px solid linear-gradient($white, transparent);
         background-color: $color-bg;
         border-radius: $border-radius-sm;
         box-shadow: $shadow-lg;
