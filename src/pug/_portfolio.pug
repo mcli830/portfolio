@@ -63,6 +63,12 @@ mixin prof(name, level, color, title)
       tags: ['Ruby/Rails', 'SQL', 'UI/UX'],
       text: `AirBnb-style digital marketplace aimed to connect artists to local store-owners that have the space and means to sell the artist's work. Developed as a final project for Le Wagon in 1 week.`
     },
+    {
+      name: 'MoneyTrack',
+      url: 'https://moneytracks.herokuapp.com/',
+      tags: ['React', 'GraphQL', 'Material UI', 'D3', 'WIP'],
+      text: `A mobile-first web app with touch-intuitive interface for managing expenses. Try adding it to your home screen on mobile. Coming soon: Add friends and link them to your transactions to track who paid for what.`,
+    },
     { name: 'Fruitbowl',
       url: 'https://fruitbowl.glitch.me/',
       tags: ['Node/Express', 'MongoDB', 'UI/UX', 'socket.io'],
@@ -156,11 +162,14 @@ section#portfolio.portfolio
           +filter('SQL')
           +filter('MongoDB')
           +filter('Firebase')
+          +filter('GraphQL')
           +filter('API')
           +filter('D3')
+          +filter('Material UI')
           +filter('socket.io')
           +filter('UI/UX')
           +filter('Tools')
+          +filter('WIP')
         ul.portfolio__list
           each p in projects
             +project(p)
