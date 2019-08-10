@@ -66,7 +66,7 @@ mixin prof(name, level, color, title)
     {
       name: 'MoneyTrack',
       url: 'https://moneytracks.herokuapp.com/',
-      tags: ['React', 'GraphQL', 'Material UI', 'D3', 'WIP'],
+      tags: ['React', 'GraphQL', 'MaterialUI', 'D3', 'WIP'],
       text: `A mobile-first web app with touch-intuitive interface for managing expenses. Try adding it to your home screen on mobile. Coming soon: Add friends and link them to your transactions to track who paid for what.`,
     },
     { name: 'Fruitbowl',
@@ -165,7 +165,7 @@ section#portfolio.portfolio
           +filter('GraphQL')
           +filter('API')
           +filter('D3')
-          +filter('Material UI')
+          +filter('MaterialUI')
           +filter('socket.io')
           +filter('UI/UX')
           +filter('Tools')
@@ -181,37 +181,38 @@ section#portfolio.portfolio
             +prof('CSS', 80, 'blue', 'Cascading Style Sheets')
             +prof('JavaScript', 90, 'blue', 'JavaScript / ECMA Script 6')
             +prof('Ruby/Rails', 70, 'blue', 'Ruby / Ruby on Rails')
-            +prof('SQL', 60, 'blue', 'Structured Query Language / MySQL / PostGreSQL')
-            +prof('Java', 30, 'blue', 'Java')
-            +prof('Python', 10, 'blue', 'Python')
-            +prof('Linux/Bash', 60, 'blue', 'Linux / Unix / Bash')
+            +prof('SQL', 50, 'blue', 'Structured Query Language / MySQL / PostGreSQL')
+            +prof('GraphQL', 60, 'blue', 'Graph Query Language')
+            +prof('Java', 40, 'blue', 'Java')
+            +prof('Python', 50, 'blue', 'Python')
+            +prof('Linux/Bash', 50, 'blue', 'Linux / Unix / Bash')
         #tools.profs__category
           h4 Tools
           ul.profs__list
             +prof('Node', 90, 'green', 'Node.js / Node Package Manager (npm)')
             +prof('Express', 80, 'green', 'Express.js')
             +prof('JQuery', 80, 'green', 'JQuery.js')
-            +prof('React', 70, 'green', 'React.js')
+            +prof('React', 80, 'green', 'React.js')
             +prof('Redux', 70, 'green', 'Redux.js')
             +prof('Pug', 90, 'green', 'Pug.js / Jade')
             +prof('Sass', 90, 'green', 'Syntactically Awesome Style Sheets')
             +prof('Bootstrap', 70, 'green')
-            +prof('Material UI', 50, 'green', 'Material Design Components')
+            +prof('Material UI', 80, 'green', 'Material Design Components')
             +prof('D3', 60, 'green', 'D3.js / Data-Driven Documents')
             +prof('MongoDB', 70, 'green')
             +prof('socket.io', 40, 'green')
             +prof('Webpack', 60, 'green')
-            +prof('Gulp', 70, 'green')
-        #skills.profs__category
-          h4 Skills
-          ul.profs__list
-            +prof('Front End', 80, 'red')
-            +prof('UI/UX Design', 80, 'red', 'User Interface / User Experience Design')
-            +prof('Responsive', 80, 'red', 'Responsive Design')
-            +prof('AJAX', 80, 'red', 'Asynchronous JavaScript and XML Requests')
-            +prof('Back End', 70, 'red')
-            +prof('API', 70, 'red', 'Application Programming Interface')
-            +prof('OOP', 70, 'red', 'Object-Orientated Programming')
-            +prof('Algorithms', 70, 'red')
-            +prof('Debugging', 50, 'red')
+            +prof('Gulp', 60, 'green')
+        //- #skills.profs__category
+        //-   h4 Skills
+        //-   ul.profs__list
+        //-     +prof('Front End', 80, 'red')
+        //-     +prof('UI/UX Design', 80, 'red', 'User Interface / User Experience Design')
+        //-     +prof('Responsive', 80, 'red', 'Responsive Design')
+        //-     +prof('AJAX', 80, 'red', 'Asynchronous JavaScript and XML Requests')
+        //-     +prof('Back End', 70, 'red')
+        //-     +prof('API', 70, 'red', 'Application Programming Interface')
+        //-     +prof('OOP', 70, 'red', 'Object-Orientated Programming')
+        //-     +prof('Algorithms', 70, 'red')
+        //-     +prof('Debugging', 50, 'red')
   #page-overlay.overlay

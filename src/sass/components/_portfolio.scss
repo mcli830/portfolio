@@ -17,6 +17,7 @@
 }
 
 .portfolio__content {
+  min-height: calc(100% - 3.9em);
   @include flex($dir: column, $align: center);
 }
 
