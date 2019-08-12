@@ -79,7 +79,12 @@ button {
   cursor: pointer; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #0069c0; }
+  a:hover {
+    color: #6ec6ff; }
+  a:visited {
+    color: #0069c0; }
 
 ::-webkit-scrollbar {
   max-width: 8px;

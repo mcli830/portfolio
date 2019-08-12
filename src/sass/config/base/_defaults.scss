@@ -24,6 +24,13 @@ button {
 
 a {
   text-decoration: none;
+  color: $theme-pri-dark;
+  &:hover {
+    color: $theme-pri-light;
+  }
+  &:visited {
+    color: $theme-pri-dark;
+  }
 }
 
 ::-webkit-scrollbar {
