@@ -74,6 +74,12 @@ $intro-delay: $transition-fast / 2;
       padding: $texts-padding;
       transform-origin: 50% 50%;
     }
+    a {
+      color: $theme-pri-dark;
+      &:hover {
+        color: $theme-pri-light;
+      }
+    }
   }
 
   .namecard__name {

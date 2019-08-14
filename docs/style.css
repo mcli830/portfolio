@@ -79,12 +79,9 @@ button {
   cursor: pointer; }
 
 a {
-  text-decoration: none;
-  color: #0069c0; }
-  a:hover {
-    color: #6ec6ff; }
+  text-decoration: none; }
   a:visited {
-    color: #0069c0; }
+    color: inherit; }
 
 ::-webkit-scrollbar {
   max-width: 8px;
@@ -326,6 +323,10 @@ a {
       padding: 8px;
       -webkit-transform-origin: 50% 50%;
       transform-origin: 50% 50%; }
+    .namecard__content .namecard__text a {
+      color: #0069c0; }
+      .namecard__content .namecard__text a:hover {
+        color: #6ec6ff; }
   .namecard__content .namecard__name {
     position: relative;
     z-index: 2;
