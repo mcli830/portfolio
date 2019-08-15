@@ -8,8 +8,17 @@ mixin filter(name, addclass)
   li.filter(class=addclass data-tag=name)
     .overlay
     span= name
-
-mixin project(obj)
+    
+mixin project_list(obj)
+  - var tagStr = obj.tags.join(' ')
+  - var dataId = obj.name.replace(/\s/g, '_').toLowerCase()
+  - var src = `assets/projects/${dataId}.jpg`
+  li.project__list(id=dataId data-tags=tagStr)
+    h2= obj.name
+    p= obj.text
+    a(href=obj.url) Visit
+  
+mixin project_grid(obj)
   - var tagStr = obj.tags.join(' ')
   - var dataId = obj.name.replace(/\s/g, '_').toLowerCase()
   - var src = `assets/projects/${dataId}.jpg`
@@ -154,25 +163,48 @@ section#portfolio.portfolio
       +section-header('Proficiency', 'proficiency')
     .portfolio__view
       #projects.portfolio__projects
-        ul.portfolio__filters
-          +filter('All', 'selected')
-          +filter('React')
-          +filter('Ruby/Rails')
-          +filter('Node/Express')
-          +filter('SQL')
-          +filter('MongoDB')
-          +filter('Firebase')
-          +filter('GraphQL')
-          +filter('API')
-          +filter('D3')
-          +filter('MaterialUI')
-          +filter('socket.io')
-          +filter('UI/UX')
-          +filter('Tools')
-          +filter('WIP')
-        ul.portfolio__list
-          each p in projects
-            +project(p)
+        .portfolio__control
+          .portfolio__control__view
+            button.control--toggle
+              i.fas.fa-th-list.on
+              i.fas.fa-th-large
+            button.control--list
+              i.fas.fa-th-list
+            button.control--grid
+              i.fas.fa-th-large
+          .portfolio__control__filters
+            button.filter-select
+              .icon
+                i.fas.fa-filter
+              span#active-filter All
+              .icon
+                i.fas.fa-sort-down
+            .portfolio__filters
+              ul
+                +filter('All', 'selected')
+                +filter('React')
+                +filter('Ruby/Rails')
+                +filter('Node/Express')
+                +filter('SQL')
+                +filter('MongoDB')
+                +filter('Firebase')
+                +filter('GraphQL')
+                +filter('API')
+                +filter('D3')
+                +filter('MaterialUI')
+                +filter('socket.io')
+                +filter('UI/UX')
+                +filter('Tools')
+                +filter('WIP')
+        .portfolio__stage
+          .portfolio__list.on
+            ul
+              each p in projects
+                +project_list(p)
+          .portfolio__grid
+            ul
+              each p in projects
+                +project_grid(p)
       #proficiency.portfolio__profs.hide
         #langs.profs__category
           h4 Languages

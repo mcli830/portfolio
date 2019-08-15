@@ -26,7 +26,6 @@ $header-selected: rgba($color-text-light, 0.7);
 .portfolio__sections {
   position: relative;
   width: 100%;
-  margin-bottom: 2rem;
   @include flex($dir: row, $justify: center, $align: center);
   @media only screen and (orientation: landscape) {
     margin-bottom: 3rem;

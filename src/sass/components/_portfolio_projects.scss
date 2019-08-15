@@ -16,18 +16,109 @@
 }
 
 $filter-selected: $theme-pri;
+$control-button-size: 2.5em;
+$control-button-fontsize: 1em;
+
+@mixin control-button {
+  font-size: $control-button-fontsize;
+  text-align: center;
+  background: transparent;
+  color: $alpha-light;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid $alpha-light;
+  cursor: pointer;
+  &:hover {
+    color: $color-text-invert;
+    border-color: $alpha-white;
+    background-color: $color-text-dark;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.portfolio__control {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-text;
+  padding: 1em;
+  button {
+    height: $control-button-size;
+    width: $control-button-size;
+    margin: auto;
+    @include control-button;
+  }
+}
+
+.portfolio__control__view {
+  .control--toggle {
+    i {
+      display: none;
+      &.on {
+        display: inline-block;
+      }
+    }
+  }
+  .control--list {
+    display: none;
+  }
+  .control--grid {
+    display: none;
+  }
+  @media only screen and (orientation: landscape) {
+    .control--toggle {
+      display: none;
+    }
+  }
+}
+
+.portfolio__control__filters {
+
+  .filter-select {
+    @include control-button;
+    width: 15em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    i {
+      margin: 0.75em;
+    }
+    #active-filter {
+      text-align: left;
+      flex: 1 1 auto;
+    }
+  }
+
+  @media only screen and (orientation: landscape) {
+    display: block;
+    .filter-select {
+      display: none;
+    }
+  }
+}
 
 .portfolio__filters {
-  position: relative;
-  font-size: 1em;
-  font-family: $font-filter;
-  text-transform: capitalize;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 1em;
-  @include flex($dir: row, $justify: center);
-  flex-wrap: wrap;
-  padding: 0 10%;
+  display: none;
+  .on {
+    display: block;
+  }
+  ul {
+    position: relative;
+    font-size: 1em;
+    font-family: $font-filter;
+    text-transform: capitalize;
+    text-align: center;
+    width: 100%;
+    @include flex($dir: row, $justify: center);
+    padding: 0 10%;
+  }
   .filter {
     position: relative;
     display: inline-block;
@@ -64,14 +155,17 @@ $filter-selected: $theme-pri;
   }
   // .portfolio__filters @media
   @media only screen and (orientation: landscape) {
-    position: sticky;
-    top: 1rem;
-    width: auto;
-    text-align: left;
-    display: initial;
-    padding: 0;
-    margin-bottom: 0;
-    margin-right: 2rem;
+    display: block;
+    ul {
+      position: sticky;
+      top: 1rem;
+      width: auto;
+      text-align: left;
+      display: initial;
+      padding: 0;
+      margin-bottom: 0;
+      margin-right: 2rem;
+    }
     .filter {
       display: block;
       flex: none;
@@ -85,13 +179,25 @@ $filter-selected: $theme-pri;
   }
 }
 
-.portfolio__list {
-  @include flex($dir: row, $justify: center);
-  height: auto;
-  width: 100%;
-  padding: 0 2em;
-  margin-bottom: 10rem;
-  flex-wrap: wrap;
+.portfolio__stage {
+  & > * {
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+}
+
+.portfolio__grid {
+
+  ul {
+    @include flex($dir: row, $justify: center);
+    height: auto;
+    width: 100%;
+    padding: 0 2em;
+    margin-bottom: 10rem;
+    flex-wrap: wrap;
+  }
 
   .project,
   .project__img img {
