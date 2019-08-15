@@ -15,7 +15,7 @@ function initFilterFunctions(state){
 
 // helper
 function getProjects(){
-  return Array.from(document.querySelectorAll('.portfolio__list > .project'));
+  return Array.from(document.querySelectorAll('.project--grid'));
 }
 function initProjectState(state){
   state.projects = getProjects().map(proj => {
@@ -67,4 +67,4 @@ function moveProjects(state){
   });
 }
 
-module.exports = initFilterFunctions;
+module.exports = {initFilterFunctions, };
