@@ -17,3 +17,18 @@
     @include mediaQueryRange((width: (100%, 85%)));
   }
 }
+
+.split--vertical {
+  @include flex($dir: row);
+  & > * {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+  & > *:nth-child(n+3){
+    display: none;
+  }
+}
+
+.flex--center {
+  @include flex(center);
+}

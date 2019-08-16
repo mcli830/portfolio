@@ -13,16 +13,28 @@ mixin project_list(obj)
   - var tagStr = obj.tags.join(' ')
   - var dataId = obj.name.replace(/\s/g, '_').toLowerCase()
   - var src = `assets/projects/${dataId}.jpg`
-  li.project__list(id=dataId data-tags=tagStr)
-    h2= obj.name
-    p= obj.text
-    a(href=obj.url) Visit
+  li.project.project--list.split--vertical(id=`list-${dataId}` data-tags=tagStr)
+    .info
+      h2= obj.name
+      .text
+        p= obj.text
+        .footer
+          .tags
+            i.fas.fa-tags
+              span= obj.tags.join(' - ')
+          a.button--pri(href=obj.url target='_blank' title=obj.url)
+            i.fas.fa-globe-americas
+            span Visit
+    .project--list__img.flex--center
+      .project__img
+        img(src=src alt=obj.name)
+      
   
 mixin project_grid(obj)
   - var tagStr = obj.tags.join(' ')
   - var dataId = obj.name.replace(/\s/g, '_').toLowerCase()
   - var src = `assets/projects/${dataId}.jpg`
-  li.project--grid(id=dataId data-tags=tagStr)
+  li.project.project--grid(id=`grid-${dataId}` data-tags=tagStr)
     .underlay
       h2= obj.name
       .text
@@ -164,19 +176,19 @@ section#portfolio.portfolio
       #projects.portfolio__projects
         .portfolio__control
           .portfolio__control__view
-            button#control-view-toggle.control--toggle(data-mode='grid')
-              i#control-view-toggle-list.fas.fa-th-list(data-mode='list')
-              i#control-view-toggle-grid.fas.fa-th-large.on(data-mode='grid')
-            button.control--list
+            button#control-view-toggle.control--toggle(data-mode='list')
+              i#control-view-toggle-list.fas.fa-th-list.on(data-mode='list')
+              i#control-view-toggle-grid.fas.fa-th-large(data-mode='grid')
+            button#control-view-list.control--switch.selected
               i.fas.fa-th-list
-            button.control--grid
+            button#control-view-grid.control--switch
               i.fas.fa-th-large
           .portfolio__control__filters
-            button.filter-select
+            button#control-view-filter-select.filter-select
               i.fas.fa-filter
               span#active-filter All
               i.fas.fa-sort-down
-            .portfolio__filters
+            #control-filter-menu.portfolio__filters
               ul
                 +filter('All', 'selected')
                 +filter('React')
@@ -194,11 +206,11 @@ section#portfolio.portfolio
                 +filter('Tools')
                 +filter('WIP')
         .portfolio__stage
-          #portfolio-list.portfolio__list
+          #portfolio-list.portfolio__list.on
             ul
               each p in projects
                 +project_list(p)
-          #portfolio-grid.portfolio__grid.on
+          #portfolio-grid.portfolio__grid
             ul
               each p in projects
                 +project_grid(p)

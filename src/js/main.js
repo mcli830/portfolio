@@ -1,7 +1,7 @@
 // IMPORTS
 // const initParticles = require('./particlesBG.js')
 const initControlFunc = require('./control.js')
-const initFilterFunc = require('./filter.js')
+const { initFilterFunctions } = require('./filter.js')
 const initSectionButtons = require('./sections.js')
 const initNamecardFunc = require('./namecard.js')
 const namecardAnim = require('./namecardAnim.js')
@@ -17,7 +17,7 @@ function init(){
   initAnims();
   initSectionButtons(animations);
   initControlFunc();
-  initFilterFunc(state);
+  initFilterFunctions(state);
   initNamecardFunc(animations);
 }
 

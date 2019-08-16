@@ -9,12 +9,13 @@
     opacity: 0;
     left: -100%;
   }
-  @media only screen and (orientation: landscape) {
+  @media only screen and (min-width: 960px) {
     @include flex($dir: row);
     flex: 1 1 auto;
   }
 }
 
+$filter-menu-width: 12em;
 $filter-selected: $theme-pri;
 $control-button-size: 2.5em;
 $control-button-fontsize: 1em;
@@ -42,6 +43,7 @@ $control-button-fontsize: 1em;
 
 .portfolio__control {
   position: sticky;
+  z-index: 1;
   top: 0;
   width: 100%;
   display: flex;
@@ -56,9 +58,18 @@ $control-button-fontsize: 1em;
     margin: auto;
     @include control-button;
   }
+  @media only screen and (min-width: 960px){
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 1rem;
+    width: $filter-menu-width;
+    padding: 0;
+  }
 }
 
 .portfolio__control__view {
+  display: flex;
+  flex-direction: row;
   .control--toggle {
     i {
       display: none;
@@ -67,24 +78,37 @@ $control-button-fontsize: 1em;
       }
     }
   }
-  .control--list {
+  .control--switch {
+    flex: 1 1 50%;
+    border: none;
+    border-radius: 0;
     display: none;
+    &.selected {
+      transition: background-color $transition-fast $bezier-quart;
+      background-color: $theme-sec-dark;
+      color: $alpha-white;
+    }
   }
-  .control--grid {
-    display: none;
-  }
-  @media only screen and (orientation: landscape) {
+  @media only screen and (min-width: 960px) {
+    width: 100%;
     .control--toggle {
       display: none;
+    }
+    .control--switch {
+      display: inline-block;
     }
   }
 }
 
 .portfolio__control__filters {
+  position: relative;
+  width: $filter-menu-width;
 
   .filter-select {
+    position: relative;
+    z-index: 2;
     @include control-button;
-    width: 15em;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,8 +121,9 @@ $control-button-fontsize: 1em;
     }
   }
 
-  @media only screen and (orientation: landscape) {
+  @media only screen and (min-width: 960px) {
     display: block;
+    width: 100%;
     .filter-select {
       display: none;
     }
@@ -106,40 +131,49 @@ $control-button-fontsize: 1em;
 }
 
 .portfolio__filters {
-  display: none;
-  .on {
-    display: block;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  padding: 0.5rem 0;
+  pointer-events: visible;
+  visibility: hidden;
+  opacity: 0;
+  &.on {
+    visibility: visible;
+    opacity: 1;
   }
   ul {
     position: relative;
-    font-size: 1em;
+    z-index: 2;
+    font-size: 1.5em;
     font-family: $font-filter;
     text-transform: capitalize;
     text-align: center;
     width: 100%;
-    @include flex($dir: row, $justify: center);
-    padding: 0 10%;
+    @include flex($dir: column);
+    background-color: $color-text;
+    color: $color-text-invert;
   }
   .filter {
     position: relative;
-    display: inline-block;
-    flex: 0 0 25%;
-    text-align: center;
-    padding: 1em 0;
-    color: $color-text-invert;
-    background-color: $black;
+    width: 100%;
+    display: block;
+    flex: none;
+    text-align: left;
+    padding: 0.4em 1em;
     cursor: pointer;
-    transition: $transition-fast $bezier-quart;
     span {
       position: relative;
       z-index: 1;
     }
     .overlay {
-      left: 50%;
-      width: 0;
-      transition: inherit;
-      background-color: $filter-selected;
+      position: absolute;
       z-index: 0;
+      top: 0;
+      left: 0;
+      background: transparent;
     }
     &:hover,
     &:focus {
@@ -148,33 +182,27 @@ $control-button-fontsize: 1em;
     }
     &.selected {
       color: $color-text-invert-light;
-      .overlay {
-        left: 0;
-        width: 100%;
-      }
     }
   }
   // .portfolio__filters @media
-  @media only screen and (orientation: landscape) {
-    display: block;
+  @media only screen and (min-width: 960px) {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
     ul {
-      position: sticky;
-      top: 1rem;
-      width: auto;
-      text-align: left;
-      display: initial;
-      padding: 0;
-      margin-bottom: 0;
-      margin-right: 2rem;
+      font-size: 1em;
     }
     .filter {
-      display: block;
-      flex: none;
-      text-align: left;
-      padding: 0.5em;
-      padding-right: 1.25em;
       .overlay {
-        left: 0;
+        background-color: $theme-pri-dark;
+        display: inline-block;
+        width: 0;
+      }
+      &.selected {
+        .overlay {
+          left: 0;
+          width: 100%;
+        }
       }
     }
   }
@@ -182,11 +210,12 @@ $control-button-fontsize: 1em;
 
 .portfolio__stage {
   position: relative;
+  z-index: 0;
   width: 100%;
   padding: 2em;
 
   & > * {
-    visibility: none;
+    visibility: hidden;
     pointer-events: visible;
     opacity: 0;
     transition: opacity $transition-fast $bezier-quart;
@@ -195,10 +224,140 @@ $control-button-fontsize: 1em;
       opacity: 1;
     }
   }
+
+  h2 {
+    font-family: $font-proj-h;
+    position: relative;
+    padding: 0.5em 0 1em;
+    flex: 0 0 auto;
+    text-align: left;
+    color: $color-text;
+  }
+
+  .text {
+    height: auto;
+    width: 100%;
+    @include flex($dir: column, $justify: space-between);
+    p {
+      flex: 1 1 auto;
+      width: 100%;
+      font-size: 0.8em;
+      color: $color-text;
+      font-family: $font-proj-text;
+      line-height: 1.1em;
+      overflow: hidden;
+    }
+    .footer {
+      @include flex($dir: row, $justify: space-between, $align: center);
+      width: 100%;
+      padding: 0.5em 0 0;
+      .tags {
+        font-size: 0.7em;
+        color: $theme-pri-dark;
+        font-family: $font-filter;
+      }
+      a {
+        flex: 0 0 auto;
+        font-size: 0.9em;
+        align-self: flex-end;
+        font-family: $font-link;
+        color: $color-text-invert;
+      }
+      span {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .project--list .info,
+  .project--grid,
+  .project__img img {
+    @include mediaQueryRange((
+      height: (120, 200),
+      width: (180, 300)
+    ));
+  }
+
+  @media only screen and (min-width: 960px){
+    padding-top: 0;
+    z-index: 2;
+  }
+}
+
+.portfolio__list {
+  ul {
+    @include flex($dir: column);
+    width: 100%;
+  }
+
+  .project--list {
+    width: 100%;
+    padding: 1em;
+    box-shadow: $shadow-sm;
+    align-items: center;
+    .info {
+      padding: 0 2em 0 1em;
+      @include flex($dir: column);
+    }
+    .text {
+      flex-grow: 1;
+    }
+    .project--list__img {
+      padding: 1em;
+      flex-grow: 0;
+      flex-shrink: 0;
+      .project__img {
+        position: relative;
+        transform:
+          perspective(1000px)
+          rotateX(-10deg)
+          rotateY(-30deg)
+          scale(0.9)
+          translate(-1em, -1em);
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 0;
+          transform-origin: 50% 100%;
+          transform-style: preserve-3d;
+          transform:
+            scaleY(0.3)
+            rotateY(-30deg)
+            rotateX(-135deg)
+            skew(20deg)
+            translateX(-19px)
+            translateY(-19px);
+          box-shadow: 0 0 80px 25px $alpha-dark;
+          z-index: -1;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow:
+            inset -10px 0 15px rgba(0,0,0,0.1),
+            inset 0 -2px 4px rgba(0,0,0,0.1);
+        }
+      }
+    }
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+    // &:nth-child(even){
+    //   flex-direction: row-reverse;
+    // }
+  }
 }
 
 .portfolio__grid {
   position: absolute;
+  width: 100%;
   top: 2em;
   left: 0;
 
@@ -206,17 +365,8 @@ $control-button-fontsize: 1em;
     @include flex($dir: row, $justify: center);
     height: auto;
     width: 100%;
-    padding: 0 2em;
-    margin-bottom: 10rem;
+    padding: 4em 2em;
     flex-wrap: wrap;
-  }
-
-  .project--grid,
-  .project__img img {
-    @include mediaQueryRange((
-      height: (80, 200),
-      width: (120, 300)
-    ));
   }
 
   .project--grid {
@@ -234,46 +384,14 @@ $control-button-fontsize: 1em;
         transition: inherit;
         opacity: 0;
       }
-      h2 {
-        font-family: $font-proj-h;
-        position: relative;
-        padding: 0.25em 0;
-        flex: 0 0 auto;
-        text-align: left;
-        color: $color-text;
-      }
-      .text {
-        height: 8.7em;
-        width: 100%;
-        @include flex($dir: column, $justify: space-between);
-        p {
-          flex: 1 1 auto;
-          width: 100%;
-          font-size: 0.8em;
-          color: $color-text;
-          font-family: $font-proj-text;
-          line-height: 1.1em;
-          overflow: hidden;
-        }
-        .footer {
-          @include flex($dir: row, $justify: space-between, $align: center);
-          width: 100%;
-          padding: 0.5em 0;
-          .tags {
-            font-size: 0.7em;
-            color: $theme-pri-dark;
-            font-family: $font-filter;
-          }
-          a {
-            flex: 0 0 auto;
-            font-size: 0.9em;
-            align-self: flex-end;
-            font-family: $font-link;
-          }
-          span {
-            margin-left: 0.5em;
-          }
-        }
+    }
+    h2 {
+      padding: 0.25em 0;
+    }
+    .text {
+      height: 8.7em;
+      .footer {
+        padding: 0.5em 0;
       }
     }
     .project__img {
@@ -346,9 +464,12 @@ $control-button-fontsize: 1em;
     }
   }
 
-  // .portfolio__list @media
-  @media only screen and (orientation: landscape){
+  // .portfolio__grid @media
+  @media only screen and (min-width: 960px){
     padding: 0;
+    ul {
+      padding: 0 2em;
+    }
 
     .project--grid {
       .project__img {

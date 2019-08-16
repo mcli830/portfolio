@@ -6,7 +6,7 @@
   z-index: 2;
   // background: linear-gradient(0deg, $theme-pri-dark, $theme-pri-light);
   background-color: $color-bg-dark;
-  @media only screen and (orientation: landscape) {
+  @media only screen and (min-width: 960px) {
     @include body-contain;
   }
 }

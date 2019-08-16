@@ -1,13 +1,15 @@
 function initFilterFunctions(state){
   initProjectState(state);
-  const filters = Array.from(document.querySelectorAll('.portfolio__filters .filter'));
+  const filters = Array.from(document.querySelectorAll('.filter'));
   filters.forEach(f => {
     f.onclick = () => {
       var ftag = f.dataset.tag;
-      filters.forEach(elem => elem.classList.remove('selected'));
+      filters.filter(elem => elem.classList.contains('selected')).forEach(elem => elem.classList.remove('selected'));
       updateProjects(state, ftag);
       moveProjects(state);
       f.classList.add('selected');
+      document.getElementById('control-filter-menu').classList.remove('on')
+      document.getElementById('active-filter').innerHTML = f.dataset.tag;
     }
   });
 
@@ -15,7 +17,7 @@ function initFilterFunctions(state){
 
 // helper
 function getProjects(){
-  return Array.from(document.querySelectorAll('.project--grid'));
+  return Array.from(document.querySelectorAll('.project'));
 }
 function initProjectState(state){
   state.projects = getProjects().map(proj => {
@@ -67,4 +69,4 @@ function moveProjects(state){
   });
 }
 
-module.exports = {initFilterFunctions, };
+module.exports = {initFilterFunctions};

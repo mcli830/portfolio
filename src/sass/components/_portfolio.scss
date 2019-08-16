@@ -27,7 +27,7 @@ $header-selected: rgba($color-text-light, 0.7);
   position: relative;
   width: 100%;
   @include flex($dir: row, $justify: center, $align: center);
-  @media only screen and (orientation: landscape) {
+  @media only screen and (min-width: 960px) {
     margin-bottom: 3rem;
   }
 }
@@ -109,7 +109,7 @@ $header-select-bg: $theme-pri-dark;
       pointer-events: none;
     }
   }
-  @media only screen and (orientation: landscape){
+  @media only screen and (min-width: 960px){
     flex-direction: row;
     @include body-contain;
   }
