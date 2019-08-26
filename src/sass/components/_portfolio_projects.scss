@@ -245,7 +245,7 @@ $control-button-fontsize: 1em;
       color: $color-text;
       font-family: $font-proj-text;
       line-height: 1.1em;
-      overflow: hidden;
+      overflow: auto;
     }
     .footer {
       @include flex($dir: row, $justify: space-between, $align: center);

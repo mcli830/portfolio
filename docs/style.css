@@ -1054,7 +1054,7 @@ a {
       color: #212121;
       font-family: "PT Serif";
       line-height: 1.1em;
-      overflow: hidden; }
+      overflow: auto; }
     .portfolio__stage .text .footer {
       display: -webkit-box;
       display: -ms-flexbox;
