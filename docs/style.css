@@ -665,9 +665,9 @@ a {
 .portfolio__header {
   position: relative;
   display: inline-block;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   font-family: "Montserrat";
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -688,8 +688,6 @@ a {
   .portfolio__header [class*=" overlay"] {
     z-index: -1;
     width: 0;
-    -webkit-transform: skew(30deg);
-    transform: skew(30deg);
     -webkit-transition: inherit;
     transition: inherit; }
   .portfolio__header .overlay--base {

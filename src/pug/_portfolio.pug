@@ -110,36 +110,36 @@ mixin prof(name, level, color, title)
       tags: ['React', 'UI/UX'],
       text: 'Stay productive using this pomodoro clock tool. Created using React.js and designed with simplicity and an intuitive user experience in mind.'
     },
-    { name: 'Drum Pad',
-      url: 'https://codepen.io/mykolodon/full/wxBwVV',
-      tags: ['React'],
-      text: 'Basic drum machine made with React. UI design and controls developed with vanilla CSS and JavaScript. Hit the pad with your keyboard to make a wicked beat!'
-    },
+    // { name: 'Drum Pad',
+    //   url: 'https://codepen.io/mykolodon/full/wxBwVV',
+    //   tags: ['React'],
+    //   text: 'Basic drum machine made with React. UI design and controls developed with vanilla CSS and JavaScript. Hit the pad with your keyboard to make a wicked beat!'
+    // },
     // { name: 'Mister Cocktail',
     //   url: 'https://mr-cocktail-mcli830.herokuapp.com/',
     //   tags: ['Ruby/Rails', 'SQL', 'UI/UX'],
     //   text: 'Discover interesting cocktails, or create your own.'
     // },
-    { name: 'Datamuse Interface',
-      url: 'https://codepen.io/mykolodon/full/vMVEwp',
-      tags: ['API', 'Tools'],
-      text: 'Bare-bones interface to access the Datamuse API. Works kind of like a thesaurus, but with more unique search queries.'
-    },
-    { name: 'Calculator',
-      url: 'https://codepen.io/mykolodon/full/yqevJv',
-      tags: ['React', 'UI/UX', 'Tools'],
-      text: `Browser-based calculator that can be used with a mouse or keyboard.`
-    },
+    // { name: 'Datamuse Interface',
+    //   url: 'https://codepen.io/mykolodon/full/vMVEwp',
+    //   tags: ['API', 'Tools'],
+    //   text: 'Bare-bones interface to access the Datamuse API. Works kind of like a thesaurus, but with more unique search queries.'
+    // },
+    // { name: 'Calculator',
+    //   url: 'https://codepen.io/mykolodon/full/yqevJv',
+    //   tags: ['React', 'UI/UX', 'Tools'],
+    //   text: `Browser-based calculator that can be used with a mouse or keyboard.`
+    // },
     { name: 'Weather Widget',
       url: 'https://codepen.io/mykolodon/full/pVQYqv',
       tags: ['UI/UX', 'API'],
       text: `Simple weather app using the geolocation API.`
     },
-    { name: 'Color Blocks',
-      url: 'https://codepen.io/mykolodon/full/MXxEyq',
-      tags: ['React'],
-      text: `A pointless game utilizing React lifecycle functions.`
-    },
+    // { name: 'Color Blocks',
+    //   url: 'https://codepen.io/mykolodon/full/MXxEyq',
+    //   tags: ['React'],
+    //   text: `A pointless game utilizing React lifecycle functions.`
+    // },
     { name: 'Goji Devkit',
       url: 'https://www.npmjs.com/package/goji-devkit',
       tags: ['Node/Express', 'Tools', 'WIP'],
@@ -155,28 +155,28 @@ mixin prof(name, level, color, title)
       tags: ['D3'],
       text: `Interactive data visualization project. Click on a section to zoom in the view box.`
     },
-    { name: 'D3 Bar Chart',
-      url: 'https://codepen.io/mykolodon/full/QBvGLx',
-      tags: ['D3'],
-      text: `Interactive data visualization project. Mouseover data points for details.`
-    },
-    { name: 'D3 Scatterplot',
-      url: 'https://codepen.io/mykolodon/full/YjxNEY',
-      tags: ['D3'],
-      text: `Interactive data visualization project. Mouseover data points for details.`
-    },
-    { name: 'D3 Heatmap',
-      url: 'https://codepen.io/mykolodon/full/Zjaamd',
-      tags: ['D3'],
-      text: `Interactive data visualization project. Mouseover data points for details.`
-    },
+    // { name: 'D3 Bar Chart',
+    //   url: 'https://codepen.io/mykolodon/full/QBvGLx',
+    //   tags: ['D3'],
+    //   text: `Interactive data visualization project. Mouseover data points for details.`
+    // },
+    // { name: 'D3 Scatterplot',
+    //   url: 'https://codepen.io/mykolodon/full/YjxNEY',
+    //   tags: ['D3'],
+    //   text: `Interactive data visualization project. Mouseover data points for details.`
+    // },
+    // { name: 'D3 Heatmap',
+    //   url: 'https://codepen.io/mykolodon/full/Zjaamd',
+    //   tags: ['D3'],
+    //   text: `Interactive data visualization project. Mouseover data points for details.`
+    // },
   ]
 
 section#portfolio.portfolio
   .portfolio__content
     .portfolio__sections
       +section-header('Portfolio', 'projects', 'selected')
-      +section-header('Proficiency', 'proficiency')
+      //- +section-header('Proficiency', 'proficiency')
     .portfolio__view
       #projects.portfolio__projects
         .portfolio__control
@@ -220,36 +220,37 @@ section#portfolio.portfolio
               each p in projects
                 +project_grid(p)
       #proficiency.portfolio__profs.hide
-        #langs.profs__category
-          h4 Languages
-          ul.profs__list
-            +prof('HTML', 80, 'blue', 'HyperText Markup Language')
-            +prof('CSS', 80, 'blue', 'Cascading Style Sheets')
-            +prof('JavaScript', 90, 'blue', 'JavaScript / ECMA Script 6')
-            +prof('Ruby/Rails', 70, 'blue', 'Ruby / Ruby on Rails')
-            +prof('SQL', 50, 'blue', 'Structured Query Language / MySQL / PostGreSQL')
-            +prof('GraphQL', 60, 'blue', 'Graph Query Language')
-            +prof('Java', 40, 'blue', 'Java')
-            +prof('Python', 50, 'blue', 'Python')
-            +prof('Linux/Bash', 50, 'blue', 'Linux / Unix / Bash')
-        #tools.profs__category
-          h4 Tools
-          ul.profs__list
-            +prof('Node', 90, 'green', 'Node.js / Node Package Manager (npm)')
-            +prof('Express', 80, 'green', 'Express.js')
-            +prof('JQuery', 80, 'green', 'JQuery.js')
-            +prof('React', 80, 'green', 'React.js')
-            +prof('Redux', 70, 'green', 'Redux.js')
-            +prof('Pug', 90, 'green', 'Pug.js / Jade')
-            +prof('Sass', 90, 'green', 'Syntactically Awesome Style Sheets')
-            +prof('Bootstrap', 70, 'green', 'Twitter Bootstrap')
-            +prof('Google Cloud', 50, 'green', 'Google Cloud Platform')
-            +prof('Material UI', 80, 'green', 'Material Design Components')
-            +prof('D3', 60, 'green', 'D3.js / Data-Driven Documents')
-            +prof('MongoDB', 70, 'green')
-            +prof('socket.io', 40, 'green')
-            +prof('Webpack', 60, 'green')
-            +prof('Gulp', 60, 'green')
+        
+      //-   #langs.profs__category
+      //-     h4 Languages
+      //-     ul.profs__list
+      //-       +prof('HTML', 80, 'blue', 'HyperText Markup Language')
+      //-       +prof('CSS', 80, 'blue', 'Cascading Style Sheets')
+      //-       +prof('JavaScript', 90, 'blue', 'JavaScript / ECMA Script 6')
+      //-       +prof('Ruby/Rails', 70, 'blue', 'Ruby / Ruby on Rails')
+      //-       +prof('SQL', 50, 'blue', 'Structured Query Language / MySQL / PostGreSQL')
+      //-       +prof('GraphQL', 60, 'blue', 'Graph Query Language')
+      //-       +prof('Java', 40, 'blue', 'Java')
+      //-       +prof('Python', 50, 'blue', 'Python')
+      //-       +prof('Linux/Bash', 50, 'blue', 'Linux / Unix / Bash')
+      //-   #tools.profs__category
+      //-     h4 Tools
+      //-     ul.profs__list
+      //-       +prof('Node', 90, 'green', 'Node.js / Node Package Manager (npm)')
+      //-       +prof('Express', 80, 'green', 'Express.js')
+      //-       +prof('JQuery', 80, 'green', 'JQuery.js')
+      //-       +prof('React', 80, 'green', 'React.js')
+      //-       +prof('Redux', 70, 'green', 'Redux.js')
+      //-       +prof('Pug', 90, 'green', 'Pug.js / Jade')
+      //-       +prof('Sass', 90, 'green', 'Syntactically Awesome Style Sheets')
+      //-       +prof('Bootstrap', 70, 'green', 'Twitter Bootstrap')
+      //-       +prof('Google Cloud', 50, 'green', 'Google Cloud Platform')
+      //-       +prof('Material UI', 80, 'green', 'Material Design Components')
+      //-       +prof('D3', 60, 'green', 'D3.js / Data-Driven Documents')
+      //-       +prof('MongoDB', 70, 'green')
+      //-       +prof('socket.io', 40, 'green')
+      //-       +prof('Webpack', 60, 'green')
+      //-       +prof('Gulp', 60, 'green')
         //- #skills.profs__category
         //-   h4 Skills
         //-   ul.profs__list

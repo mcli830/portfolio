@@ -43,7 +43,7 @@ $header-select-bg: $theme-pri-dark;
 .portfolio__header {
   position: relative;
   display: inline-block;
-  flex: 0 0 50%;
+  flex: 1 1 auto;
   font-family: $font-header;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -61,7 +61,6 @@ $header-select-bg: $theme-pri-dark;
   [class*=" overlay"] {
     z-index: -1;
     width: 0;
-    transform: skew(30deg);
     transition: inherit;
   }
   .overlay--base {
